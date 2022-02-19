@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/BadeaAlamidi/athenaeum.git",
+  "author": "Badea Alamidi",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "type" : "module",
+  "scripts" : {
+    "start" : "node index.js"
+  }
+}
