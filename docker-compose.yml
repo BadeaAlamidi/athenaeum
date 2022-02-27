@@ -1,0 +1,18 @@
+version: '2.4'
+services:
+  client:
+    image: athenaeum-client:node
+    build:
+      context: ./client
+      target: node
+    ports:
+      - "3000:3000"
+  server:
+    image: athenaeum-server
+    build: ./server
+    volumes:
+      - "db:/home/node/app/db"
+    ports:
+      - "5000:5000"
+volumes:
+  db:

@@ -3,14 +3,25 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/BadeaAlamidi/athenaeum.git",
-  "author": "Badea Alamidi",
+  "contributors": [
+    "Badea Alamidi <badea.alamidi@gmail.com>",
+    "Anthony Chavez <anthony@anthonychavez.xyz>"
+  ],
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "express": "^4.17.3"
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "sequelize": "^6.17.0",
+    "sqlite3": "^5.0.2"
   },
-  "type" : "module",
-  "scripts" : {
-    "start" : "node index.js"
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.4.1"
   }
 }
