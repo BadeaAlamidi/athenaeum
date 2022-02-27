@@ -18,7 +18,9 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       cover: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: null,
+        allowNull: true
       },
       createdAt: {
         allowNull: false,
