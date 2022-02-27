@@ -1,0 +1,19 @@
+version: '2.4'
+services:
+  web:
+    image: athenaeum-client:static-web
+    build:
+      context: ./client
+      target: static-web
+    ports:
+      - 80:80
+    depends_on:
+      backend:
+        condition: service_started
+  backend:
+    image: athenaeum-server
+    build: ./server
+    volumes:
+      - "db:/home/node/app/db"
+volumes:
+  db:
