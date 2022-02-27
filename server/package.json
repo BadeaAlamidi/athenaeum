@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/BadeaAlamidi/athenaeum.git",
-  "author": "Badea Alamidi",
+  "contributors": [
+    "Badea Alamidi <badea.alamidi@gmail.com>",
+    "Anthony Chad <anthony@anthonychavez.xyz>"
+  ],
   "license": "MIT",
   "private": false,
   "dependencies": {
