@@ -14,9 +14,19 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Book.init({
+    isbn10: DataTypes.STRING,
+    isbn13: DataTypes.STRING,
     title: DataTypes.STRING,
-    author: DataTypes.STRING,
-    rating: DataTypes.INTEGER
+    subtitle: DataTypes.STRING,
+    rating: DataTypes.INTEGER,
+    maturityRating: DataTypes.STRING,
+    thumbnailUrl: DataTypes.STRING,
+    smallThumbnailUrl: DataTypes.STRING,
+    language: DataTypes.STRING,
+    publishDate: DataTypes.DATE,
+    pageCount: DataTypes.INTEGER,
+    description: DataTypes.TEXT,
+    textSnippet: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Book',
