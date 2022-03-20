@@ -12,7 +12,6 @@
 <h1>Welcome to Athenaeum</h1>
 
 {#each books as book}
-    <p>{book.title}</p>
     <BookComponent>
         <span slot="title">{book.title}</span>
         <span slot="image"><img src="{book.thumbnailUrl}"></span>
