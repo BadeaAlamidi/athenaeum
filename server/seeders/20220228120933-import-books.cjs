@@ -112,24 +112,6 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 7,
-      isbn10: null,
-      isbn13: null,
-      title: "The Negro Motorist Green Book",
-      subtitle: "1940 Edition",
-      rating: null,
-      maturityRating: null,
-      thumbnailUrl: "http://books.google.com/books/content?id=SKWqDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      smallThumbnailUrl: "http://books.google.com/books/content?id=SKWqDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      language: "en",
-      publishDate: "",
-      pageCount: null,
-      description: "The idea of \"The Green Book\" is to give the Motorist and Tourist a Guide not only of the Hotels and Tourist Homes in all of the large cities, but other classifications that will be found useful wherever he may be. Also facts and information that the Negro Motorist can use and depend upon. There are thousands of places that the public doesn't know about and aren't listed. Perhaps you know of some? If so send in their names and addresses and the kind of business, so that we might pass it along to the rest of your fellow Motorists. You will find it handy on your travels, whether at home or in some other state, and is up to date. Each year we are compiling new lists as some of these places move, or go out of business and new business places are started giving added employment to members of our race.",
-      textSnippet: "The idea of &quot;The Green Book&quot; is to give the Motorist and Tourist a Guide not only of the Hotels and Tourist Homes in all of the large cities, but other classifications that will be found useful wherever he may be.",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
       id: 8,
       isbn10: "0316123390",
       isbn13: "9780316123396",
