@@ -13,6 +13,7 @@ export default /*const BooksTable =*/ (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models.Author);
+      this.hasMany(models.Category)
     }
   }
   Book.init({
