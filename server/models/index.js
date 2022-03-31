@@ -29,9 +29,9 @@ const modelFiles = readdirSync(__dirname)
   //  const model = (await import(join(__dirname, file)))(sequelize, DataTypes);
   //  db[model.name] = model;
   //});
-  (async function importModels(){
+
+export default await (async function importModels(){
     for (const file of modelFiles){
-      
       
       // const module = await import('file://' + join(__dirname, file));
       // const model = module.default(sequelize, DataTypes);
@@ -39,18 +39,16 @@ const modelFiles = readdirSync(__dirname)
       const model = modelImport(sequelize, DataTypes);
       db[model.name] = model;
     }
+    Object.keys(db).forEach(modelName => {
+      if (db[modelName].associate) {
+        db[modelName].associate(db);
+      }
+      else {console.log('associate method was not found ')}
+    });
+    db.sequelize = sequelize;
+    return db;
 })()
 
 
-Object.keys(db).forEach(modelName => {
-  if (db[modelName].associate) {
-    db[modelName].associate(db);
-  }
-  else {console.log('associate method was not found ')}
-});
 
-db.sequelize = sequelize;
-db.Sequelize = Sequelize;
-
-
-export default db;
+// export default db;
