@@ -9,12 +9,7 @@ export default (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.Book,{
-        foreignKey: {
-          name: 'bookId',
-          allowNull: false
-        }
-      });
+      this.belongsToMany(models.Book, {through: models.Wrote, foreignKey: 'writerId'});
     }
   }
   Author.init({

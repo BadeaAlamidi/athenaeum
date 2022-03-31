@@ -12,8 +12,8 @@ export default /*const BooksTable =*/ (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasMany(models.Author);
       this.hasMany(models.Category)
+      this.belongsToMany(models.Author,{through:models.Wrote, foreignKey: 'bookId'});
     }
   }
   Book.init({
