@@ -9,7 +9,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       author: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique:true
       },
       createdAt: {
         allowNull: false,
@@ -20,25 +21,25 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
-    await queryInterface.addColumn(
-      'Authors',
-      'bookId',
-      {
-        type: Sequelize.INTEGER,
-        references:{
-          model: 'Books',
-          key: 'id',
-        },
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-      }
-    );
+    // await queryInterface.addColumn(
+    //   'Authors',
+    //   'bookId',
+    //   {
+    //     type: Sequelize.INTEGER,
+    //     references:{
+    //       model: 'Books',
+    //       key: 'id',
+    //     },
+    //     onUpdate: 'CASCADE',
+    //     onDelete: 'SET NULL',
+    //   }
+    // );
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Authors');
-    await queryInterface.removeColumn(
-      'Authors',
-      'bookId'
-    );
+    // await queryInterface.removeColumn(
+    //   'Authors',
+    //   'bookId'
+    // );
   }
 };
