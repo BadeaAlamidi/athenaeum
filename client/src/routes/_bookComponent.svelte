@@ -1,12 +1,12 @@
 <div class='wrapper' style=''>
     <div>
-        <slot name='image'>book image</slot>
+        <slot name='image'>no image</slot>
     </div>
-    <slot name='title'>book title</slot>
+    <slot name='title'>no title</slot>
 </div>
 
 <style>
-    .wrapper { 
+    .wrapper {
         border-style:solid;
         border-color:red;
     }
