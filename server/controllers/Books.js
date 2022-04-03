@@ -3,13 +3,35 @@
 import models from '../models/index.js';
 
 const getBooks = async (req,res) =>{
-    try {
-        Object.keys(models).forEach((prop)=> console.log(typeof(prop), prop));
-        const allEntries = await models.Book.findAll({raw:true});
-        res.status(200).json(allEntries);
-    } catch(e){
-        console.log(e);
+    let books;
+    if (req.query){
+        // api/books?
+        if (req.query.order){
+            // api/books?order
+            const columns = ['title','publishDate','rating','pageCount'];
+            if (!columns.includes(req.query.order)){
+                // invalid
+                res.status(400).json({status: 'error', reason:'invalid column for find all query'});
+                return;
+            }
+            // api/books?order={valid column}
+            let direction = 'ASC';
+            if (req.query.direction && req.query.direction ==='DESC'){
+                direction = 'DESC';
+            }
+            books = await models.Book.findAll({
+                raw:true,
+                order: [[req.query.order,direction]]
+            });
+        } else {
+            // api/books? no  order
+            books = await models.Book.findAll({raw:true});
+        }
+    } else {
+        // api/books
+        books = await models.Book.findAll({raw:true});
     }
+    res.json(books);
 }
 
 export { getBooks, };
