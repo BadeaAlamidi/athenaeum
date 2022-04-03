@@ -1,7 +1,7 @@
 import express from 'express';
 
-import bookRoutes from './routes/Book.js'
-import joinRoute from './routes/Join.js'
+import api from './routes/api.js'
+// import joinRoute from './routes/Join.js'
 
 import cors from 'cors';
 const app = express();
@@ -13,8 +13,9 @@ app.get('/', (req, res) => {
   res.send("Hello, world!");
 });
 
-app.use('/books', bookRoutes);
-app.use('/join', joinRoute);
+app.use('/api', api); //why does this regex not match the 1st word in the list?
+// app.use('/books/:order?', bookRoutes);
+// app.use('/join', joinRoute);
 
 app.listen(port, () => {
   console.log(`Listening on ${port}`);

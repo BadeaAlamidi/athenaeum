@@ -3,7 +3,11 @@ import models from '../models/index.js';
 export default async (req,res) =>{
     try {
         const result = await models.Book.findAll({
-            include: models.Author,
+            attributes: ['title', 'id'],
+            include: {
+                model: models.Author,
+                through: {attributes:[]} // specifies the attributes wanted from the through table
+            },
             raw:true
             // as: 'writer'}
             // include: "bookId"
