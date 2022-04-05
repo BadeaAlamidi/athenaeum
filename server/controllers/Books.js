@@ -8,7 +8,7 @@ const getBooks = async (req,res) =>{
         // api/books?
         if (req.query.order){
             // api/books?order
-            const columns = ['title','publishDate','rating','pageCount'];
+            const columns = ['title','publishDate','rating','pageCount','id'];
             if (!columns.includes(req.query.order)){
                 // invalid
                 res.status(400).json({status: 'error', reason:'invalid column for find all query'});
