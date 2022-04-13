@@ -1,7 +1,10 @@
+<script>
+	import SearchBar from "$lib/components/_search.svelte";
+</script>
 <nav>
 	<a href="/">Home</a>
 	<a href="/about">About</a>
 	<a href="/settings">Settings</a>
-	<input type="text" placeholder="search here">
+	<SearchBar/>
 </nav>
 <slot></slot>

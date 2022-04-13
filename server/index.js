@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
   res.send("Hello, world!");
 });
 
-app.use('/api', api); //why does this regex not match the 1st word in the list?
+app.use('/api', api);
 // app.use('/books/:order?', bookRoutes);
 // app.use('/join', joinRoute);
 
