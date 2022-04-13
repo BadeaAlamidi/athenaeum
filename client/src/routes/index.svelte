@@ -1,15 +1,17 @@
 <script>
- import BookComponent from "./_bookComponent.svelte";
+ import BookComponent from "$lib/components/_bookComponent.svelte";
  import {page} from "$app/stores"
- import { onMount } from 'svelte';
+// import {queryParamStore} from "$lib/stores.js"
+// import { onMount } from 'svelte';
 
 
  let selectValue = $page.url.searchParams.get('order') ?? 'id';
  let selectDirection = $page.url.searchParams.get('direction') ?? 'ASC';
  let bookFetch = async () => {
-     let order = $page.url.searchParams.get('order') ?? 'id';
-     let direction = $page.url.searchParams.get('direction') ?? 'DESC';
-     const res = await fetch(`http://localhost:5000/api/books?order=${order}&direction=${direction}`);
+     const order = $page.url.searchParams.get('order') ?? 'id';
+     const direction = $page.url.searchParams.get('direction') ?? 'DESC';
+     const searchString = $page.url.searchParams.get('searchString')?? '';
+     const res = await fetch(`http://localhost:5000/api/books?order=${order}&direction=${direction}&searchString=${searchString}`);
      return await res.json();
  }
 //  onMount(async () => {
@@ -18,8 +20,12 @@
 //      console.log(books);
 //  })
  function ReOrder(){
-    window.location.href=`http://localhost:3000?order=${selectValue}&direction=${selectDirection}`
+    $page.url.searchParams.set('order',selectValue);
+    $page.url.searchParams.set('direction',selectDirection);
+    // window.location.href=`http://localhost:3000?order=${selectValue}&direction=${selectDirection}`
+    window.location.href=$page.url.href;
  }
+
 </script>
 <style>
  .grid-container {
