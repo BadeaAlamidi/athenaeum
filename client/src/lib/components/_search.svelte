@@ -8,7 +8,7 @@
     // let normalSearch; // boolean for switching between tag search and normal title/isbn search
     let tagSearchString='';
     let tagArray = [];
-    let tagSearchFlag = $page.url.searchParams.get('tag') === "false"? false : true;
+    let tagSearchFlag = $page.url.searchParams.get('tag') === "true"? true : false;
     let searchString = $page.url.searchParams.get('searchString')??'';
     
     // if ($page.url.searchParams.get('tag') === "true") $tagSearchFlag = true;
