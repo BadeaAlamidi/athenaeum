@@ -5,10 +5,11 @@ export default async (req,res) =>{
         const result = await models.Book.findAll({
             attributes: ['title', 'id'],
             include: {
-                model: models.Author,
+                model: models.Tag,
+                attributes: ['tagname'],
                 through: {attributes:[]} // specifies the attributes wanted from the through table
             },
-            raw:true
+            // raw:true
             // as: 'writer'}
             // include: "bookId"
         });
