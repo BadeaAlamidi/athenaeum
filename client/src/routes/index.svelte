@@ -9,7 +9,7 @@
  let selectDirection = $page.url.searchParams.get('direction') ?? 'ASC';
  let bookFetch = async () => {
      const order = $page.url.searchParams.get('order') ?? 'id';
-     const direction = $page.url.searchParams.get('direction') ?? 'DESC';
+     const direction = $page.url.searchParams.get('direction') ?? 'ASC';
      const searchString = $page.url.searchParams.get('searchString')?? '';
      const res = await fetch(`http://localhost:5000/api/books?order=${order}&direction=${direction}&searchString=${searchString}`);
      return await res.json();
