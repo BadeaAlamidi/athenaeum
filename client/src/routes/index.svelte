@@ -25,7 +25,20 @@
     // window.location.href=`http://localhost:3000?order=${selectValue}&direction=${selectDirection}`
     window.location.href=$page.url.href;
  }
-
+ function deleteBook(id) {
+     const url = "http://localhost:5000/api/delete/book"
+     const options = {
+         method: 'POST',
+         body: JSON.stringify({bookId: id}),
+         headers: {
+             'Content-Type': 'application/json'
+         }
+     }
+     fetch(url, options)
+         .then(res => res.json())
+         .then(res => console.log(res));
+     console.log("res sent");
+ }
 </script>
 <style>
  .grid-container {
@@ -44,6 +57,7 @@
 {#await bookFetch()}
 <p>Loading Books...</p>
 {:then books} 
+
 <div>
     <label for="order">Sort by: </label>
     <select bind:value={selectValue} on:change={ReOrder}>
@@ -68,6 +82,7 @@
         <BookComponent>
             <span slot="title">{book.title}</span>
             <span slot="image"><img src="{book.thumbnailUrl}" alt="Book cover"></span>
+            <button on:click={() => deleteBook(book.id)}>Delete</button>
         </BookComponent>
     </div>
     {/each}
