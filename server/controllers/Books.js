@@ -5,7 +5,7 @@ import {Op} from 'sequelize';
 
 const getBooks = async (req,res) =>{
     let books;
-    if (req.query){
+    if (Object.keys(req.query).length){
         let whereClause;
         switch (true){
             case /^isbn10:/.test(req.query.searchString) :
