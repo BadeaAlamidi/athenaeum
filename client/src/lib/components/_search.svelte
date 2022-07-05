@@ -11,6 +11,32 @@
     let tagSearchFlag = $page.url.searchParams.get('tag') === "true"? true : false;
     let searchString = $page.url.searchParams.get('searchString')??'';
     
+    // represents all of the tags from the database
+    let tagsMap = [];
+    // fetches tags from the backend and calls the soundex function for each tag to create a hash for each tag
+    const getTags = async () =>{
+        const res = await fetch("http://localhost:5000/api/tags");
+        const tagsRes = await res.json();
+
+        let map=[];
+        Array.from(tagsRes).forEach(({tagname})=>{
+            const identifier = soundex(tagname);
+            if (map[identifier]) map[identifier].push(tagname);
+            else map[identifier] = [tagname,];
+        });
+        tagsMap = map;
+
+        return map;
+    }
+    // utility function created to avoid duplicate code.
+    // sets the tags parameters after changing it and refreshes the page 
+    // to reflect the changes done to tagArray
+    const tagSearchReaction = function (){
+        $page.url.searchParams.set('tags', tagArray.join());
+        // refresh the page and update the search if the current page is the index page:
+        if (window.location.pathname === '/')
+            window.location.href=$page.url.href;
+    }
     // if ($page.url.searchParams.get('tag') === "true") $tagSearchFlag = true;
     // this statement reacts to the changes done to the normalSearchText store to reflect its contents into the page store:
     // $: $page.url.searchParams.set('searchString',$normalSearchText)
@@ -67,7 +93,12 @@
 </div>
 {/if}
 <lable for="searchType">Tag Search</lable>
-<input type="checkbox" name="searchType" bind:checked={tagSearchFlag}>
+{#await getTags()}
+    <input type="checkbox" name="searchType" bind:checked={tagSearchFlag} disabled={true}>
+    <lable for="searchType">loading tags...</lable>
+{:then tagMap}
+    <input type="checkbox" name="searchType" bind:checked={tagSearchFlag}>
+{/await}
 <style>
     div>input{
         flex:auto
