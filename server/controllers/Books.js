@@ -72,4 +72,12 @@ const getBooks = async (req,res) =>{
     res.json(books);
 }
 
-export { getBooks, };
+const getBook = async (req,res)=>{
+    // findAll is used instead of findByPk because the book table has a date column in the model
+    // definition which is not a supported type in sqlite. this is circumvented with
+    // findAll with the raw:true option for the time being
+    const book = await models.Book.findAll({raw:true, where:{id:{[Op.eq]:req.params.id}}})
+    res.json(book);
+}
+
+export { getBooks, getBook};

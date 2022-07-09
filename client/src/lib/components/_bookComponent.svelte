@@ -1,4 +1,7 @@
-<div class='wrapper' style=''>
+<script>
+    export let id;
+</script>
+<div class='wrapper' style='' title={id}>
     <div>
         <slot name='image'>no image</slot>
     </div>
