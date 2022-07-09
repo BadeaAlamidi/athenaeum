@@ -33,7 +33,16 @@
     // window.location.href=`http://localhost:3000?order=${selectValue}&direction=${selectDirection}`
     window.location.href=$page.url.href;
  }
+ function expand_sharable_div(){
+    navigator.clipboard.writeText($page.url.href)
+            .then(()=>console.log('async copy success'), ()=>console.log('async copy failed'))
 
+    // change look as necessary:
+        sharable_div.id = 'sharable-link-div_open';
+        sharable_div.innerText = $page.url.href + ' Copied! (Click again to update)';
+ }
+
+ let sharable_div;
 </script>
 <style>
  .grid-container {
@@ -46,6 +55,16 @@
      width: 200px;
      height: 300px;
      object-fit: cover;
+ }
+ #sharable-link-div_closed{
+    background-color: rgb(0, 0, 0);
+    display:inline;
+    color: white;
+ }
+ #sharable-link-div-open{
+    background-color: white;
+    display:inline;
+    color: black;
  }
 </style>
 <h1>Welcome to Athenaeum</h1>
@@ -77,6 +96,9 @@
             <span slot="title">{book.title}</span>
             <span slot="image"><img src="{book.thumbnailUrl}" alt="Book cover"></span>
         </BookComponent>
+    </div>
+    <div id = sharable-link-div_closed bind:this={sharable_div} on:click={expand_sharable_div}>
+        Results link...
     </div>
     {/each}
 </div>
