@@ -2,7 +2,7 @@
     import {onMount} from 'svelte'
     import {page} from '$app/stores'
     import soundex from '../soundex.js'
-    import {browser} from '$app/env'
+    import {searchStatus} from '../stores.js'
     
     // import {queryParamStore} from '$lib/stores'
     // import {normalSearchText} from '$lib/stores'
@@ -39,11 +39,12 @@
     // utility function created to avoid duplicate code.
     // sets the tags parameters after changing it and refreshes the page 
     // to reflect the changes done to tagArray
+    let lastTimeoutID;
     const tagSearchReaction = function (){
         $page.url.searchParams.set('tags', tagArray.join());
-        // refresh the page and update the search if the current page is the index page:
-        if (window.location.pathname === '/')
-            window.location.href=$page.url.href;
+        searchStatus.set('not_ready');
+        clearTimeout(lastTimeoutID);
+        lastTimeoutID = setTimeout(()=>searchStatus.set('ready'),1500);
     }
     // if ($page.url.searchParams.get('tag') === "true") $tagSearchFlag = true;
     // this statement reacts to the changes done to the normalSearchText store to reflect its contents into the page store:

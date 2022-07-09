@@ -1,6 +1,7 @@
 <script>
  import BookComponent from "$lib/components/_bookComponent.svelte";
  import {page} from "$app/stores"
+ import {searchStatus} from "../lib/stores"
 // import {queryParamStore} from "$lib/stores.js"
 // import { onMount } from 'svelte';
 
@@ -68,40 +69,44 @@
  }
 </style>
 <h1>Welcome to Athenaeum</h1>
-{#await bookFetch()}
-<p>Loading Books...</p>
-{:then books} 
-<div>
-    <label for="order">Sort by: </label>
-    <select bind:value={selectValue} on:change={ReOrder}>
-        <option value="title">Title</option>
-        <option value="publishDate">Date published</option>
-        <option value="rating">Rating</option>
-        <option value="pageCount">Page Count</option>
-        <option value="id">Book ID</option>
-    </select>
-    <label for="ASC">
-        <input type="radio" id="ASC" value="ASC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
-        Ascending 
-    </label>
-    <label for="DESC">
-        <input type="radio" id="DESC" value="DESC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
-        Descending
-    </label>
-</div>
-<div class="grid-container">
-    {#each books as book}
-    <div class="grid-items">
-        <BookComponent>
-            <span slot="title">{book.title}</span>
-            <span slot="image"><img src="{book.thumbnailUrl}" alt="Book cover"></span>
-        </BookComponent>
+{#if $searchStatus == 'ready'}
+    {#await bookFetch()}
+    <p>Loading Books...</p>
+    {:then books} 
+    <div>
+        <label for="order">Sort by: </label>
+        <select bind:value={selectValue} on:change={ReOrder}>
+            <option value="title">Title</option>
+            <option value="publishDate">Date published</option>
+            <option value="rating">Rating</option>
+            <option value="pageCount">Page Count</option>
+            <option value="id">Book ID</option>
+        </select>
+        <label for="ASC">
+            <input type="radio" id="ASC" value="ASC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
+            Ascending 
+        </label>
+        <label for="DESC">
+            <input type="radio" id="DESC" value="DESC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
+            Descending
+        </label>
     </div>
     <div id = sharable-link-div_closed bind:this={sharable_div} on:click={expand_sharable_div}>
         Results link...
     </div>
-    {/each}
-</div>
-  {:catch error}
-    <p>{error}</p>
-  {/await}
+    <div class="grid-container">
+        {#each books as {title, thumbnailUrl, id}}
+        <div class="grid-items">
+            <BookComponent id={id}>
+                <span slot="title">{title}</span>
+                <span slot="image"><img src="{thumbnailUrl}" alt="Book cover"></span>
+            </BookComponent>
+        </div>
+        {/each}
+    </div>
+      {:catch error}
+        <p>{error}</p>
+      {/await}
+    {:else}
+    <span>waiting for user</span>
+{/if}
