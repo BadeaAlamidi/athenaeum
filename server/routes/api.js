@@ -3,6 +3,7 @@ import express from 'express';
 import {getBooks, getBook} from '../controllers/Books.js'
 import {getTags} from '../controllers/Tags.js'
 import getTaggedBooks from '../controllers/JoinTestController.js'
+import { getBookAuthors } from '../controllers/Authors.js';
 
 const router = express.Router();
 
@@ -11,5 +12,6 @@ router.get('/books', getBooks);
 router.get('/book/:id', getBook);
 router.get('/tags', getTags);
 router.get('/taggedbooks',getTaggedBooks);
+router.get('/bookauthors/:bookId', getBookAuthors);
 
 export default router;
