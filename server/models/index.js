@@ -2,7 +2,7 @@
 
 import { readdirSync } from 'fs';
 import { basename as _basename, join, dirname } from 'path';
-import Sequelize, { DataTypes } from 'sequelize';
+import { DataTypes,Sequelize } from 'sequelize';
 import { fileURLToPath } from 'url';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);

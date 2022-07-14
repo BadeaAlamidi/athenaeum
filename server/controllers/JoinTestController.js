@@ -28,7 +28,9 @@ export default async (req,res) =>{
             // order processing:
             const valid_columns = ['title','publishDate','rating','pageCount','id'];
             let order = [['id','ASC']]; // nested array because to comply with sequelize format...
+            //api/taggedbooks?order
             if (valid_columns.includes(req.query.order)) order[0][0]=req.query.order;
+            //api/taggedbooks?direction
             if (req.query.direction === 'DESC') order[0][1] = 'DESC';
 
             const result = await models.Book.findAll({
