@@ -1,6 +1,12 @@
 import models from '../models/index.js';
 import {Op, Sequelize, where} from 'sequelize'
 
+//Queries the database to return books AND their associated tags using the through-table: attributes
+//if req.query is certain to have parameters, and one of those parameters is tags, then the db
+//is queried to return books that contain all of the specified tags.
+//req.query may (but is not guaranteed to) contain additional params for results order & direction 
+//
+//returns an array of json elements
 export default async (req,res) =>{
     try {
         // api/taggedbooks?
@@ -27,7 +33,7 @@ export default async (req,res) =>{
             } else tagsArray = []
             // order processing:
             const valid_columns = ['title','publishDate','rating','pageCount','id'];
-            let order = [['id','ASC']]; // nested array because to comply with sequelize format...
+            let order = [['id','ASC']]; // nested array to comply with sequelize format...
             //api/taggedbooks?order
             if (valid_columns.includes(req.query.order)) order[0][0]=req.query.order;
             //api/taggedbooks?direction

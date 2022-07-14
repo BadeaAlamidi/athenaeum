@@ -3,6 +3,13 @@
 import models from '../models/index.js';
 import {Op} from 'sequelize';
 
+// Queries the database to find books whose titles are similar
+//      to the provided req.query.searchString (or equivalent in case the
+//      searchString starts with isbn10/isbn13)
+//      req.query may (but is not guaranteed to) also contain information
+//      on how the results of the query should be sorted and/or ordered
+//
+//      returns an array of json elements
 const getBooks = async (req,res) =>{
     let books;
     if (Object.keys(req.query).length){
@@ -71,7 +78,8 @@ const getBooks = async (req,res) =>{
     }
     res.json(books);
 }
-
+// queries the database for a single book through provided id
+// returns a json representing the book tuple
 const getBook = async (req,res)=>{
     // findAll is used instead of findByPk because the book table has a date column in the model
     // definition which is not a supported type in sqlite. this is circumvented with
