@@ -36,9 +36,14 @@
 
         return map;
     }
-    // utility function created to avoid duplicate code.
-    // sets the tags parameters after changing it and refreshes the page 
-    // to reflect the changes done to tagArray
+    // utility function created to introduce a cool-down
+    // feature when the user mutates the tagArray. The 1500 ms
+    // interval is reset if the user mutates the tagArray more than
+    // once in less than 1500 ms. causes an html node to render as reaction
+    // to changing the value of the searchStatus and is meant to stop the
+    // user from abusing the backend database
+
+    // TODO: can this be turned into a normal svelte reaction block?
     let lastTimeoutID;
     const tagSearchReaction = function (){
         $page.url.searchParams.set('tags', tagArray.join());
