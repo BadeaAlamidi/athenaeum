@@ -53,7 +53,7 @@ module.exports = {
       publishDate: "2000-03-01",
       pageCount: 312,
       description: "Experts estimate that as many as 98,000 people die in any given year from medical errors that occur in hospitals. That's more than die from motor vehicle accidents, breast cancer, or AIDS--three causes that receive far more public attention. Indeed, more people die annually from medication errors than from workplace injuries. Add the financial cost to the human tragedy, and medical error easily rises to the top ranks of urgent, widespread public problems. To Err Is Human breaks the silence that has surrounded medical errors and their consequence--but not by pointing fingers at caring health care professionals who make honest mistakes. After all, to err is human. Instead, this book sets forth a national agenda--with state and local implications--for reducing medical errors and improving patient safety through the design of a safer health system. This volume reveals the often startling statistics of medical error and the disparity between the incidence of error and public perception of it, given many patients' expectations that the medical profession always performs perfectly. A careful examination is made of how the surrounding forces of legislation, regulation, and market activity influence the quality of care provided by health care organizations and then looks at their handling of medical mistakes. Using a detailed case study, the book reviews the current understanding of why these mistakes happen. A key theme is that legitimate liability concerns discourage reporting of errors--which begs the question, \"How can we learn from our mistakes?\" Balancing regulatory versus market-based initiatives and public versus private efforts, the Institute of Medicine presents wide-ranging recommendations for improving patient safety, in the areas of leadership, improved data collection and analysis, and development of effective systems at the level of direct patient care. To Err Is Human asserts that the problem is not bad people in health care--it is that good people are working in bad systems that need to be made safer. Comprehensive and straightforward, this book offers a clear prescription for raising the level of patient safety in American health care. It also explains how patients themselves can influence the quality of care that they receive once they check into the hospital. This book will be vitally important to federal, state, and local health policy makers and regulators, health professional licensing officials, hospital administrators, medical educators and students, health caregivers, health journalists, patient advocates--as well as patients themselves. First in a series of publications from the Quality of Health Care in America, a project initiated by the Institute of Medicine",
-      textSnippet: "After all, to err is human. Instead, this book sets forth a national agendaï¿½&quot;with state and local implicationsï¿½&quot;for reducing medical errors and improving patient safety through the design of a safer health system.",
+      textSnippet: "After all, to err is human. Instead, this book sets forth a national agendaâ€&quot;with state and local implicationsâ€&quot;for reducing medical errors and improving patient safety through the design of a safer health system.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
@@ -106,31 +106,13 @@ module.exports = {
       language: "en",
       publishDate: "2020-06-02",
       pageCount: 264,
-      description: "A celebration of the meaning and comfort printed books bring to our homes and lives, from the curation and design experts at Juniper Books. Explore the significance of the home library, embellished with alluring photography and illustrations, in a keepsake worthy of any bibliophileï¿½s collection. For the Love of Books shares the vision of Juniper Books, a business that embraces the roles that books fulfill in our lives and their staying power. It recounts the history of books and private libraries, and champions the resilience of books in the digital era. Dive into the nuances that define books for reading, books for decoration, and books for inspiration. Instructive chapters provide useful details for creating and curating oneï¿½s own home library, whether it be a single shelf or multiple rooms each with their own collection. You will never look at your bookshelves the same way again. For the Love of Books is about storytelling beyond the pages of our favorite books. Our booksï¿½the ones we choose to keepï¿½tell the story of who we are. They remind us who we once were and who we aspire to be. Thatcher Wine founded Juniper Books in 2001. The company creates custom libraries and has perfected the art of turning books inside out to allow for books to tell stories not just to us, but about us. Working with booklovers, homeowners, and designers, Juniper Books has provided the world with a fresh new approach to the printed book. Thatcher grew up in New York City where his parents owned and operated The Quilted Giraffe, one of the most innovative restaurants in America. Thatcher graduated from Dartmouth College with a degree in history and art history and lives in Boulder, Colorado. Elizabeth Lane is the founder of Quarterlane, a quarterly subscription book service which merged with Juniper Books in 2018. She is also the book buyer for her local independent bookstore, Partners Village Store and Kitchen in Westport, Massachusetts. Prior to working in books, Elizabeth worked in contemporary visual artï¿½in galleries, nonprofit initiatives and museums in New York, Austin, and Chicago. Elizabeth graduated from Davidson College with a degree in art history and received her masters degree from the School of the Art Institute of Chicago.",
-      textSnippet: "You will never look at your bookshelves the same way again. For the Love of Books is about storytelling beyond the pages of our favorite books. Our booksï¿½the ones we choose to keepï¿½tell the story of who we are.",
+      description: "A celebration of the meaning and comfort printed books bring to our homes and lives, from the curation and design experts at Juniper Books. Explore the significance of the home library, embellished with alluring photography and illustrations, in a keepsake worthy of any bibliophile’s collection. For the Love of Books shares the vision of Juniper Books, a business that embraces the roles that books fulfill in our lives and their staying power. It recounts the history of books and private libraries, and champions the resilience of books in the digital era. Dive into the nuances that define books for reading, books for decoration, and books for inspiration. Instructive chapters provide useful details for creating and curating one’s own home library, whether it be a single shelf or multiple rooms each with their own collection. You will never look at your bookshelves the same way again. For the Love of Books is about storytelling beyond the pages of our favorite books. Our books—the ones we choose to keep—tell the story of who we are. They remind us who we once were and who we aspire to be. Thatcher Wine founded Juniper Books in 2001. The company creates custom libraries and has perfected the art of turning books inside out to allow for books to tell stories not just to us, but about us. Working with booklovers, homeowners, and designers, Juniper Books has provided the world with a fresh new approach to the printed book. Thatcher grew up in New York City where his parents owned and operated The Quilted Giraffe, one of the most innovative restaurants in America. Thatcher graduated from Dartmouth College with a degree in history and art history and lives in Boulder, Colorado. Elizabeth Lane is the founder of Quarterlane, a quarterly subscription book service which merged with Juniper Books in 2018. She is also the book buyer for her local independent bookstore, Partners Village Store and Kitchen in Westport, Massachusetts. Prior to working in books, Elizabeth worked in contemporary visual art—in galleries, nonprofit initiatives and museums in New York, Austin, and Chicago. Elizabeth graduated from Davidson College with a degree in art history and received her masters degree from the School of the Art Institute of Chicago.",
+      textSnippet: "You will never look at your bookshelves the same way again. For the Love of Books is about storytelling beyond the pages of our favorite books. Our books—the ones we choose to keep—tell the story of who we are.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
       id: 7,
-      isbn10: null,
-      isbn13: null,
-      title: "The Negro Motorist Green Book",
-      subtitle: "1940 Edition",
-      rating: null,
-      maturityRating: null,
-      thumbnailUrl: "http://books.google.com/books/content?id=SKWqDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
-      smallThumbnailUrl: "http://books.google.com/books/content?id=SKWqDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-      language: "en",
-      publishDate: "",
-      pageCount: null,
-      description: "The idea of \"The Green Book\" is to give the Motorist and Tourist a Guide not only of the Hotels and Tourist Homes in all of the large cities, but other classifications that will be found useful wherever he may be. Also facts and information that the Negro Motorist can use and depend upon. There are thousands of places that the public doesn't know about and aren't listed. Perhaps you know of some? If so send in their names and addresses and the kind of business, so that we might pass it along to the rest of your fellow Motorists. You will find it handy on your travels, whether at home or in some other state, and is up to date. Each year we are compiling new lists as some of these places move, or go out of business and new business places are started giving added employment to members of our race.",
-      textSnippet: "The idea of &quot;The Green Book&quot; is to give the Motorist and Tourist a Guide not only of the Hotels and Tourist Homes in all of the large cities, but other classifications that will be found useful wherever he may be.",
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      id: 8,
       isbn10: "0316123390",
       isbn13: "9780316123396",
       title: "The Fallen Blade",
@@ -148,7 +130,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 9,
+      id: 8,
       isbn10: "0190928956",
       isbn13: "9780190928957",
       title: "CDC Yellow Book 2020",
@@ -160,13 +142,13 @@ module.exports = {
       language: "en",
       publishDate: "2019-05-14",
       pageCount: 704,
-      description: "The definitive reference for travel medicine, updated for 2020! \"A beloved travel must-have for the intrepid wanderer.\" -Publishers Weekly \"A truly excellent and comprehensive resource.\" -Journal of Hospital Infection The CDC Yellow Book offers everything travelers and healthcare providers need to know for safe and healthy travel abroad. This 2020 edition includes: ï¿½ Country-specific risk guidelines for yellow fever and malaria, including expert recommendations and 26 detailed, country-level maps ï¿½ Detailed maps showing distribution of travel-related illnesses, including dengue, Japanese encephalitis, meningococcal meningitis, and schistosomiasis ï¿½ Guidelines for self-treating common travel conditions, including altitude illness, jet lag, motion sickness, and travelers' diarrhea ï¿½ Expert guidance on food and drink precautions to avoid illness, plus water-disinfection techniques for travel to remote destinations ï¿½ Specialized guidelines for non-leisure travelers, study abroad, work-related travel, and travel to mass gatherings ï¿½ Advice on medical tourism, complementary and integrative health approaches, and counterfeit drugs ï¿½ Updated guidance for pre-travel consultations ï¿½ Advice for obtaining healthcare abroad, including guidance on different types of travel insurance ï¿½ Health insights around 15 popular tourist destinations and itineraries ï¿½ Recommendations for traveling with infants and children ï¿½ Advising travelers with specific needs, including those with chronic medical conditions or weakened immune systems, health care workers, humanitarian aid workers, long-term travelers and expatriates, and last-minute travelers ï¿½ Considerations for newly arrived adoptees, immigrants, and refugees Long the most trusted book of its kind, the CDC Yellow Book is an essential resource in an ever-changing field -- and an ever-changing world.",
-      textSnippet: "This 2020 edition includes: ï¿½ Country-specific risk guidelines for yellow fever and malaria, including expert recommendations and 26 detailed, country-level maps ï¿½ Detailed maps showing distribution of travel-related illnesses, including ...",
+      description: "The definitive reference for travel medicine, updated for 2020! \"A beloved travel must-have for the intrepid wanderer.\" -Publishers Weekly \"A truly excellent and comprehensive resource.\" -Journal of Hospital Infection The CDC Yellow Book offers everything travelers and healthcare providers need to know for safe and healthy travel abroad. This 2020 edition includes: · Country-specific risk guidelines for yellow fever and malaria, including expert recommendations and 26 detailed, country-level maps · Detailed maps showing distribution of travel-related illnesses, including dengue, Japanese encephalitis, meningococcal meningitis, and schistosomiasis · Guidelines for self-treating common travel conditions, including altitude illness, jet lag, motion sickness, and travelers' diarrhea · Expert guidance on food and drink precautions to avoid illness, plus water-disinfection techniques for travel to remote destinations · Specialized guidelines for non-leisure travelers, study abroad, work-related travel, and travel to mass gatherings · Advice on medical tourism, complementary and integrative health approaches, and counterfeit drugs · Updated guidance for pre-travel consultations · Advice for obtaining healthcare abroad, including guidance on different types of travel insurance · Health insights around 15 popular tourist destinations and itineraries · Recommendations for traveling with infants and children · Advising travelers with specific needs, including those with chronic medical conditions or weakened immune systems, health care workers, humanitarian aid workers, long-term travelers and expatriates, and last-minute travelers · Considerations for newly arrived adoptees, immigrants, and refugees Long the most trusted book of its kind, the CDC Yellow Book is an essential resource in an ever-changing field -- and an ever-changing world.",
+      textSnippet: "This 2020 edition includes: · Country-specific risk guidelines for yellow fever and malaria, including expert recommendations and 26 detailed, country-level maps · Detailed maps showing distribution of travel-related illnesses, including ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 10,
+      id: 9,
       isbn10: null,
       isbn13: null,
       title: "Epidemiology and Prevention of Vaccine-preventable Diseases",
@@ -184,7 +166,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 11,
+      id: 10,
       isbn10: "1501111124",
       isbn13: "9781501111129",
       title: "Grit",
@@ -196,13 +178,13 @@ module.exports = {
       language: "en",
       publishDate: "2016-05-03",
       pageCount: 352,
-      description: "In this instant New York Times bestseller, Angela Duckworth shows anyone striving to succeed that the secret to outstanding achievement is not talent, but a special blend of passion and persistence she calls ï¿½grit.ï¿½ ï¿½Inspiration for non-geniuses everywhereï¿½ (People). The daughter of a scientist who frequently noted her lack of ï¿½genius,ï¿½ Angela Duckworth is now a celebrated researcher and professor. It was her early eye-opening stints in teaching, business consulting, and neuroscience that led to her hypothesis about what really drives success: not genius, but a unique combination of passion and long-term perseverance. In Grit, she takes us into the field to visit cadets struggling through their first days at West Point, teachers working in some of the toughest schools, and young finalists in the National Spelling Bee. She also mines fascinating insights from history and shows what can be gleaned from modern experiments in peak performance. Finally, she shares what sheï¿½s learned from interviewing dozens of high achieversï¿½from JP Morgan CEO Jamie Dimon to New Yorker cartoon editor Bob Mankoff to Seattle Seahawks Coach Pete Carroll. ï¿½Duckworthï¿½s ideas about the cultivation of tenacity have clearly changed some lives for the betterï¿½ (The New York Times Book Review). Among Gritï¿½s most valuable insights: any effort you make ultimately counts twice toward your goal; grit can be learned, regardless of IQ or circumstances; when it comes to child-rearing, neither a warm embrace nor high standards will work by themselves; how to trigger lifelong interest; the magic of the Hard Thing Rule; and so much more. Winningly personal, insightful, and even life-changing, Grit is a book about what goes through your head when you fall down, and how thatï¿½not talent or luckï¿½makes all the difference. This is ï¿½a fascinating tour of the psychological research on successï¿½ (The Wall Street Journal).",
-      textSnippet: "This is ï¿½a fascinating tour of the psychological research on successï¿½ (The Wall Street Journal).",
+      description: "In this instant New York Times bestseller, Angela Duckworth shows anyone striving to succeed that the secret to outstanding achievement is not talent, but a special blend of passion and persistence she calls “grit.” “Inspiration for non-geniuses everywhere” (People). The daughter of a scientist who frequently noted her lack of “genius,” Angela Duckworth is now a celebrated researcher and professor. It was her early eye-opening stints in teaching, business consulting, and neuroscience that led to her hypothesis about what really drives success: not genius, but a unique combination of passion and long-term perseverance. In Grit, she takes us into the field to visit cadets struggling through their first days at West Point, teachers working in some of the toughest schools, and young finalists in the National Spelling Bee. She also mines fascinating insights from history and shows what can be gleaned from modern experiments in peak performance. Finally, she shares what she’s learned from interviewing dozens of high achievers—from JP Morgan CEO Jamie Dimon to New Yorker cartoon editor Bob Mankoff to Seattle Seahawks Coach Pete Carroll. “Duckworth’s ideas about the cultivation of tenacity have clearly changed some lives for the better” (The New York Times Book Review). Among Grit’s most valuable insights: any effort you make ultimately counts twice toward your goal; grit can be learned, regardless of IQ or circumstances; when it comes to child-rearing, neither a warm embrace nor high standards will work by themselves; how to trigger lifelong interest; the magic of the Hard Thing Rule; and so much more. Winningly personal, insightful, and even life-changing, Grit is a book about what goes through your head when you fall down, and how that—not talent or luck—makes all the difference. This is “a fascinating tour of the psychological research on success” (The Wall Street Journal).",
+      textSnippet: "This is “a fascinating tour of the psychological research on success” (The Wall Street Journal).",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 12,
+      id: 11,
       isbn10: "0916856011",
       isbn13: "9780916856014",
       title: "Twelve Steps and Twelve Traditions Trade Edition",
@@ -220,7 +202,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 13,
+      id: 12,
       isbn10: "0399501487",
       isbn13: "9780399501487",
       title: "Lord of the Flies",
@@ -232,13 +214,13 @@ module.exports = {
       language: "en",
       publishDate: "2003-12-16",
       pageCount: 224,
-      description: "Goldingï¿½s iconic 1954 novel, now with a new foreword by Lois Lowry, remains one of the greatest books ever written for young adults and an unforgettable classic for readers of any age. This edition includes a new Suggestions for Further Reading by Jennifer Buehler. At the dawn of the next world war, a plane crashes on an uncharted island, stranding a group of schoolboys. At first, with no adult supervision, their freedom is something to celebrate. This far from civilization they can do anything they want. Anything. But as order collapses, as strange howls echo in the night, as terror begins its reign, the hope of adventure seems as far removed from reality as the hope of being rescued.",
+      description: "Golding’s iconic 1954 novel, now with a new foreword by Lois Lowry, remains one of the greatest books ever written for young adults and an unforgettable classic for readers of any age. This edition includes a new Suggestions for Further Reading by Jennifer Buehler. At the dawn of the next world war, a plane crashes on an uncharted island, stranding a group of schoolboys. At first, with no adult supervision, their freedom is something to celebrate. This far from civilization they can do anything they want. Anything. But as order collapses, as strange howls echo in the night, as terror begins its reign, the hope of adventure seems as far removed from reality as the hope of being rescued.",
       textSnippet: "This edition includes a new Suggestions for Further Reading by Jennifer Buehler. At the dawn of the next world war, a plane crashes on an uncharted island, stranding a group of schoolboys.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 14,
+      id: 13,
       isbn10: null,
       isbn13: null,
       title: "The Wisconsin Blue Book",
@@ -256,7 +238,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 15,
+      id: 14,
       isbn10: "1541618602",
       isbn13: "9781541618602",
       title: "Vanguard",
@@ -274,7 +256,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 16,
+      id: 15,
       isbn10: "1426718128",
       isbn13: "9781426718120",
       title: "The Book of Discipline of The United Methodist Church 2012",
@@ -292,7 +274,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 17,
+      id: 16,
       isbn10: "1524763187",
       isbn13: "9781524763183",
       title: "A Promised Land",
@@ -304,13 +286,13 @@ module.exports = {
       language: "en",
       publishDate: "2020-11-17",
       pageCount: 768,
-      description: "A riveting, deeply personal account of history in the makingï¿½from the president who inspired us to believe in the power of democracy #1 NEW YORK TIMES BESTSELLER ï¿½ NAACP IMAGE AWARD NOMINEE ï¿½ NAMED ONE OF THE TEN BEST BOOKS OF THE YEAR BY THE NEW YORK TIMES BOOK REVIEW NAMED ONE OF THE BEST BOOKS OF THE YEAR BY The Washington Post ï¿½ Jennifer Szalai, The New York Times ï¿½ NPR ï¿½ The Guardian ï¿½ Marie Claire In the stirring, highly anticipated first volume of his presidential memoirs, Barack Obama tells the story of his improbable odyssey from young man searching for his identity to leader of the free world, describing in strikingly personal detail both his political education and the landmark moments of the first term of his historic presidencyï¿½a time of dramatic transformation and turmoil. Obama takes readers on a compelling journey from his earliest political aspirations to the pivotal Iowa caucus victory that demonstrated the power of grassroots activism to the watershed night of November 4, 2008, when he was elected 44th president of the United States, becoming the first African American to hold the nationï¿½s highest office. Reflecting on the presidency, he offers a unique and thoughtful exploration of both the awesome reach and the limits of presidential power, as well as singular insights into the dynamics of U.S. partisan politics and international diplomacy. Obama brings readers inside the Oval Office and the White House Situation Room, and to Moscow, Cairo, Beijing, and points beyond. We are privy to his thoughts as he assembles his cabinet, wrestles with a global financial crisis, takes the measure of Vladimir Putin, overcomes seemingly insurmountable odds to secure passage of the Affordable Care Act, clashes with generals about U.S. strategy in Afghanistan, tackles Wall Street reform, responds to the devastating Deepwater Horizon blowout, and authorizes Operation Neptuneï¿½s Spear, which leads to the death of Osama bin Laden. A Promised Land is extraordinarily intimate and introspectiveï¿½the story of one manï¿½s bet with history, the faith of a community organizer tested on the world stage. Obama is candid about the balancing act of running for office as a Black American, bearing the expectations of a generation buoyed by messages of ï¿½hope and change,ï¿½ and meeting the moral challenges of high-stakes decision-making. He is frank about the forces that opposed him at home and abroad, open about how living in the White House affected his wife and daughters, and unafraid to reveal self-doubt and disappointment. Yet he never wavers from his belief that inside the great, ongoing American experiment, progress is always possible. This beautifully written and powerful book captures Barack Obamaï¿½s conviction that democracy is not a gift from on high but something founded on empathy and common understanding and built together, day by day.",
-      textSnippet: "A riveting, deeply personal account of history in the makingï¿½from the president who inspired us to believe in the power of democracy #1 NEW YORK TIMES BESTSELLER ï¿½ NAACP IMAGE AWARD NOMINEE ï¿½ NAMED ONE OF THE TEN BEST BOOKS OF THE ...",
+      description: "A riveting, deeply personal account of history in the making—from the president who inspired us to believe in the power of democracy #1 NEW YORK TIMES BESTSELLER • NAACP IMAGE AWARD NOMINEE • NAMED ONE OF THE TEN BEST BOOKS OF THE YEAR BY THE NEW YORK TIMES BOOK REVIEW NAMED ONE OF THE BEST BOOKS OF THE YEAR BY The Washington Post • Jennifer Szalai, The New York Times • NPR • The Guardian • Marie Claire In the stirring, highly anticipated first volume of his presidential memoirs, Barack Obama tells the story of his improbable odyssey from young man searching for his identity to leader of the free world, describing in strikingly personal detail both his political education and the landmark moments of the first term of his historic presidency—a time of dramatic transformation and turmoil. Obama takes readers on a compelling journey from his earliest political aspirations to the pivotal Iowa caucus victory that demonstrated the power of grassroots activism to the watershed night of November 4, 2008, when he was elected 44th president of the United States, becoming the first African American to hold the nation’s highest office. Reflecting on the presidency, he offers a unique and thoughtful exploration of both the awesome reach and the limits of presidential power, as well as singular insights into the dynamics of U.S. partisan politics and international diplomacy. Obama brings readers inside the Oval Office and the White House Situation Room, and to Moscow, Cairo, Beijing, and points beyond. We are privy to his thoughts as he assembles his cabinet, wrestles with a global financial crisis, takes the measure of Vladimir Putin, overcomes seemingly insurmountable odds to secure passage of the Affordable Care Act, clashes with generals about U.S. strategy in Afghanistan, tackles Wall Street reform, responds to the devastating Deepwater Horizon blowout, and authorizes Operation Neptune’s Spear, which leads to the death of Osama bin Laden. A Promised Land is extraordinarily intimate and introspective—the story of one man’s bet with history, the faith of a community organizer tested on the world stage. Obama is candid about the balancing act of running for office as a Black American, bearing the expectations of a generation buoyed by messages of “hope and change,” and meeting the moral challenges of high-stakes decision-making. He is frank about the forces that opposed him at home and abroad, open about how living in the White House affected his wife and daughters, and unafraid to reveal self-doubt and disappointment. Yet he never wavers from his belief that inside the great, ongoing American experiment, progress is always possible. This beautifully written and powerful book captures Barack Obama’s conviction that democracy is not a gift from on high but something founded on empathy and common understanding and built together, day by day.",
+      textSnippet: "A riveting, deeply personal account of history in the making—from the president who inspired us to believe in the power of democracy #1 NEW YORK TIMES BESTSELLER • NAACP IMAGE AWARD NOMINEE • NAMED ONE OF THE TEN BEST BOOKS OF THE ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 18,
+      id: 17,
       isbn10: null,
       isbn13: null,
       title: "The Book",
@@ -328,7 +310,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 19,
+      id: 18,
       isbn10: "1951693310",
       isbn13: "9781951693312",
       title: "Psychology 2e",
@@ -346,7 +328,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 20,
+      id: 19,
       isbn10: "0143124986",
       isbn13: "9780143124986",
       title: "Give and Take",
@@ -358,13 +340,13 @@ module.exports = {
       language: "en",
       publishDate: "2014-03-25",
       pageCount: 320,
-      description: "A groundbreaking look at why our interactions with others hold the key to success, from the bestselling author of Think Again and Originals For generations, we have focused on the individual drivers of success: passion, hard work, talent, and luck. But in todayï¿½s dramatically reconfigured world, success is increasingly dependent on how we interact with others. In Give and Take, Adam Grant, an award-winning researcher and Whartonï¿½s highest-rated professor, examines the surprising forces that shape why some people rise to the top of the success ladder while others sink to the bottom. Praised by social scientists, business theorists, and corporate leaders, Give and Take opens up an approach to work, interactions, and productivity that is nothing short of revolutionary.",
-      textSnippet: "In Give and Take, Adam Grant, an award-winning researcher and Whartonï¿½s highest-rated professor, examines the surprising forces that shape why some people rise to the top of the success ladder while others sink to the bottom.",
+      description: "A groundbreaking look at why our interactions with others hold the key to success, from the bestselling author of Think Again and Originals For generations, we have focused on the individual drivers of success: passion, hard work, talent, and luck. But in today’s dramatically reconfigured world, success is increasingly dependent on how we interact with others. In Give and Take, Adam Grant, an award-winning researcher and Wharton’s highest-rated professor, examines the surprising forces that shape why some people rise to the top of the success ladder while others sink to the bottom. Praised by social scientists, business theorists, and corporate leaders, Give and Take opens up an approach to work, interactions, and productivity that is nothing short of revolutionary.",
+      textSnippet: "In Give and Take, Adam Grant, an award-winning researcher and Wharton’s highest-rated professor, examines the surprising forces that shape why some people rise to the top of the success ladder while others sink to the bottom.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 21,
+      id: 20,
       isbn10: "159562015X",
       isbn13: "9781595620156",
       title: "StrengthsFinder 2.0",
@@ -382,7 +364,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 22,
+      id: 21,
       isbn10: "0190628618",
       isbn13: "9780190628611",
       title: "CDC Yellow Book 2018: Health Information for International Travel",
@@ -400,7 +382,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 23,
+      id: 22,
       isbn10: "1938168143",
       isbn13: "9781938168147",
       title: "Microbiology",
@@ -418,7 +400,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 24,
+      id: 23,
       isbn10: "0811739937",
       isbn13: "9780811739931",
       title: "Landon Mayer's Guide Flies",
@@ -436,7 +418,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 25,
+      id: 24,
       isbn10: null,
       isbn13: null,
       title: "The Bad Bug Book",
@@ -454,7 +436,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 26,
+      id: 25,
       isbn10: "1501171631",
       isbn13: "9781501171635",
       title: "Lucky",
@@ -472,7 +454,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 27,
+      id: 26,
       isbn10: "0393089088",
       isbn13: "9780393089080",
       title: "Liber Novus",
@@ -490,7 +472,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 28,
+      id: 27,
       isbn10: "1797211331",
       isbn13: "9781797211336",
       title: "Feel Good Smoothies",
@@ -502,13 +484,13 @@ module.exports = {
       language: "en",
       publishDate: "2022-01-04",
       pageCount: 120,
-      description: "When you need a quick, brain-powering meal or a delicious way to repair and relax, blend up one of these 40 nutrient-rich smoothies to boost your day. There's nothing easier than whipping up a delicious smoothie. It's a foolproof way to get the vital nutrients your body needs in a drinkable, no-fuss meal. This colorful book takes a casual approach to smoothiesï¿½there's no need to buy supplements, powders, or mixes. Every smoothie recipe in this book relies on the magical flavors and health benefits of ingredients you can find in any grocery store or specialty market. From perfect breakfast boosts to relaxing tropical blends, post-workout cooling drinks, and treat-yourself desserts without the guilt, there are endless ways to sip your way to feeling good. Each recipe has a little badge that notes its main benefit: Digestion, Relax, Energy, Immunity, and more. You'll also find a handy guide to the main ingredients found in this collection so you can build up your blending skills and imagine up your own drinks. CREATIVE RECIPES: You'll find a variety of tasty flavor combinations and unique recipes, like Matcha Avocado Frappï¿½, Mango Turmeric Lassi, and Blueberry Cheesecake. EASY TO MAKE: Included is a smoothie making guide and helpful prep and storage tips so you can make the best drinks again and again. COLORFUL GIFT: A beautiful package with dynamic illustrations throughout makes this a fun gift for smoothie lovers, those looking for easy breakfast ideas, college grads, and anyone interested in healthy eating. Perfect for: ï¿½ Fans of smoothies ï¿½ Health food shoppers ï¿½ People interested in easy self-improvement ï¿½ Healthy-ish readers ï¿½ Busy people looking for easy recipes",
+      description: "When you need a quick, brain-powering meal or a delicious way to repair and relax, blend up one of these 40 nutrient-rich smoothies to boost your day. There's nothing easier than whipping up a delicious smoothie. It's a foolproof way to get the vital nutrients your body needs in a drinkable, no-fuss meal. This colorful book takes a casual approach to smoothies—there's no need to buy supplements, powders, or mixes. Every smoothie recipe in this book relies on the magical flavors and health benefits of ingredients you can find in any grocery store or specialty market. From perfect breakfast boosts to relaxing tropical blends, post-workout cooling drinks, and treat-yourself desserts without the guilt, there are endless ways to sip your way to feeling good. Each recipe has a little badge that notes its main benefit: Digestion, Relax, Energy, Immunity, and more. You'll also find a handy guide to the main ingredients found in this collection so you can build up your blending skills and imagine up your own drinks. CREATIVE RECIPES: You'll find a variety of tasty flavor combinations and unique recipes, like Matcha Avocado Frappé, Mango Turmeric Lassi, and Blueberry Cheesecake. EASY TO MAKE: Included is a smoothie making guide and helpful prep and storage tips so you can make the best drinks again and again. COLORFUL GIFT: A beautiful package with dynamic illustrations throughout makes this a fun gift for smoothie lovers, those looking for easy breakfast ideas, college grads, and anyone interested in healthy eating. Perfect for: • Fans of smoothies • Health food shoppers • People interested in easy self-improvement • Healthy-ish readers • Busy people looking for easy recipes",
       textSnippet: "Every smoothie recipe in this book relies on the magical flavors and health benefits of ingredients you can find in any grocery store or specialty market.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 29,
+      id: 28,
       isbn10: "1797201123",
       isbn13: "9781797201122",
       title: "Have You Ever Seen a Flower?",
@@ -520,13 +502,13 @@ module.exports = {
       language: "en",
       publishDate: "2021-05-04",
       pageCount: null,
-      description: "Have You Ever Seen a Flower? is an enchanting picture book exploring the relationship between childhood and nature. In this simple yet profound story, one child experiences a flower with all five sensesï¿½from its color to its fragrance to the entire universe it evokesï¿½revealing how a single flower can expand one's perspective in incredible ways. ï¿½ Authorial debut of award-winning illustrator Shawn Harris ï¿½ Reminds readers to appreciate the beauty of the world ï¿½ Full of bright, stunning illustrations Have You Ever Seen a Flower? is a beautiful exploration of perception, the environment, and humanity. ï¿½ Perfect read-aloud with thought-provoking questions ï¿½ Ideal for nature lovers ï¿½ For fans of The Little Prince, The Giving Tree, Not a Box, and The Very Hungry Caterpillar",
+      description: "Have You Ever Seen a Flower? is an enchanting picture book exploring the relationship between childhood and nature. In this simple yet profound story, one child experiences a flower with all five senses—from its color to its fragrance to the entire universe it evokes—revealing how a single flower can expand one's perspective in incredible ways. • Authorial debut of award-winning illustrator Shawn Harris • Reminds readers to appreciate the beauty of the world • Full of bright, stunning illustrations Have You Ever Seen a Flower? is a beautiful exploration of perception, the environment, and humanity. • Perfect read-aloud with thought-provoking questions • Ideal for nature lovers • For fans of The Little Prince, The Giving Tree, Not a Box, and The Very Hungry Caterpillar",
       textSnippet: "Have You Ever Seen a Flower? is an enchanting picture book exploring the relationship between childhood and nature.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 30,
+      id: 29,
       isbn10: "1565126890",
       isbn13: "9781565126893",
       title: "A Crime in the Neighborhood",
@@ -544,7 +526,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 31,
+      id: 30,
       isbn10: "1797208519",
       isbn13: "9781797208510",
       title: "Circle Under Berry",
@@ -556,13 +538,13 @@ module.exports = {
       language: "en",
       publishDate: "2021-09-14",
       pageCount: 52,
-      description: "Part Sandra Boynton, part Each Peach Pear Plum; part Chicka Chicka Boom Boom, part Hippoppositesï¿½a treat for the brain and the tongue. With an elegant and simple approach, this thought-provoking concept book shows young readers that everything in the world can be seen from infinite perspectives. Each page compares colors, shapes, and objects in relation to each other. A triangle that is over a square is also under a circle. A circle that is pink also might be a flower. The artful, playful combinations of simple concepts and Higgins's rhythmic writing and expert arrangement of objects on the page make this book a perfect read-aloud, capable of entertaining, educating, and challenging readers in equal measure. There are multiple ways to read the book, allowing it to work for several ages and reading levels at once. The educational value and sheer fun packed into this book's language and visual design will make it a huge hit with educators and librarians, new parents, and creative kids who are visual learners. This striking, delightfully different exploration of shape, color, and patterns redefines what a picture book can be. Read it once, read it ten times. See something new every time. A GREAT INTRODUCTION TO MANY DIFFERENT CONCEPTS: This book's focus on color, shapes, objects, and relative words like \"over,\" \"under,\" and \"next to\" make this the perfect introduction to basic concepts of all kinds. Rather than traditional concept books that focus on only one idea, this book combines its teaching approach, helping young readers learn more than one concept at once by showing how they relate to each other. A DYNAMIC LEARNING EXPERIENCE: The unusual combination of colors, shapes, and animals intelligently introduces young readers to patterns, classification, and problem-solving. The imaginative language of this book, rich with rhythmic phrasing and a tongue twisterï¿½like playfulness, creates a soothing read-aloud text that engages young children with questions and encourages audience participation. PERFECT FOR ANY KIND OF EDUCATION: With a variety of concepts, clear read-aloud qualities, and the many different ways this book engages different styles of learning, this book is ideal for librarians, educators, and anyone creating reading events in their communities. BELOVED AUTHOR: Carter Higgins is not only the author of many acclaimed books for children such as Everything You Need to Build a Treehouse, This Is Not a Valentine, and Bikes for Sale, she's also a seasoned school librarian who's spent many years working with children. Her love of kidsï¿½and her passion for teachingï¿½shines throughout this book. EASY ART PROJECT INSPIRATION: Having honed her art skills as an elementary librarian, Carter Higgins makes her own debut as an illustrator for this book with simple, appealing collages. Kids will love making their own art projects inspired by the illustrations in this book. BRIGHT, EYE-CATCHING ART: The simple shapes and lively colors are designed to appeal to young children. Read this if your children enjoy Hervï¿½ Tullet's Press Here or Bill Martin Jr.'s Brown Bear, Brown Bear What Do You See? Perfect for: ï¿½ Parents ï¿½ Grandparents ï¿½ Educators ï¿½ Gift-givers",
+      description: "Part Sandra Boynton, part Each Peach Pear Plum; part Chicka Chicka Boom Boom, part Hippopposites—a treat for the brain and the tongue. With an elegant and simple approach, this thought-provoking concept book shows young readers that everything in the world can be seen from infinite perspectives. Each page compares colors, shapes, and objects in relation to each other. A triangle that is over a square is also under a circle. A circle that is pink also might be a flower. The artful, playful combinations of simple concepts and Higgins's rhythmic writing and expert arrangement of objects on the page make this book a perfect read-aloud, capable of entertaining, educating, and challenging readers in equal measure. There are multiple ways to read the book, allowing it to work for several ages and reading levels at once. The educational value and sheer fun packed into this book's language and visual design will make it a huge hit with educators and librarians, new parents, and creative kids who are visual learners. This striking, delightfully different exploration of shape, color, and patterns redefines what a picture book can be. Read it once, read it ten times. See something new every time. A GREAT INTRODUCTION TO MANY DIFFERENT CONCEPTS: This book's focus on color, shapes, objects, and relative words like \"over,\" \"under,\" and \"next to\" make this the perfect introduction to basic concepts of all kinds. Rather than traditional concept books that focus on only one idea, this book combines its teaching approach, helping young readers learn more than one concept at once by showing how they relate to each other. A DYNAMIC LEARNING EXPERIENCE: The unusual combination of colors, shapes, and animals intelligently introduces young readers to patterns, classification, and problem-solving. The imaginative language of this book, rich with rhythmic phrasing and a tongue twister–like playfulness, creates a soothing read-aloud text that engages young children with questions and encourages audience participation. PERFECT FOR ANY KIND OF EDUCATION: With a variety of concepts, clear read-aloud qualities, and the many different ways this book engages different styles of learning, this book is ideal for librarians, educators, and anyone creating reading events in their communities. BELOVED AUTHOR: Carter Higgins is not only the author of many acclaimed books for children such as Everything You Need to Build a Treehouse, This Is Not a Valentine, and Bikes for Sale, she's also a seasoned school librarian who's spent many years working with children. Her love of kids—and her passion for teaching—shines throughout this book. EASY ART PROJECT INSPIRATION: Having honed her art skills as an elementary librarian, Carter Higgins makes her own debut as an illustrator for this book with simple, appealing collages. Kids will love making their own art projects inspired by the illustrations in this book. BRIGHT, EYE-CATCHING ART: The simple shapes and lively colors are designed to appeal to young children. Read this if your children enjoy Hervé Tullet's Press Here or Bill Martin Jr.'s Brown Bear, Brown Bear What Do You See? Perfect for: • Parents • Grandparents • Educators • Gift-givers",
       textSnippet: "BELOVED AUTHOR: Carter Higgins is not only the author of many acclaimed books for children such as Everything You Need to Build a Treehouse, This Is Not a Valentine, and Bikes for Sale, she&#39;s also a seasoned school librarian who&#39;s spent ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 32,
+      id: 31,
       isbn10: "1797201131",
       isbn13: "9781797201139",
       title: "The Longest Letsgoboy",
@@ -574,13 +556,13 @@ module.exports = {
       language: "en",
       publishDate: "2021-10-25",
       pageCount: 48,
-      description: "Homeward Bound: The Incredible Journey meets Dog Heaven in this profoundly beautiful book about the special relationship between kids and dogs, the importance of language, and finding the meaning of life even in its final days. Poignant, hopeful, and lovingly told, this dog's journeyï¿½told by the dog himself in his own unique wordsï¿½proves that love abides beyond a lifetime, out of sight but never far away. As a dog and his little girl go on their final walk together, he experiences the sights, smells, and wonders of this world one last time before peacefully passing on. But for such a good boy (oh yes, he is!) and his foreverfriend, that doesn't mean it's the end. Offering a unique and noteworthy take on death, this book balances the somber topic with a dog's ever-optimistic viewpoint, all woven together with its unconventional yet fitting approach to language. Family members, librarians, art-lovers, and educators alike will use this book as an accessible and comforting introduction to the ever-difficult topic of death, discussed and related in a new way with hopeful, uplifting, innovative language. THE PERFECT BOOK TO TALK ABOUT LOSS: The perennial themes of grief, fear, and death are always relevant and classic discussion topics even in families not yet dealing with death. The perfect answer to kids' big questions about what happens when we die, this book will be a standard in every home library. CREATIVE USE OF LANGUAGE: The words in this book are incredibly special, with phrases that conjure how the dog sees the world. The enjoyable challenge of matching up \"letsgoboy\" to a walk or \"pufftails\" to rabbits will make for meaningful discussions on a parent's lap or in a classroom reading circle. TEACHES CHILDREN EMPATHY: Reading this story from the dog's perspective is the perfect way for young readers to understand that the way another character thinks and perceives the world is different from their own experience. A BEAUTIFUL DOG STORY: Ideal for readers who love dogs, want dogs, or are going through a grieving process for their family dog, this book celebrates all that is most magical about these animals who are always by our side. A COMFORTING MESSAGE: It's rare for a book about death to extend beyond the moment of dying. The continuation of the dog's story past this point makes it special and especially comforting. Perfect for: parents and caregivers, dog lovers, educators",
+      description: "Homeward Bound: The Incredible Journey meets Dog Heaven in this profoundly beautiful book about the special relationship between kids and dogs, the importance of language, and finding the meaning of life even in its final days. Poignant, hopeful, and lovingly told, this dog's journey—told by the dog himself in his own unique words—proves that love abides beyond a lifetime, out of sight but never far away. As a dog and his little girl go on their final walk together, he experiences the sights, smells, and wonders of this world one last time before peacefully passing on. But for such a good boy (oh yes, he is!) and his foreverfriend, that doesn't mean it's the end. Offering a unique and noteworthy take on death, this book balances the somber topic with a dog's ever-optimistic viewpoint, all woven together with its unconventional yet fitting approach to language. Family members, librarians, art-lovers, and educators alike will use this book as an accessible and comforting introduction to the ever-difficult topic of death, discussed and related in a new way with hopeful, uplifting, innovative language. THE PERFECT BOOK TO TALK ABOUT LOSS: The perennial themes of grief, fear, and death are always relevant and classic discussion topics even in families not yet dealing with death. The perfect answer to kids' big questions about what happens when we die, this book will be a standard in every home library. CREATIVE USE OF LANGUAGE: The words in this book are incredibly special, with phrases that conjure how the dog sees the world. The enjoyable challenge of matching up \"letsgoboy\" to a walk or \"pufftails\" to rabbits will make for meaningful discussions on a parent's lap or in a classroom reading circle. TEACHES CHILDREN EMPATHY: Reading this story from the dog's perspective is the perfect way for young readers to understand that the way another character thinks and perceives the world is different from their own experience. A BEAUTIFUL DOG STORY: Ideal for readers who love dogs, want dogs, or are going through a grieving process for their family dog, this book celebrates all that is most magical about these animals who are always by our side. A COMFORTING MESSAGE: It's rare for a book about death to extend beyond the moment of dying. The continuation of the dog's story past this point makes it special and especially comforting. Perfect for: parents and caregivers, dog lovers, educators",
       textSnippet: "TEACHES CHILDREN EMPATHY: Reading this story from the dog&#39;s perspective is the perfect way for young readers to understand that the way another character thinks and perceives the world is different from their own experience.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 33,
+      id: 32,
       isbn10: "1797214713",
       isbn13: "9781797214719",
       title: "AstroNuts Mission Three: The Perfect Planet",
@@ -592,13 +574,13 @@ module.exports = {
       language: "en",
       publishDate: "2021-09-21",
       pageCount: 240,
-      description: "This series is The Hitchhiker's Guide to the Galaxy meets The Bad Guys in a funny, visually daring adventure series for reluctant readers, teachers, and librarians alike. This hilarious, visually groundbreaking read is the conclusion to a major series by children's literature legend Jon Scieszka. The book follows a final mission, where AlphaWolf, LaserShark, SmartHawk, and StinkBug must find a planet fit for human life after we've finally made Earth unlivable. Time is up for our friends the AstroNuts. In fact, time is up for you, too. If they don't succeed on this mission, Earth is doomed! So when the team finds out they're being sent to a place called \"the perfect planet,\" their mission sounds way too easy. Unfortunately, the second they land, they realize they'll be dealing with the most dangerous species of all time . . . humans. Huh? Where in the universe is this supposedly perfect place? And how will the Nuts manage to convince the humans to risk death . . . for the sake of their lives?! Featuring full-color illustrations throughout, Planet Earth as the narrator, an out-of-this-world gatefold, and how-to-draw pages in the back, eager and reluctant readers alike will be over the moon about this new mission. Full of laugh-out-loud humor with a thoughtful commentary on the reality of climate change at the core of the story, this creatively illustrated, full-color, action-packed space saga is a can't-put-it-down page-turner for readers of all levels and fans ready to blast past Dogman. EXCITING BIG-NAME TALENT: Jon Scieszka is one of the biggest names in children's books. The first National Ambassador of Young People's literature, he and Steven Weinberg toured extensively for this series. They'll continue making their way around the world for Book 3! You might have met them at ALA, the National Book Festival, the Rabbit HOle, the Brooklyn Book Festival, the Illinois Reading Council, the Tween Reads Book Festival, the Texas Book Festival, the NYC Department of Education Fall Conference, the 826 Story Soirï¿½e in New York, or NCTE in Baltimore! POPULAR SERIES: MISSIONS 1 and 2 received starred reviews, amazing blurbs, and tons of industry love. MISSION 1 was an Amazon Best Book of the Year! Dav Pilkey, Jennifer Holm, LeUyen Pham, and Gene Luen Yang are all big fansï¿½check out those blurbs! FUN AND SCIENTIFIC: The book incorporates STEM elements in a way that readers will find fun and entertaining, while teachers and librarians will find it clever and original. PERFECT FOR BUDDING GRETA THUNBERGS: This book successfully talks about the effect of climate change and impels its readers to take action, without feeling didactic or message-y at all. TIES TO REAL-WORLD ISSUES: Readers will recognize quite a few dilemmas the AstroNuts face from current events on Earth. Making connections between fiction and non-fiction is a big developmental milestone for young readers, and this book works as an effective allegory for our most dire contemporary concerns. RELUCTANT READERï¿½FRIENDLY: The book is a great vehicle for reluctant readers, featuring cool topics and bright art, and relying on visual literacy and very few words. A CONSTELLATION OF TOPICS: Space, STEM, and talking animals: There's something here for every reader! LOLs FOR DAYS: The book is funny and will delight kids who love books like Wimpy Kid, The 39-Story Treehouse, Dog Man, and Captain Underpants. While it contains serious ideas, it's a quick, easy, and fun visual read. GROUNDBREAKING DESIGN: The hundreds of pages of full-color art are dynamic and engagingï¿½and it doesn't look like anything else out there. Steven Weinberg bases his art on public domain pieces from the Smithsonian museum! Teachers turn to the books for this element of the art and use it in classrooms to talk about collage, idea sourcing, history, and art medium. PERFECT ART PROJECT: On the website, kids can download pages of the \"original\" art and use it to make their own hybrid animal collages. Perfect for: ï¿½ Perfect for fans of Dog Man, Big Nate, Wimpy Kid, and Captain Underpants ï¿½ Families who care about the environment ï¿½ Grandparents ï¿½ Teachers and educators who are looking to introduce STEM and environmental topics to children ï¿½ Librarians",
+      description: "This series is The Hitchhiker's Guide to the Galaxy meets The Bad Guys in a funny, visually daring adventure series for reluctant readers, teachers, and librarians alike. This hilarious, visually groundbreaking read is the conclusion to a major series by children's literature legend Jon Scieszka. The book follows a final mission, where AlphaWolf, LaserShark, SmartHawk, and StinkBug must find a planet fit for human life after we've finally made Earth unlivable. Time is up for our friends the AstroNuts. In fact, time is up for you, too. If they don't succeed on this mission, Earth is doomed! So when the team finds out they're being sent to a place called \"the perfect planet,\" their mission sounds way too easy. Unfortunately, the second they land, they realize they'll be dealing with the most dangerous species of all time . . . humans. Huh? Where in the universe is this supposedly perfect place? And how will the Nuts manage to convince the humans to risk death . . . for the sake of their lives?! Featuring full-color illustrations throughout, Planet Earth as the narrator, an out-of-this-world gatefold, and how-to-draw pages in the back, eager and reluctant readers alike will be over the moon about this new mission. Full of laugh-out-loud humor with a thoughtful commentary on the reality of climate change at the core of the story, this creatively illustrated, full-color, action-packed space saga is a can't-put-it-down page-turner for readers of all levels and fans ready to blast past Dogman. EXCITING BIG-NAME TALENT: Jon Scieszka is one of the biggest names in children's books. The first National Ambassador of Young People's literature, he and Steven Weinberg toured extensively for this series. They'll continue making their way around the world for Book 3! You might have met them at ALA, the National Book Festival, the Rabbit HOle, the Brooklyn Book Festival, the Illinois Reading Council, the Tween Reads Book Festival, the Texas Book Festival, the NYC Department of Education Fall Conference, the 826 Story Soirée in New York, or NCTE in Baltimore! POPULAR SERIES: MISSIONS 1 and 2 received starred reviews, amazing blurbs, and tons of industry love. MISSION 1 was an Amazon Best Book of the Year! Dav Pilkey, Jennifer Holm, LeUyen Pham, and Gene Luen Yang are all big fans—check out those blurbs! FUN AND SCIENTIFIC: The book incorporates STEM elements in a way that readers will find fun and entertaining, while teachers and librarians will find it clever and original. PERFECT FOR BUDDING GRETA THUNBERGS: This book successfully talks about the effect of climate change and impels its readers to take action, without feeling didactic or message-y at all. TIES TO REAL-WORLD ISSUES: Readers will recognize quite a few dilemmas the AstroNuts face from current events on Earth. Making connections between fiction and non-fiction is a big developmental milestone for young readers, and this book works as an effective allegory for our most dire contemporary concerns. RELUCTANT READER–FRIENDLY: The book is a great vehicle for reluctant readers, featuring cool topics and bright art, and relying on visual literacy and very few words. A CONSTELLATION OF TOPICS: Space, STEM, and talking animals: There's something here for every reader! LOLs FOR DAYS: The book is funny and will delight kids who love books like Wimpy Kid, The 39-Story Treehouse, Dog Man, and Captain Underpants. While it contains serious ideas, it's a quick, easy, and fun visual read. GROUNDBREAKING DESIGN: The hundreds of pages of full-color art are dynamic and engaging—and it doesn't look like anything else out there. Steven Weinberg bases his art on public domain pieces from the Smithsonian museum! Teachers turn to the books for this element of the art and use it in classrooms to talk about collage, idea sourcing, history, and art medium. PERFECT ART PROJECT: On the website, kids can download pages of the \"original\" art and use it to make their own hybrid animal collages. Perfect for: • Perfect for fans of Dog Man, Big Nate, Wimpy Kid, and Captain Underpants • Families who care about the environment • Grandparents • Teachers and educators who are looking to introduce STEM and environmental topics to children • Librarians",
       textSnippet: "This series is The Hitchhiker&#39;s Guide to the Galaxy meets The Bad Guys in a funny, visually daring adventure series for reluctant readers, teachers, and librarians alike.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 34,
+      id: 33,
       isbn10: null,
       isbn13: "9798597421865",
       title: "United States Government Policy and Supporting Positions",
@@ -616,7 +598,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 35,
+      id: 34,
       isbn10: "1797205951",
       isbn13: "9781797205953",
       title: "Star Wars: Yoda One for Me",
@@ -634,7 +616,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 36,
+      id: 35,
       isbn10: "1942185839",
       isbn13: "9781942185833",
       title: "Rania Matar: She",
@@ -652,7 +634,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 37,
+      id: 36,
       isbn10: "0309141354",
       isbn13: "9780309141352",
       title: "On Being a Scientist",
@@ -670,11 +652,11 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 38,
+      id: 37,
       isbn10: "3899559940",
       isbn13: "9783899559941",
       title: "Do You Read Me?",
-      subtitle: "Bookstores Aroundï¿½the World",
+      subtitle: "Bookstores Around the World",
       rating: null,
       maturityRating: null,
       thumbnailUrl: "http://books.google.com/books/content?id=u6XwxgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
@@ -688,7 +670,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 39,
+      id: 38,
       isbn10: "8862087551",
       isbn13: "9788862087551",
       title: "Alexis Rockman: Works on Paper",
@@ -706,7 +688,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 40,
+      id: 39,
       isbn10: "1797215124",
       isbn13: "9781797215129",
       title: "Morning Meditations",
@@ -724,7 +706,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 41,
+      id: 40,
       isbn10: null,
       isbn13: "9798597421865",
       title: "United States Government Policy and Supporting Positions",
@@ -742,7 +724,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 42,
+      id: 41,
       isbn10: "0520344332",
       isbn13: "9780520344334",
       title: "Ink Under the Fingernails",
@@ -760,7 +742,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 43,
+      id: 42,
       isbn10: "1100232400",
       isbn13: "9781100232409",
       title: "The Little Black Book of Scams",
@@ -778,7 +760,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 44,
+      id: 43,
       isbn10: "1491951176",
       isbn13: "9781491951170",
       title: "Site Reliability Engineering",
@@ -790,13 +772,13 @@ module.exports = {
       language: "en",
       publishDate: "2016-03-23",
       pageCount: 552,
-      description: "The overwhelming majority of a software systemï¿½s lifespan is spent in use, not in design or implementation. So, why does conventional wisdom insist that software engineers focus primarily on the design and development of large-scale computing systems? In this collection of essays and articles, key members of Googleï¿½s Site Reliability Team explain how and why their commitment to the entire lifecycle has enabled the company to successfully build, deploy, monitor, and maintain some of the largest software systems in the world. Youï¿½ll learn the principles and practices that enable Google engineers to make systems more scalable, reliable, and efficientï¿½lessons directly applicable to your organization. This book is divided into four sections: Introductionï¿½Learn what site reliability engineering is and why it differs from conventional IT industry practices Principlesï¿½Examine the patterns, behaviors, and areas of concern that influence the work of a site reliability engineer (SRE) Practicesï¿½Understand the theory and practice of an SREï¿½s day-to-day work: building and operating large distributed computing systems Managementï¿½Explore Google's best practices for training, communication, and meetings that your organization can use",
-      textSnippet: "This book is divided into four sections: Introductionï¿½Learn what site reliability engineering is and why it differs from conventional IT industry practices Principlesï¿½Examine the patterns, behaviors, and areas of concern that influence ...",
+      description: "The overwhelming majority of a software system’s lifespan is spent in use, not in design or implementation. So, why does conventional wisdom insist that software engineers focus primarily on the design and development of large-scale computing systems? In this collection of essays and articles, key members of Google’s Site Reliability Team explain how and why their commitment to the entire lifecycle has enabled the company to successfully build, deploy, monitor, and maintain some of the largest software systems in the world. You’ll learn the principles and practices that enable Google engineers to make systems more scalable, reliable, and efficient—lessons directly applicable to your organization. This book is divided into four sections: Introduction—Learn what site reliability engineering is and why it differs from conventional IT industry practices Principles—Examine the patterns, behaviors, and areas of concern that influence the work of a site reliability engineer (SRE) Practices—Understand the theory and practice of an SRE’s day-to-day work: building and operating large distributed computing systems Management—Explore Google's best practices for training, communication, and meetings that your organization can use",
+      textSnippet: "This book is divided into four sections: Introduction—Learn what site reliability engineering is and why it differs from conventional IT industry practices Principles—Examine the patterns, behaviors, and areas of concern that influence ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 45,
+      id: 44,
       isbn10: "0553393065",
       isbn13: "9780553393064",
       title: "Untangled",
@@ -808,13 +790,13 @@ module.exports = {
       language: "en",
       publishDate: "2016-02-09",
       pageCount: 352,
-      description: "NEW YORK TIMES BESTSELLER ï¿½ An award-winning guide to the sometimes erratic and confusing behavior of teenage girls that explains whatï¿½s going on, prepares parents for whatï¿½s to come, and lets them know when itï¿½s time to worry. Look for Under Pressure, the companion guide to coping with stress and anxiety among girls, available now. In this sane, highly engaging, and informed guide for parents of daughters, Dr. Damour draws on decades of experience and the latest research to reveal the seven distinctï¿½and absolutely normalï¿½developmental transitions that turn girls into grown-ups, including Parting with Childhood, Contending with Adult Authority, Entering the Romantic World, and Caring for Herself. Providing realistic scenarios and welcome advice on how to engage daughters in smart, constructive ways, Untangled gives parents a broad framework for understanding their daughters while addressing their most common questions, including ï¿½ My thirteen-year-old rolls her eyes when I try to talk to her, and only does it more when I get angry with her about it. How should I respond? ï¿½ Do I tell my teen daughter that Iï¿½m checking her phone? ï¿½ My daughter suffers from test anxiety. What can I do to help her? ï¿½ Whereï¿½s the line between healthy eating and having an eating disorder? ï¿½ My teenage daughter wants to know why Iï¿½m against pot when itï¿½s legal in some states. What should I say? ï¿½ My daughterï¿½s friend is cutting herself. Do I call the girlï¿½s mother to let her know? Perhaps most important, Untangled helps mothers and fathers understand, connect, and grow with their daughters. When parents know what makes their daughter tick, they can embrace and enjoy the challenge of raising a healthy, happy young woman. BOOKS FOR A BETTER LIFE AWARD WINNER ï¿½Finally, thereï¿½s some good news for puzzled parents of adolescent girls, and psychologist Lisa Damour is the bearer of that happy news. [Untangled] is the most down-to-earth, readable parenting book Iï¿½ve come across in a long time.ï¿½ï¿½The Washington Post ï¿½Anna Freud wrote in 1958, ï¿½There are few situations in life which are more difficult to cope with than an adolescent son or daughter during the attempt to liberate themselves.ï¿½ In the intervening decades, the transition doesnï¿½t appear to have gotten any easier which makes Untangled such a welcome new resource.ï¿½ï¿½The Boston Globe",
+      description: "NEW YORK TIMES BESTSELLER • An award-winning guide to the sometimes erratic and confusing behavior of teenage girls that explains what’s going on, prepares parents for what’s to come, and lets them know when it’s time to worry. Look for Under Pressure, the companion guide to coping with stress and anxiety among girls, available now. In this sane, highly engaging, and informed guide for parents of daughters, Dr. Damour draws on decades of experience and the latest research to reveal the seven distinct—and absolutely normal—developmental transitions that turn girls into grown-ups, including Parting with Childhood, Contending with Adult Authority, Entering the Romantic World, and Caring for Herself. Providing realistic scenarios and welcome advice on how to engage daughters in smart, constructive ways, Untangled gives parents a broad framework for understanding their daughters while addressing their most common questions, including • My thirteen-year-old rolls her eyes when I try to talk to her, and only does it more when I get angry with her about it. How should I respond? • Do I tell my teen daughter that I’m checking her phone? • My daughter suffers from test anxiety. What can I do to help her? • Where’s the line between healthy eating and having an eating disorder? • My teenage daughter wants to know why I’m against pot when it’s legal in some states. What should I say? • My daughter’s friend is cutting herself. Do I call the girl’s mother to let her know? Perhaps most important, Untangled helps mothers and fathers understand, connect, and grow with their daughters. When parents know what makes their daughter tick, they can embrace and enjoy the challenge of raising a healthy, happy young woman. BOOKS FOR A BETTER LIFE AWARD WINNER “Finally, there’s some good news for puzzled parents of adolescent girls, and psychologist Lisa Damour is the bearer of that happy news. [Untangled] is the most down-to-earth, readable parenting book I’ve come across in a long time.”—The Washington Post “Anna Freud wrote in 1958, ‘There are few situations in life which are more difficult to cope with than an adolescent son or daughter during the attempt to liberate themselves.’ In the intervening decades, the transition doesn’t appear to have gotten any easier which makes Untangled such a welcome new resource.”—The Boston Globe",
       textSnippet: "Look for Under Pressure, the companion guide to coping with stress and anxiety among girls, available now.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 46,
+      id: 45,
       isbn10: "0714548103",
       isbn13: "9780714548104",
       title: "Adventures of Pipi the Pink Monkey",
@@ -832,7 +814,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 47,
+      id: 46,
       isbn10: "1449493238",
       isbn13: "9781449493233",
       title: "Tomatoland, Third Edition",
@@ -844,13 +826,13 @@ module.exports = {
       language: "en",
       publishDate: "2018-04-03",
       pageCount: 256,
-      description: "Four entirely new chapters take up where the current edition leaves off to tell the story behind what president Bill Clinton calls ï¿½the most astonishing thing politically in the world weï¿½re living in today.ï¿½ Estabrook reveals how a rag-tag group of migrant tomato pickers in Florida convinced the worldï¿½s largest restaurant chains and food retailers to join forces to create a model for labor justice, and then took the necessary steps to make sure that the model really works, not only in Florida, but around the world. The book includes a new foreword by journalist and author Eric Schlosser (Fast Food Nation).",
-      textSnippet: "Four entirely new chapters take up where the current edition leaves off to tell the story behind what president Bill Clinton calls ï¿½the most astonishing thing politically in the world weï¿½re living in today.ï¿½ Estabrook reveals how a ...",
+      description: "Four entirely new chapters take up where the current edition leaves off to tell the story behind what president Bill Clinton calls “the most astonishing thing politically in the world we’re living in today.” Estabrook reveals how a rag-tag group of migrant tomato pickers in Florida convinced the world’s largest restaurant chains and food retailers to join forces to create a model for labor justice, and then took the necessary steps to make sure that the model really works, not only in Florida, but around the world. The book includes a new foreword by journalist and author Eric Schlosser (Fast Food Nation).",
+      textSnippet: "Four entirely new chapters take up where the current edition leaves off to tell the story behind what president Bill Clinton calls “the most astonishing thing politically in the world we’re living in today.” Estabrook reveals how a ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 48,
+      id: 47,
       isbn10: "1492029459",
       isbn13: "9781492029458",
       title: "The Site Reliability Workbook",
@@ -862,13 +844,13 @@ module.exports = {
       language: "en",
       publishDate: "2018-07-25",
       pageCount: 512,
-      description: "In 2016, Googleï¿½s Site Reliability Engineering book ignited an industry discussion on what it means to run production services todayï¿½and why reliability considerations are fundamental to service design. Now, Google engineers who worked on that bestseller introduce The Site Reliability Workbook, a hands-on companion that uses concrete examples to show you how to put SRE principles and practices to work in your environment. This new workbook not only combines practical examples from Googleï¿½s experiences, but also provides case studies from Googleï¿½s Cloud Platform customers who underwent this journey. Evernote, The Home Depot, The New York Times, and other companies outline hard-won experiences of what worked for them and what didnï¿½t. Dive into this workbook and learn how to flesh out your own SRE practice, no matter what size your company is. Youï¿½ll learn: How to run reliable services in environments you donï¿½t completely controlï¿½like cloud Practical applications of how to create, monitor, and run your services via Service Level Objectives How to convert existing ops teams to SREï¿½including how to dig out of operational overload Methods for starting SRE from either greenfield or brownfield",
+      description: "In 2016, Google’s Site Reliability Engineering book ignited an industry discussion on what it means to run production services today—and why reliability considerations are fundamental to service design. Now, Google engineers who worked on that bestseller introduce The Site Reliability Workbook, a hands-on companion that uses concrete examples to show you how to put SRE principles and practices to work in your environment. This new workbook not only combines practical examples from Google’s experiences, but also provides case studies from Google’s Cloud Platform customers who underwent this journey. Evernote, The Home Depot, The New York Times, and other companies outline hard-won experiences of what worked for them and what didn’t. Dive into this workbook and learn how to flesh out your own SRE practice, no matter what size your company is. You’ll learn: How to run reliable services in environments you don’t completely control—like cloud Practical applications of how to create, monitor, and run your services via Service Level Objectives How to convert existing ops teams to SRE—including how to dig out of operational overload Methods for starting SRE from either greenfield or brownfield",
       textSnippet: "Dive into this workbook and learn how to flesh out your own SRE practice, no matter what size your company is.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 49,
+      id: 48,
       isbn10: "1797205951",
       isbn13: "9781797205953",
       title: "Star Wars: Yoda One for Me",
@@ -886,7 +868,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 50,
+      id: 49,
       isbn10: "0062430408",
       isbn13: "9780062430403",
       title: "Harold and the Purple Crayon",
@@ -898,13 +880,13 @@ module.exports = {
       language: "en",
       publishDate: "2015-09-29",
       pageCount: 64,
-      description: "From beloved childrenï¿½s book creator Crockett Johnson comes the timeless classic Harold and the Purple Crayon! This imagination-sparking picture book belongs on every child's digital bookshelf. One evening Harold decides to go for a walk in the moonlight. Armed only with an oversize purple crayon, young Harold draws himself a landscape full of wonder and excitement. Harold and his trusty crayon travel through woods and across seas and past dragons before returning to bed, safe and sound. Full of funny twists and surprises, this charming story shows just how far your imagination can take you. ï¿½A satisfying artistic triumph.ï¿½ ï¿½Chris Van Allsburg, author-illustrator of The Polar Express Share this classic as a birthday, baby shower, or graduation gift!",
+      description: "From beloved children’s book creator Crockett Johnson comes the timeless classic Harold and the Purple Crayon! This imagination-sparking picture book belongs on every child's digital bookshelf. One evening Harold decides to go for a walk in the moonlight. Armed only with an oversize purple crayon, young Harold draws himself a landscape full of wonder and excitement. Harold and his trusty crayon travel through woods and across seas and past dragons before returning to bed, safe and sound. Full of funny twists and surprises, this charming story shows just how far your imagination can take you. “A satisfying artistic triumph.” —Chris Van Allsburg, author-illustrator of The Polar Express Share this classic as a birthday, baby shower, or graduation gift!",
       textSnippet: "Full of funny twists and surprises, this joyful story shows just how far your imagination can take you. Harold and the Purple Crayon has delighted readers of all ages for over fifty years.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 51,
+      id: 50,
       isbn10: "0062862170",
       isbn13: "9780062862174",
       title: "All About Love",
@@ -916,13 +898,13 @@ module.exports = {
       language: "en",
       publishDate: "2018-01-30",
       pageCount: 272,
-      description: "A New York Times bestseller and enduring classic, All About Love is the acclaimed first volume in feminist icon bell hooks' \"Love Song to the Nation\" trilogy. All About Love reveals what causes a polarized society, and how to heal the divisions that cause suffering. Here is the truth about love, and inspiration to help us instill caring, compassion, and strength in our homes, schools, and workplaces. ï¿½The word ï¿½loveï¿½ is most often defined as a noun, yet we would all love better if we used it as a verb,ï¿½ writes bell hooks as she comes out fighting and on fire in All About Love. Here, at her most provocative and intensely personal, renowned scholar, cultural critic and feminist bell hooks offers a proactive new ethic for a society bereft with lovelessness--not the lack of romance, but the lack of care, compassion, and unity. People are divided, she declares, by societyï¿½s failure to provide a model for learning to love. As bell hooks uses her incisive mind to explore the question ï¿½What is love?ï¿½ her answers strike at both the mind and heart. Razing the cultural paradigm that the ideal love is infused with sex and desire, she provides a new path to love that is sacred, redemptive, and healing for individuals and for a nation. The Utne Reader declared bell hooks one of the ï¿½100 Visionaries Who Can Change Your Life.ï¿½ All About Love is a powerful, timely affirmation of just how profoundly her revelations can change hearts and minds for the better.",
-      textSnippet: "Here is the truth about love, and inspiration to help us instill caring, compassion, and strength in our homes, schools, and workplaces. ï¿½The word ï¿½loveï¿½ is most often defined as a noun, yet we would all love better if we used it as a ...",
+      description: "A New York Times bestseller and enduring classic, All About Love is the acclaimed first volume in feminist icon bell hooks' \"Love Song to the Nation\" trilogy. All About Love reveals what causes a polarized society, and how to heal the divisions that cause suffering. Here is the truth about love, and inspiration to help us instill caring, compassion, and strength in our homes, schools, and workplaces. “The word ‘love’ is most often defined as a noun, yet we would all love better if we used it as a verb,” writes bell hooks as she comes out fighting and on fire in All About Love. Here, at her most provocative and intensely personal, renowned scholar, cultural critic and feminist bell hooks offers a proactive new ethic for a society bereft with lovelessness--not the lack of romance, but the lack of care, compassion, and unity. People are divided, she declares, by society’s failure to provide a model for learning to love. As bell hooks uses her incisive mind to explore the question “What is love?” her answers strike at both the mind and heart. Razing the cultural paradigm that the ideal love is infused with sex and desire, she provides a new path to love that is sacred, redemptive, and healing for individuals and for a nation. The Utne Reader declared bell hooks one of the “100 Visionaries Who Can Change Your Life.” All About Love is a powerful, timely affirmation of just how profoundly her revelations can change hearts and minds for the better.",
+      textSnippet: "Here is the truth about love, and inspiration to help us instill caring, compassion, and strength in our homes, schools, and workplaces. “The word ‘love’ is most often defined as a noun, yet we would all love better if we used it as a ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 52,
+      id: 51,
       isbn10: "168335785X",
       isbn13: "9781683357858",
       title: "Belly of the Beast (The Fabled Stables Book #3)",
@@ -934,13 +916,13 @@ module.exports = {
       language: "en",
       publishDate: "2022-02-22",
       pageCount: 96,
-      description: "Book 3 in the one-of-a-kind adventure series from New York Times bestselling author Jonathan Auxier explores the real magic behind simple acts of kindness. Auggie loves his job at the Fabled Stables, but he fears the day when it will come to an end. Fen keeps dropping hints that caretakers donï¿½t stay forever, and itï¿½s giving Auggie the grumps. Thankfully, there always seems to be a new stall to fill. This time, the stables set Auggie on a quest to rescue a beast called the Shibbolethï¿½but the portal leads Auggie and Fen to the lair of the evil Rooks! In the dark, damp dungeon, they meet one mysterious girl and one very hungry monster. Itï¿½s already gobbled up all of the Rooks, and Auggie and Fen are next unless they figure out the one way to calm the creature. Will they be able to work together to complete the mission before itï¿½s too late?",
+      description: "Book 3 in the one-of-a-kind adventure series from New York Times bestselling author Jonathan Auxier explores the real magic behind simple acts of kindness. Auggie loves his job at the Fabled Stables, but he fears the day when it will come to an end. Fen keeps dropping hints that caretakers don’t stay forever, and it’s giving Auggie the grumps. Thankfully, there always seems to be a new stall to fill. This time, the stables set Auggie on a quest to rescue a beast called the Shibboleth—but the portal leads Auggie and Fen to the lair of the evil Rooks! In the dark, damp dungeon, they meet one mysterious girl and one very hungry monster. It’s already gobbled up all of the Rooks, and Auggie and Fen are next unless they figure out the one way to calm the creature. Will they be able to work together to complete the mission before it’s too late?",
       textSnippet: "Book 3 in the one-of-a-kind adventure series from New York Times bestselling author Jonathan Auxier explores the real magic behind simple acts of kindness.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 53,
+      id: 52,
       isbn10: "1683358058",
       isbn13: "9781683358053",
       title: "The Motherlode",
@@ -952,13 +934,13 @@ module.exports = {
       language: "en",
       publishDate: "2021-02-02",
       pageCount: 240,
-      description: "An illustrated highlight reel of more than 100 women in rap who have helped shape the genre and eschewed gender norms in the process The Motherlode highlights more than 100 women who have shaped the power, scope, and reach of rap music, including pioneers like Roxanne Shantï¿½, game changers like Lauryn Hill and Missy Elliott, and current reigning queens like Nicki Minaj, Cardi B, and Lizzoï¿½as well as everyone who came before, after, and in between. Some of these women were respected but not widely celebrated. Some are impossible not to know. Some of these women have stood on their own; others were forced into templates, compelled to stand beside men in big rap crews. Some have been trapped in a strange critical space between respected MC and object. They are characters, caricatures, lyricists, at times both feminine and explicit. This book profiles each of these women, their musical and career breakthroughs, and the ways in which they each helped change the culture of rap.",
+      description: "An illustrated highlight reel of more than 100 women in rap who have helped shape the genre and eschewed gender norms in the process The Motherlode highlights more than 100 women who have shaped the power, scope, and reach of rap music, including pioneers like Roxanne Shanté, game changers like Lauryn Hill and Missy Elliott, and current reigning queens like Nicki Minaj, Cardi B, and Lizzo—as well as everyone who came before, after, and in between. Some of these women were respected but not widely celebrated. Some are impossible not to know. Some of these women have stood on their own; others were forced into templates, compelled to stand beside men in big rap crews. Some have been trapped in a strange critical space between respected MC and object. They are characters, caricatures, lyricists, at times both feminine and explicit. This book profiles each of these women, their musical and career breakthroughs, and the ways in which they each helped change the culture of rap.",
       textSnippet: "They are characters, caricatures, lyricists, at times both feminine and explicit. This book profiles each of these women, their musical and career breakthroughs, and the ways in which they each helped change the culture of rap.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 54,
+      id: 53,
       isbn10: "1647001617",
       isbn13: "9781647001612",
       title: "Above the Rim",
@@ -970,13 +952,13 @@ module.exports = {
       language: "en",
       publishDate: "2020-10-06",
       pageCount: 40,
-      description: "The story of Elgin Baylor, basketball icon and civil rights advocate, from an all-star team Hall-of-famer Elgin Baylor was one of basketballï¿½s all-time-greatest playersï¿½an innovative athlete, team player, and quiet force for change. One of the first professional African-American players, he inspired others on and off the court. But when traveling for away games, many hotels and restaurants turned Elgin away because he was black. One night, Elgin had enough and staged a one-man protest that captured the attention of the press, the public, and the NBA. Above the Rim is a poetic, exquisitely illustrated telling of the life of an underrecognized athlete and a celebration of standing up for what is right.",
-      textSnippet: "The story of Elgin Baylor, basketball icon and civil rights advocate, from an all-star team Hall-of-famer Elgin Baylor was one of basketballï¿½s all-time-greatest playersï¿½an innovative athlete, team player, and quiet force for change.",
+      description: "The story of Elgin Baylor, basketball icon and civil rights advocate, from an all-star team Hall-of-famer Elgin Baylor was one of basketball’s all-time-greatest players—an innovative athlete, team player, and quiet force for change. One of the first professional African-American players, he inspired others on and off the court. But when traveling for away games, many hotels and restaurants turned Elgin away because he was black. One night, Elgin had enough and staged a one-man protest that captured the attention of the press, the public, and the NBA. Above the Rim is a poetic, exquisitely illustrated telling of the life of an underrecognized athlete and a celebration of standing up for what is right.",
+      textSnippet: "The story of Elgin Baylor, basketball icon and civil rights advocate, from an all-star team Hall-of-famer Elgin Baylor was one of basketball’s all-time-greatest players—an innovative athlete, team player, and quiet force for change.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 55,
+      id: 54,
       isbn10: "1647006260",
       isbn13: "9781647006266",
       title: "Ada Twist, Scientist: Show Me the Bunny",
@@ -988,13 +970,13 @@ module.exports = {
       language: "en",
       publishDate: "2022-02-22",
       pageCount: 32,
-      description: "A charming Easter adventure based on the Netflix show Ada Twist, Scientist Itï¿½s Easter! The eggs are decorated, the baskets are ready, and Mr. Twistï¿½s Easter pants are looking fly, which means one thing: itï¿½s time for the annual Twist Easter Egg Hunt, Adaï¿½s favorite family tradition. And this year, her parents are letting Ada hide the eggs! But Arthur, her big brother, thinks the egg hunt is going to be too easy now that heï¿½s elevenï¿½so Ada has to do a test hiding to make sure itï¿½s super hard or else Arthur will retire from the egg hunt forever! Ada, Rosie, and Iggy brainstorm about how to find the hardest hiding spot in the history of egg-hiding. A sweet and funny storybook about learning from your mistakes and accepting that sometimes you might fail, this is the most egg-cellent book for the Easter season. Based on the bestselling series and the new Netflix show Ada Twist, Scientist, this charming new storybook is perfect for fans new and old!",
+      description: "A charming Easter adventure based on the Netflix show Ada Twist, Scientist It’s Easter! The eggs are decorated, the baskets are ready, and Mr. Twist’s Easter pants are looking fly, which means one thing: it’s time for the annual Twist Easter Egg Hunt, Ada’s favorite family tradition. And this year, her parents are letting Ada hide the eggs! But Arthur, her big brother, thinks the egg hunt is going to be too easy now that he’s eleven—so Ada has to do a test hiding to make sure it’s super hard or else Arthur will retire from the egg hunt forever! Ada, Rosie, and Iggy brainstorm about how to find the hardest hiding spot in the history of egg-hiding. A sweet and funny storybook about learning from your mistakes and accepting that sometimes you might fail, this is the most egg-cellent book for the Easter season. Based on the bestselling series and the new Netflix show Ada Twist, Scientist, this charming new storybook is perfect for fans new and old!",
       textSnippet: "A sweet and funny storybook about learning from your mistakes and accepting that sometimes you might fail, this is the most egg-cellent book for the Easter season.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 56,
+      id: 55,
       isbn10: "1647000467",
       isbn13: "9781647000462",
       title: "Knit Fold Pleat Repeat",
@@ -1006,13 +988,13 @@ module.exports = {
       language: "en",
       publishDate: "2022-02-15",
       pageCount: 224,
-      description: "Knitting guru Norah Gaughan shows you how to make rectangles, squares, and simple shapesï¿½then fold, twist, and pleat them to create unique, fashionable clothes and accessories Simple shapes are ideal for the novice knitter, but the clever folds and fastenings of Knit, Fold, Pleat, Repeat will intrigue the experienced crowd too. These techniques are easy to learn, and the design possibilitiesï¿½and new combinations that come to light once you beginï¿½are nearly endless. Each design starts with a simple rectangle, square, or triangle and builds from there: to fold, drape, or twist the shape into a garment or accessory, and to introduce pleats, welts, and slices along the way. Every pattern has a gorgeous high-fashion style, and the projects are so addictive to knitï¿½you may find yourself making the same garment in new colors and yarns so you'll have one for each season. The book includes thirty-six patterns in all, each with variations.",
+      description: "Knitting guru Norah Gaughan shows you how to make rectangles, squares, and simple shapes—then fold, twist, and pleat them to create unique, fashionable clothes and accessories Simple shapes are ideal for the novice knitter, but the clever folds and fastenings of Knit, Fold, Pleat, Repeat will intrigue the experienced crowd too. These techniques are easy to learn, and the design possibilities—and new combinations that come to light once you begin—are nearly endless. Each design starts with a simple rectangle, square, or triangle and builds from there: to fold, drape, or twist the shape into a garment or accessory, and to introduce pleats, welts, and slices along the way. Every pattern has a gorgeous high-fashion style, and the projects are so addictive to knit—you may find yourself making the same garment in new colors and yarns so you'll have one for each season. The book includes thirty-six patterns in all, each with variations.",
       textSnippet: "The book includes thirty-six patterns in all, each with variations.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 57,
+      id: 56,
       isbn10: "1465589600",
       isbn13: "9781465589606",
       title: "A House of Gentlefolk",
@@ -1030,7 +1012,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 58,
+      id: 57,
       isbn10: "1942185839",
       isbn13: "9781942185833",
       title: "Rania Matar: She",
@@ -1048,7 +1030,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 59,
+      id: 58,
       isbn10: "0309141354",
       isbn13: "9780309141352",
       title: "On Being a Scientist",
@@ -1066,11 +1048,11 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 60,
+      id: 59,
       isbn10: "3899559940",
       isbn13: "9783899559941",
       title: "Do You Read Me?",
-      subtitle: "Bookstores Aroundï¿½the World",
+      subtitle: "Bookstores Around the World",
       rating: null,
       maturityRating: null,
       thumbnailUrl: "http://books.google.com/books/content?id=u6XwxgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
@@ -1084,7 +1066,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 61,
+      id: 60,
       isbn10: "8862087551",
       isbn13: "9788862087551",
       title: "Alexis Rockman: Works on Paper",
@@ -1102,7 +1084,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 62,
+      id: 61,
       isbn10: "1797215124",
       isbn13: "9781797215129",
       title: "Morning Meditations",
@@ -1120,7 +1102,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 63,
+      id: 62,
       isbn10: "1797212591",
       isbn13: "9781797212593",
       title: "The Wild Unknown Notes: 16 Foil-Stamped Notecards and Envelopes",
@@ -1138,7 +1120,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 64,
+      id: 63,
       isbn10: "1950807347",
       isbn13: "9781950807345",
       title: "When You Hear Me (You Hear Us)",
@@ -1156,7 +1138,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 65,
+      id: 64,
       isbn10: "1495203611",
       isbn13: "9781495203619",
       title: "Bad Bug Book",
@@ -1168,13 +1150,13 @@ module.exports = {
       language: "en",
       publishDate: "2014-01-14",
       pageCount: 292,
-      description: "The Bad Bug Book 2nd Edition, released in 2012, provides current information about the major known agents that cause foodborne illness.Each chapter in this book is about a pathogenï¿½a bacterium, virus, or parasiteï¿½or a natural toxin that can contaminate food and cause illness. The book contains scientific and technical information about the major pathogens that cause these kinds of illnesses.A separate ï¿½consumer boxï¿½ in each chapter provides non-technical information, in everyday language. The boxes describe plainly what can make you sick and, more important, how to prevent it.The information provided in this handbook is abbreviated and general in nature, and is intended for practical use. It is not intended to be a comprehensive scientific or clinical reference.The Bad Bug Book is published by the Center for Food Safety and Applied Nutrition (CFSAN) of the Food and Drug Administration (FDA), U.S. Department of Health and Human Services.",
-      textSnippet: "The Bad Bug Book 2nd Edition, released in 2012, provides current information about the major known agents that cause foodborne illness.Each chapter in this book is about a pathogenï¿½a bacterium, virus, or parasiteï¿½or a natural toxin that ...",
+      description: "The Bad Bug Book 2nd Edition, released in 2012, provides current information about the major known agents that cause foodborne illness.Each chapter in this book is about a pathogen—a bacterium, virus, or parasite—or a natural toxin that can contaminate food and cause illness. The book contains scientific and technical information about the major pathogens that cause these kinds of illnesses.A separate “consumer box” in each chapter provides non-technical information, in everyday language. The boxes describe plainly what can make you sick and, more important, how to prevent it.The information provided in this handbook is abbreviated and general in nature, and is intended for practical use. It is not intended to be a comprehensive scientific or clinical reference.The Bad Bug Book is published by the Center for Food Safety and Applied Nutrition (CFSAN) of the Food and Drug Administration (FDA), U.S. Department of Health and Human Services.",
+      textSnippet: "The Bad Bug Book 2nd Edition, released in 2012, provides current information about the major known agents that cause foodborne illness.Each chapter in this book is about a pathogen—a bacterium, virus, or parasite—or a natural toxin that ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 66,
+      id: 65,
       isbn10: "0879952415",
       isbn13: "9780879952419",
       title: "Illuminating Engineering Society Lighting Handbook",
@@ -1192,7 +1174,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 67,
+      id: 66,
       isbn10: "160359714X",
       isbn13: "9781603597142",
       title: "Graduate Medical Education Directory",
@@ -1210,7 +1192,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 68,
+      id: 67,
       isbn10: "1782125450",
       isbn13: "9781782125457",
       title: "Virginia Woolf Collection",
@@ -1228,7 +1210,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 69,
+      id: 68,
       isbn10: "1619613468",
       isbn13: "9781619613461",
       title: "The Book in a Box Method: The New Way to Quickly and Easily Write Your Book (Even If You're Not a Writer)",
@@ -1246,7 +1228,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 70,
+      id: 69,
       isbn10: "1526622432",
       isbn13: "9781526622433",
       title: "Piranesi",
@@ -1264,7 +1246,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 71,
+      id: 70,
       isbn10: null,
       isbn13: null,
       title: "General Explanations of the Administration's Revenue Proposals",
@@ -1282,7 +1264,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 72,
+      id: 71,
       isbn10: "1942185758",
       isbn13: "9781942185758",
       title: "Helen Pashgian: Spheres and Lenses",
@@ -1300,7 +1282,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 73,
+      id: 72,
       isbn10: "1473610370",
       isbn13: "9781473610378",
       title: "Business Adventures",
@@ -1318,7 +1300,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 74,
+      id: 73,
       isbn10: "1914224000",
       isbn13: "9781914224003",
       title: "Diego Rivera",
@@ -1336,7 +1318,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 75,
+      id: 74,
       isbn10: "1914224027",
       isbn13: "9781914224027",
       title: "Catalyst",
@@ -1348,13 +1330,13 @@ module.exports = {
       language: "en",
       publishDate: "2021-10-14",
       pageCount: 120,
-      description: "This anthology showcases new comics voices alongside more established creators as they all explore a single theme--\"catalyst\"--through the graphic short story form This collection of short stories presents pieces from established artists Asia Alfasi, Catherine Anyango Grï¿½newald, Sonia Leong, and Woodrow Phoenix alongside work from up-and-coming new voices, with the aim of reflecting the diversity and wealth of talent in the UK comics scene. United by a single theme--\"catalyst\"--the contributors have each written and drawn an eight-page story to explore ideas of reaction and transformation. Edited by Ayoola Solarin, this provocative, intriguing, and revelatory anthology invites readers to consider the situations, people, and events that might accelerate change in their own lives and in our society as a whole.",
+      description: "This anthology showcases new comics voices alongside more established creators as they all explore a single theme--\"catalyst\"--through the graphic short story form This collection of short stories presents pieces from established artists Asia Alfasi, Catherine Anyango Grünewald, Sonia Leong, and Woodrow Phoenix alongside work from up-and-coming new voices, with the aim of reflecting the diversity and wealth of talent in the UK comics scene. United by a single theme--\"catalyst\"--the contributors have each written and drawn an eight-page story to explore ideas of reaction and transformation. Edited by Ayoola Solarin, this provocative, intriguing, and revelatory anthology invites readers to consider the situations, people, and events that might accelerate change in their own lives and in our society as a whole.",
       textSnippet: "Born of SelfMadeHero&#39;s 12-week Graphic Anthology Programme, this collection presents pieces from mentors Asia Alfasi, Catherine Anyango Grunewald, Sonia Leong and Woodrow Phoenix alongside work from up-and-coming new voices, with the aim of ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 76,
+      id: 75,
       isbn10: "1846883180",
       isbn13: "9781846883187",
       title: "Angela Merkel",
@@ -1366,13 +1348,13 @@ module.exports = {
       language: "en",
       publishDate: "2014-09-01",
       pageCount: 300,
-      description: "With the Eurozone engulfed in an unprecedented crisis, one political figure looms largest of all, Angela Merkel, the leader of its most powerful economy. While foreign affairs have become the central issues of her chancellorship in this crucial election year, the entire world is anxiously looking to Germany to play its part in Europeï¿½s rescue. This authorized biography sheds light on the person behind the politician ï¿½ from her youthful days of hitchhiking in Tbilisi to being the guest of honour at a White House state dinner ï¿½ and examines how a girl from East Germany rose to the highest echelons of European power. As well as explaining how Angela Merkelï¿½s world view was shaped and influenced by her background and ideology, Stefan Korneliusï¿½s lively account discusses her personal relations with international counterparts such as David Cameron, Barack Obama or Vladimir Putin, as well as her attitude towards the countries and cultures over which they rule.",
+      description: "With the Eurozone engulfed in an unprecedented crisis, one political figure looms largest of all, Angela Merkel, the leader of its most powerful economy. While foreign affairs have become the central issues of her chancellorship in this crucial election year, the entire world is anxiously looking to Germany to play its part in Europe’s rescue. This authorized biography sheds light on the person behind the politician – from her youthful days of hitchhiking in Tbilisi to being the guest of honour at a White House state dinner – and examines how a girl from East Germany rose to the highest echelons of European power. As well as explaining how Angela Merkel’s world view was shaped and influenced by her background and ideology, Stefan Kornelius’s lively account discusses her personal relations with international counterparts such as David Cameron, Barack Obama or Vladimir Putin, as well as her attitude towards the countries and cultures over which they rule.",
       textSnippet: "With the Eurozone engulfed in an unprecedented crisis, one political figure looms largest of all, Angela Merkel, the leader of its most powerful economy.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 77,
+      id: 76,
       isbn10: "1846884683",
       isbn13: "9781846884689",
       title: "CHINESE CONUNDRUM",
@@ -1390,7 +1372,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 78,
+      id: 77,
       isbn10: "143381787X",
       isbn13: "9781433817878",
       title: "This Day in June [eBook - NC Kids Digital Library]",
@@ -1408,7 +1390,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 79,
+      id: 78,
       isbn10: "8026882466",
       isbn13: "9788026882466",
       title: "The Years",
@@ -1426,7 +1408,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 80,
+      id: 79,
       isbn10: "0890425752",
       isbn13: "9780890425756",
       title: "Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision (DSM-5-TR(tm))",
@@ -1444,7 +1426,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 81,
+      id: 80,
       isbn10: "1338795457",
       isbn13: "9781338795455",
       title: "Middle School Mischief (The Magical Reality of Nadia #2)",
@@ -1456,13 +1438,13 @@ module.exports = {
       language: "en",
       publishDate: "2021-11-02",
       pageCount: 176,
-      description: "Inspired by the author's real-life experiences, this second hilarious and sweet novel about sixth grade Egyptian immigrant Nadia has her battling school newspaper drama, controversy with the school mascot, and some magical mischief, too. Nadia loves fun facts. Here are a few about her: There was a magicalï¿½and hilariousï¿½ancient Egyptian teacher named Titi trapped in her hippo amulet until she freed him last fall.Her school is choosing a new mascot and her idea is totally going to win!Sheï¿½s going to kick butt writing for the school newspaper this term... ...Maybe. A couple of weeks in, the newspaper is a big mess. The mascot contest is mayhem, too. (Who knew choosing a costumed character could cause such controversy?!) Then Nadia and Titi discover that the hippo amulet holds a second secret, one thatï¿½s super powerfulï¿½and super scary. Too bad they have no idea how to stop it. But Nadia is on the case! If she can solve the mystery of an ancient amulet, winning the mascot contest and acing her reporter assignments should be easy...right? From The Daily Show comedian Bassem Youssef and author Catherine R. Daly comes a humorous and heartfelt story about integrity, empathy, power, and friendship. Includes sections of black-and-white comics as well as black-and-white illustrations throughout, brought to life by Last Kids on Earth illustrator, Douglas Holgate.",
-      textSnippet: "Here are a few about her: There was a magicalï¿½and hilariousï¿½ancient Egyptian teacher named Titi trapped in her hippo amulet until she freed him last fall.Her school is choosing a new mascot and her idea is totally going to win!Sheï¿½s ...",
+      description: "Inspired by the author's real-life experiences, this second hilarious and sweet novel about sixth grade Egyptian immigrant Nadia has her battling school newspaper drama, controversy with the school mascot, and some magical mischief, too. Nadia loves fun facts. Here are a few about her: There was a magical—and hilarious—ancient Egyptian teacher named Titi trapped in her hippo amulet until she freed him last fall.Her school is choosing a new mascot and her idea is totally going to win!She’s going to kick butt writing for the school newspaper this term... ...Maybe. A couple of weeks in, the newspaper is a big mess. The mascot contest is mayhem, too. (Who knew choosing a costumed character could cause such controversy?!) Then Nadia and Titi discover that the hippo amulet holds a second secret, one that’s super powerful—and super scary. Too bad they have no idea how to stop it. But Nadia is on the case! If she can solve the mystery of an ancient amulet, winning the mascot contest and acing her reporter assignments should be easy...right? From The Daily Show comedian Bassem Youssef and author Catherine R. Daly comes a humorous and heartfelt story about integrity, empathy, power, and friendship. Includes sections of black-and-white comics as well as black-and-white illustrations throughout, brought to life by Last Kids on Earth illustrator, Douglas Holgate.",
+      textSnippet: "Here are a few about her: There was a magical—and hilarious—ancient Egyptian teacher named Titi trapped in her hippo amulet until she freed him last fall.Her school is choosing a new mascot and her idea is totally going to win!She’s ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 82,
+      id: 81,
       isbn10: "1430218347",
       isbn13: "9781430218340",
       title: "Pro Git",
@@ -1480,7 +1462,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 83,
+      id: 82,
       isbn10: null,
       isbn13: null,
       title: "State Data Book",
@@ -1498,7 +1480,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 84,
+      id: 83,
       isbn10: "0307743985",
       isbn13: "9780307743985",
       title: "The Stories of John Cheever",
@@ -1510,13 +1492,13 @@ module.exports = {
       language: "en",
       publishDate: "2011-04-20",
       pageCount: 704,
-      description: "NATIONAL BESTSELLER Winner of the Pulitzer Prize Winner of the National Book Award Winner of the National Book Critics Circle Award, The Stories of John Cheever is a seminal collection from one of the true masters of the short story. Spanning the duration of Cheeverï¿½s long and distinguished career, these sixty-one stories chronicle and encapsulate the lives of what has been called ï¿½the greatest generation.ï¿½ From the early wonder and disillusionment of city life in ï¿½The Enormous Radioï¿½ to the surprising discoveries and common mysteries of suburbia in ï¿½The Housebreaker of Shady Hillï¿½ and ï¿½The Swimmer,ï¿½ these are tales that have helped define the form. Featuring a preface by the author, The Stories of John Cheever brings together some of the finest short stories ever written.",
+      description: "NATIONAL BESTSELLER Winner of the Pulitzer Prize Winner of the National Book Award Winner of the National Book Critics Circle Award, The Stories of John Cheever is a seminal collection from one of the true masters of the short story. Spanning the duration of Cheever’s long and distinguished career, these sixty-one stories chronicle and encapsulate the lives of what has been called “the greatest generation.” From the early wonder and disillusionment of city life in “The Enormous Radio” to the surprising discoveries and common mysteries of suburbia in “The Housebreaker of Shady Hill” and “The Swimmer,” these are tales that have helped define the form. Featuring a preface by the author, The Stories of John Cheever brings together some of the finest short stories ever written.",
       textSnippet: "NATIONAL BESTSELLER Winner of the Pulitzer Prize Winner of the National Book Award Winner of the National Book Critics Circle Award, The Stories of John Cheever is a seminal collection from one of the true masters of the short story.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 85,
+      id: 84,
       isbn10: "1647002575",
       isbn13: "9781647002572",
       title: "Out on a Limb",
@@ -1528,13 +1510,13 @@ module.exports = {
       language: "en",
       publishDate: "2022-02-15",
       pageCount: 40,
-      description: "This picture book about a child with a broken leg explores the role of courage and patience in the healing processï¿½both inside and out Luluï¿½s leg is broken, but sheï¿½s OK. Bonnie Bear has a matching yellow cast. Her sympathy trove has new books, sweet cards, and pretty daisies. She finds new ways to do ordinary thingsï¿½like taking a bath or wearing her favorite pants. As time wears on, the newness of the cast wears off and the weariness sets in. Lulu grows bored and grumpy by day. Her cast becomes itchy and twitchy at night. Eventually, itï¿½s time to get the cast off, but Luluï¿½s not ready. What if her leg canï¿½t do all of the things it used to do? What if it breaks again? A visit from Grandpa, a well-timed letter, and the power of healing help get Lulu back on her feet.",
-      textSnippet: "This picture book about a child with a broken leg explores the role of courage and patience in the healing processï¿½both inside and out Luluï¿½s leg is broken, but sheï¿½s OK. Bonnie Bear has a matching yellow cast.",
+      description: "This picture book about a child with a broken leg explores the role of courage and patience in the healing process—both inside and out Lulu’s leg is broken, but she’s OK. Bonnie Bear has a matching yellow cast. Her sympathy trove has new books, sweet cards, and pretty daisies. She finds new ways to do ordinary things—like taking a bath or wearing her favorite pants. As time wears on, the newness of the cast wears off and the weariness sets in. Lulu grows bored and grumpy by day. Her cast becomes itchy and twitchy at night. Eventually, it’s time to get the cast off, but Lulu’s not ready. What if her leg can’t do all of the things it used to do? What if it breaks again? A visit from Grandpa, a well-timed letter, and the power of healing help get Lulu back on her feet.",
+      textSnippet: "This picture book about a child with a broken leg explores the role of courage and patience in the healing process—both inside and out Lulu’s leg is broken, but she’s OK. Bonnie Bear has a matching yellow cast.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 86,
+      id: 85,
       isbn10: "1782125450",
       isbn13: "9781782125457",
       title: "Virginia Woolf Collection",
@@ -1552,7 +1534,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 87,
+      id: 86,
       isbn10: "1619613468",
       isbn13: "9781619613461",
       title: "The Book in a Box Method: The New Way to Quickly and Easily Write Your Book (Even If You're Not a Writer)",
@@ -1570,7 +1552,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 88,
+      id: 87,
       isbn10: "1400079071",
       isbn13: "9781400079070",
       title: "The Curious Incident of the Dog in the Night-Time",
@@ -1582,13 +1564,13 @@ module.exports = {
       language: "en",
       publishDate: "2004-05-18",
       pageCount: 240,
-      description: "A bestselling modern classicï¿½both poignant and funnyï¿½about a boy with autism who sets out to solve the murder of a neighbor's dog and discovers unexpected truths about himself and the world. Nominated as one of Americaï¿½s best-loved novels by PBSï¿½s The Great American Read Christopher John Francis Boone knows all the countries of the world and their capitals and every prime number up to 7,057. He relates well to animals but has no understanding of human emotions. He cannot stand to be touched. And he detests the color yellow. This improbable story of Christopher's quest to investigate the suspicious death of a neighborhood dog makes for one of the most captivating, unusual, and widely heralded novels in recent years.",
+      description: "A bestselling modern classic—both poignant and funny—about a boy with autism who sets out to solve the murder of a neighbor's dog and discovers unexpected truths about himself and the world. Nominated as one of America’s best-loved novels by PBS’s The Great American Read Christopher John Francis Boone knows all the countries of the world and their capitals and every prime number up to 7,057. He relates well to animals but has no understanding of human emotions. He cannot stand to be touched. And he detests the color yellow. This improbable story of Christopher's quest to investigate the suspicious death of a neighborhood dog makes for one of the most captivating, unusual, and widely heralded novels in recent years.",
       textSnippet: "And he detests the color yellow. This improbable story of Christopher&#39;s quest to investigate the suspicious death of a neighborhood dog makes for one of the most captivating, unusual, and widely heralded novels in recent years.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 89,
+      id: 88,
       isbn10: "1466598646",
       isbn13: "9781466598645",
       title: "The Art of Game Design",
@@ -1600,13 +1582,13 @@ module.exports = {
       language: "en",
       publishDate: "2014-11-06",
       pageCount: 600,
-      description: "Good game design happens when you view your game from as many perspectives as possible. Written by one of the world's top game designers, The Art of Game Design presents 100+ sets of questions, or different lenses, for viewing a gameï¿½s design, encompassing diverse fields such as psychology, architecture, music, visual design, film, software engineering, theme park design, mathematics, puzzle design, and anthropology. This Second Edition of a Game Developer Front Line Award winner: Describes the deepest and most fundamental principles of game design Demonstrates how tactics used in board, card, and athletic games also work in top-quality video games Contains valuable insight from Jesse Schell, the former chair of the International Game Developers Association and award-winning designer of Disney online games The Art of Game Design, Second Edition gives readers useful perspectives on how to make better game designs faster. It provides practical instruction on creating world-class games that will be played again and again.",
+      description: "Good game design happens when you view your game from as many perspectives as possible. Written by one of the world's top game designers, The Art of Game Design presents 100+ sets of questions, or different lenses, for viewing a game’s design, encompassing diverse fields such as psychology, architecture, music, visual design, film, software engineering, theme park design, mathematics, puzzle design, and anthropology. This Second Edition of a Game Developer Front Line Award winner: Describes the deepest and most fundamental principles of game design Demonstrates how tactics used in board, card, and athletic games also work in top-quality video games Contains valuable insight from Jesse Schell, the former chair of the International Game Developers Association and award-winning designer of Disney online games The Art of Game Design, Second Edition gives readers useful perspectives on how to make better game designs faster. It provides practical instruction on creating world-class games that will be played again and again.",
       textSnippet: "This Second Edition of a Game Developer Front Line Award winner: Describes the deepest and most fundamental principles of game design Demonstrates how tactics used in board, card, and athletic games also work in top-quality video games ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 90,
+      id: 89,
       isbn10: "006291331X",
       isbn13: "9780062913319",
       title: "Together",
@@ -1618,13 +1600,13 @@ module.exports = {
       language: "en",
       publishDate: "2020-04-07",
       pageCount: 352,
-      description: "The book we need NOW to avoid a social recession, Murthyï¿½s prescient message is about the importance of human connection, the hidden impact of loneliness on our health, and the social power of community. Humans are social creatures: In this simple and obvious fact lies both the problem and the solution to the current crisis of loneliness. In his groundbreaking book, the 19th surgeon general of the United States Dr. Vivek Murthy makes a case for loneliness as a public health concern: a root cause and contributor to many of the epidemics sweeping the world today from alcohol and drug addiction to violence to depression and anxiety. Loneliness, he argues, is affecting not only our health, but also how our children experience school, how we perform in the workplace, and the sense of division and polarization in our society. But, at the center of our loneliness is our innate desire to connect. We have evolved to participate in community, to forge lasting bonds with others, to help one another, and to share life experiences. We are, simply, better together. The lessons in Together have immediate relevance and application. These four key strategies will help us not only to weather this crisis, but also to heal our social world far into the future. Spend time each day with those you love. Devote at least 15 minutes each day to connecting with those you most care about. Focus on each other. Forget about multitasking and give the other person the gift of your full attention, making eye contact, if possible, and genuinely listening. Embrace solitude. The first step toward building stronger connections with others is to build a stronger connection with oneself. Meditation, prayer, art, music, and time spent outdoors can all be sources of solitary comfort and joy. Help and be helped. Service is a form of human connection that reminds us of our value and purpose in life. Checking on a neighbor, seeking advice, even just offering a smile to a stranger six feet away, all can make us stronger. During Murthyï¿½s tenure as Surgeon General and during the research for Together, he found that there were few issues that elicited as much enthusiastic interest from both very conservative and very liberal members of Congress, from young and old people, or from urban and rural residents alike. Loneliness was something so many people have known themselves or have seen in the people around them. In the book, Murthy also shares his own deeply personal experiences with the subject--from struggling with loneliness in school, to the devastating loss of his uncle who succumbed to his own loneliness, as well as the important example of community and connection that his parents modeled. Simply, itï¿½s a universal condition that affects all of us directly or through the people we loveï¿½now more than ever.",
-      textSnippet: "The book we need NOW to avoid a social recession, Murthyï¿½s prescient message is about the importance of human connection, the hidden impact of loneliness on our health, and the social power of community.",
+      description: "The book we need NOW to avoid a social recession, Murthy’s prescient message is about the importance of human connection, the hidden impact of loneliness on our health, and the social power of community. Humans are social creatures: In this simple and obvious fact lies both the problem and the solution to the current crisis of loneliness. In his groundbreaking book, the 19th surgeon general of the United States Dr. Vivek Murthy makes a case for loneliness as a public health concern: a root cause and contributor to many of the epidemics sweeping the world today from alcohol and drug addiction to violence to depression and anxiety. Loneliness, he argues, is affecting not only our health, but also how our children experience school, how we perform in the workplace, and the sense of division and polarization in our society. But, at the center of our loneliness is our innate desire to connect. We have evolved to participate in community, to forge lasting bonds with others, to help one another, and to share life experiences. We are, simply, better together. The lessons in Together have immediate relevance and application. These four key strategies will help us not only to weather this crisis, but also to heal our social world far into the future. Spend time each day with those you love. Devote at least 15 minutes each day to connecting with those you most care about. Focus on each other. Forget about multitasking and give the other person the gift of your full attention, making eye contact, if possible, and genuinely listening. Embrace solitude. The first step toward building stronger connections with others is to build a stronger connection with oneself. Meditation, prayer, art, music, and time spent outdoors can all be sources of solitary comfort and joy. Help and be helped. Service is a form of human connection that reminds us of our value and purpose in life. Checking on a neighbor, seeking advice, even just offering a smile to a stranger six feet away, all can make us stronger. During Murthy’s tenure as Surgeon General and during the research for Together, he found that there were few issues that elicited as much enthusiastic interest from both very conservative and very liberal members of Congress, from young and old people, or from urban and rural residents alike. Loneliness was something so many people have known themselves or have seen in the people around them. In the book, Murthy also shares his own deeply personal experiences with the subject--from struggling with loneliness in school, to the devastating loss of his uncle who succumbed to his own loneliness, as well as the important example of community and connection that his parents modeled. Simply, it’s a universal condition that affects all of us directly or through the people we love—now more than ever.",
+      textSnippet: "The book we need NOW to avoid a social recession, Murthy’s prescient message is about the importance of human connection, the hidden impact of loneliness on our health, and the social power of community.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 91,
+      id: 90,
       isbn10: "0399589066",
       isbn13: "9780399589065",
       title: "Good Talk",
@@ -1636,13 +1618,13 @@ module.exports = {
       language: "en",
       publishDate: "2020-03-24",
       pageCount: 368,
-      description: "A ï¿½beautiful and eye-openingï¿½ (Jacqueline Woodson), ï¿½hilarious and heart-rendingï¿½ (Celeste Ng) graphic memoir about American identity, interracial families, and the realities that divide us, from the acclaimed author of The Sleepwalkerï¿½s Guide to Dancing. NAMED ONE OF THE TEN BEST BOOKS OF THE YEAR BY Chicago Tribune ï¿½ The New York Public Library ï¿½ Publishers Weekly AND ONE OF THE BEST BOOKS OF THE YEAR BY The New York Times Book Review ï¿½ Time ï¿½ BuzzFeed ï¿½ Esquire ï¿½ Library Journal ï¿½ Kirkus Reviews ï¿½How brown is too brown?ï¿½ ï¿½Can Indians be racist?ï¿½ ï¿½What does real love between really different people look like?ï¿½ Like many six-year-olds, Mira Jacobï¿½s half-Jewish, half-Indian son, Z, has questions about everything. At first they are innocuous enough, but as tensions from the 2016 election spread from the media into his own family, they become much, much more complicated. Trying to answer him honestly, Mira has to think back to where sheï¿½s gotten her own answers: her most formative conversations about race, color, sexuality, and, of course, love. Written with humor and vulnerability, this deeply relatable graphic memoir is a love letter to the art of conversationï¿½and to the hope that hovers in our most difficult questions. LONGLISTED FOR THE PEN/OPEN BOOK AWARD ï¿½Jacobï¿½s earnest recollections are often heartbreaking, but also infused with levity and humor. What stands out most is the fierce compassion with which she parses the complexities of family and love.ï¿½ï¿½Time ï¿½Good Talk uses a masterful mix of pictures and words to speak on lifeï¿½s most uncomfortable conversations.ï¿½ï¿½io9 ï¿½Mira Jacob just made me toss everything I thought was possible in a book-as-art-object into the garbage. Her new book changes everything.ï¿½ï¿½Kiese Laymon, New York Times bestselling author of Heavy",
-      textSnippet: "NAMED ONE OF THE TEN BEST BOOKS OF THE YEAR BY Chicago Tribune ï¿½ The New York Public Library ï¿½ Publishers Weekly AND ONE OF THE BEST BOOKS OF THE YEAR BY The New York Times Book Review ï¿½ Time ï¿½ BuzzFeed ï¿½ Esquire ï¿½ Library ...",
+      description: "A “beautiful and eye-opening” (Jacqueline Woodson), “hilarious and heart-rending” (Celeste Ng) graphic memoir about American identity, interracial families, and the realities that divide us, from the acclaimed author of The Sleepwalker’s Guide to Dancing. NAMED ONE OF THE TEN BEST BOOKS OF THE YEAR BY Chicago Tribune • The New York Public Library • Publishers Weekly AND ONE OF THE BEST BOOKS OF THE YEAR BY The New York Times Book Review • Time • BuzzFeed • Esquire • Library Journal • Kirkus Reviews “How brown is too brown?” “Can Indians be racist?” “What does real love between really different people look like?” Like many six-year-olds, Mira Jacob’s half-Jewish, half-Indian son, Z, has questions about everything. At first they are innocuous enough, but as tensions from the 2016 election spread from the media into his own family, they become much, much more complicated. Trying to answer him honestly, Mira has to think back to where she’s gotten her own answers: her most formative conversations about race, color, sexuality, and, of course, love. Written with humor and vulnerability, this deeply relatable graphic memoir is a love letter to the art of conversation—and to the hope that hovers in our most difficult questions. LONGLISTED FOR THE PEN/OPEN BOOK AWARD “Jacob’s earnest recollections are often heartbreaking, but also infused with levity and humor. What stands out most is the fierce compassion with which she parses the complexities of family and love.”—Time “Good Talk uses a masterful mix of pictures and words to speak on life’s most uncomfortable conversations.”—io9 “Mira Jacob just made me toss everything I thought was possible in a book-as-art-object into the garbage. Her new book changes everything.”—Kiese Laymon, New York Times bestselling author of Heavy",
+      textSnippet: "NAMED ONE OF THE TEN BEST BOOKS OF THE YEAR BY Chicago Tribune • The New York Public Library • Publishers Weekly AND ONE OF THE BEST BOOKS OF THE YEAR BY The New York Times Book Review • Time • BuzzFeed • Esquire • Library ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 92,
+      id: 91,
       isbn10: "1443883247",
       isbn13: "9781443883245",
       title: "Mathematics in Industry",
@@ -1660,7 +1642,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 93,
+      id: 92,
       isbn10: "1250782961",
       isbn13: "9781250782960",
       title: "Goliath",
@@ -1672,13 +1654,13 @@ module.exports = {
       language: "en",
       publishDate: "2022-01-25",
       pageCount: 336,
-      description: "ï¿½Onyebuchi sets fire to the boundary between fiction and reality, and brings a crumbling city and an all too plausible future to vibrant life. Riveting, disturbing, and rendered in masterful detail.ï¿½ï¿½Leigh Bardugo In his adult novel debut, Hugo, Nebula, Locus, and NAACP Image Award finalist and ALA Alex and New England Book Award winner Tochi Onyebuchi delivers a sweeping science fiction epic in the vein of Samuel R. Delany and Station Eleven In the 2050s, Earth has begun to empty. Those with the means and the privilege have departed the great cities of the United States for the more comfortable confines of space colonies. Those left behind salvage what they can from the collapsing infrastructure. As they eke out an existence, their neighborhoods are being cannibalized. Brick by brick, their houses are sent to the colonies, what was once a home now a quaint reminder for the colonists of the world that they wrecked. A primal biblical epic flung into the future, Goliath weaves together disparate narrativesï¿½a space-dweller looking at New Haven, Connecticut as a chance to reconnect with his spiraling lover; a group of laborers attempting to renew the promises of Earthï¿½s crumbling cities; a journalist attempting to capture the violence of the streets; a marshal trying to solve a kidnappingï¿½into a richly urgent mosaic about race, class, gentrification, and who is allowed to be the hero of any history. At the Publisher's request, this title is being sold without Digital Rights Management Software (DRM) applied.",
+      description: "“Onyebuchi sets fire to the boundary between fiction and reality, and brings a crumbling city and an all too plausible future to vibrant life. Riveting, disturbing, and rendered in masterful detail.”—Leigh Bardugo In his adult novel debut, Hugo, Nebula, Locus, and NAACP Image Award finalist and ALA Alex and New England Book Award winner Tochi Onyebuchi delivers a sweeping science fiction epic in the vein of Samuel R. Delany and Station Eleven In the 2050s, Earth has begun to empty. Those with the means and the privilege have departed the great cities of the United States for the more comfortable confines of space colonies. Those left behind salvage what they can from the collapsing infrastructure. As they eke out an existence, their neighborhoods are being cannibalized. Brick by brick, their houses are sent to the colonies, what was once a home now a quaint reminder for the colonists of the world that they wrecked. A primal biblical epic flung into the future, Goliath weaves together disparate narratives—a space-dweller looking at New Haven, Connecticut as a chance to reconnect with his spiraling lover; a group of laborers attempting to renew the promises of Earth’s crumbling cities; a journalist attempting to capture the violence of the streets; a marshal trying to solve a kidnapping—into a richly urgent mosaic about race, class, gentrification, and who is allowed to be the hero of any history. At the Publisher's request, this title is being sold without Digital Rights Management Software (DRM) applied.",
       textSnippet: "A Most Anticipated Pick for USA Today | Bustle | Buzzfeed | Goodreads | Nerdist | io9 | WBUR | Polygon | The New Scientist &quot;In this ambitious novel, dense with perspectives and social commentary, Onyebuchi dreams up disparate lives in a ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 94,
+      id: 93,
       isbn10: null,
       isbn13: null,
       title: "General Explanations of the Administration's Revenue Proposals",
@@ -1696,7 +1678,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 95,
+      id: 94,
       isbn10: "1942185758",
       isbn13: "9781942185758",
       title: "Helen Pashgian: Spheres and Lenses",
@@ -1714,7 +1696,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 96,
+      id: 95,
       isbn10: "1473610370",
       isbn13: "9781473610378",
       title: "Business Adventures",
@@ -1732,7 +1714,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 97,
+      id: 96,
       isbn10: "1914224000",
       isbn13: "9781914224003",
       title: "Diego Rivera",
@@ -1750,7 +1732,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 98,
+      id: 97,
       isbn10: "1914224027",
       isbn13: "9781914224027",
       title: "Catalyst",
@@ -1762,13 +1744,13 @@ module.exports = {
       language: "en",
       publishDate: "2021-10-14",
       pageCount: 120,
-      description: "This anthology showcases new comics voices alongside more established creators as they all explore a single theme--\"catalyst\"--through the graphic short story form This collection of short stories presents pieces from established artists Asia Alfasi, Catherine Anyango Grï¿½newald, Sonia Leong, and Woodrow Phoenix alongside work from up-and-coming new voices, with the aim of reflecting the diversity and wealth of talent in the UK comics scene. United by a single theme--\"catalyst\"--the contributors have each written and drawn an eight-page story to explore ideas of reaction and transformation. Edited by Ayoola Solarin, this provocative, intriguing, and revelatory anthology invites readers to consider the situations, people, and events that might accelerate change in their own lives and in our society as a whole.",
+      description: "This anthology showcases new comics voices alongside more established creators as they all explore a single theme--\"catalyst\"--through the graphic short story form This collection of short stories presents pieces from established artists Asia Alfasi, Catherine Anyango Grünewald, Sonia Leong, and Woodrow Phoenix alongside work from up-and-coming new voices, with the aim of reflecting the diversity and wealth of talent in the UK comics scene. United by a single theme--\"catalyst\"--the contributors have each written and drawn an eight-page story to explore ideas of reaction and transformation. Edited by Ayoola Solarin, this provocative, intriguing, and revelatory anthology invites readers to consider the situations, people, and events that might accelerate change in their own lives and in our society as a whole.",
       textSnippet: "Born of SelfMadeHero&#39;s 12-week Graphic Anthology Programme, this collection presents pieces from mentors Asia Alfasi, Catherine Anyango Grunewald, Sonia Leong and Woodrow Phoenix alongside work from up-and-coming new voices, with the aim of ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 99,
+      id: 98,
       isbn10: "1846883180",
       isbn13: "9781846883187",
       title: "Angela Merkel",
@@ -1780,13 +1762,13 @@ module.exports = {
       language: "en",
       publishDate: "2014-09-01",
       pageCount: 300,
-      description: "With the Eurozone engulfed in an unprecedented crisis, one political figure looms largest of all, Angela Merkel, the leader of its most powerful economy. While foreign affairs have become the central issues of her chancellorship in this crucial election year, the entire world is anxiously looking to Germany to play its part in Europeï¿½s rescue. This authorized biography sheds light on the person behind the politician ï¿½ from her youthful days of hitchhiking in Tbilisi to being the guest of honour at a White House state dinner ï¿½ and examines how a girl from East Germany rose to the highest echelons of European power. As well as explaining how Angela Merkelï¿½s world view was shaped and influenced by her background and ideology, Stefan Korneliusï¿½s lively account discusses her personal relations with international counterparts such as David Cameron, Barack Obama or Vladimir Putin, as well as her attitude towards the countries and cultures over which they rule.",
+      description: "With the Eurozone engulfed in an unprecedented crisis, one political figure looms largest of all, Angela Merkel, the leader of its most powerful economy. While foreign affairs have become the central issues of her chancellorship in this crucial election year, the entire world is anxiously looking to Germany to play its part in Europe’s rescue. This authorized biography sheds light on the person behind the politician – from her youthful days of hitchhiking in Tbilisi to being the guest of honour at a White House state dinner – and examines how a girl from East Germany rose to the highest echelons of European power. As well as explaining how Angela Merkel’s world view was shaped and influenced by her background and ideology, Stefan Kornelius’s lively account discusses her personal relations with international counterparts such as David Cameron, Barack Obama or Vladimir Putin, as well as her attitude towards the countries and cultures over which they rule.",
       textSnippet: "With the Eurozone engulfed in an unprecedented crisis, one political figure looms largest of all, Angela Merkel, the leader of its most powerful economy.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 100,
+      id: 99,
       isbn10: "1846884683",
       isbn13: "9781846884689",
       title: "CHINESE CONUNDRUM",
@@ -1804,7 +1786,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 101,
+      id: 100,
       isbn10: "1433816598",
       isbn13: "9781433816598",
       title: "This Day in June",
@@ -1822,7 +1804,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 102,
+      id: 101,
       isbn10: "8026882466",
       isbn13: "9788026882466",
       title: "The Years",
@@ -1840,7 +1822,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 103,
+      id: 102,
       isbn10: "0062974769",
       isbn13: "9780062974761",
       title: "The Orchard",
@@ -1852,13 +1834,13 @@ module.exports = {
       language: "en",
       publishDate: "2020-11-17",
       pageCount: 496,
-      description: "A NATIONAL JEWISH BOOK AWARD FINALIST A Recommended Book From: The New York Times * Good Morning America * Entertainment Weekly * Electric Literature * The New York Post * Alma * The Millions * Book Riot A commanding debut and a poignant coming-of-age story about a devout Jewish high school student whose plunge into the secularized world threatens everything he knows of himself Ari Edenï¿½s life has always been governed by strict rules. In ultra-Orthodox Brooklyn, his days are dedicated to intense study and religious rituals, and adolescence feels profoundly lonely. So when his family announces that they are moving to a glitzy Miami suburb, Ari seizes his unexpected chance for reinvention. Enrolling in an opulent Jewish academy, Ari is stunned by his peersï¿½ dizzying wealth, ambition, and shameless pursuit of lifeï¿½s pleasures. When the academyï¿½s golden boy, Noah, takes Ari under his wing, Ari finds himself entangled in the schoolï¿½s most exclusive and wayward group. These friends are magnetic and defiantï¿½especially Evan, the brooding genius of the bunch, still living in the shadow of his motherï¿½s death. Influenced by their charismatic rabbi, the group begins testing their religion in unconventional ways. Soon Ari and his friends are pushing moral boundaries and careening toward a perilous futureï¿½one in which the traditions of their faith are repurposed to mysterious, tragic ends. Mesmerizing and playful, heartrending and darkly romantic, The Orchard probes the conflicting forces that determine who we become: the heady relationships of youth, the allure of greatness, the doctrines we inherit, and our concealed desires.",
+      description: "A NATIONAL JEWISH BOOK AWARD FINALIST A Recommended Book From: The New York Times * Good Morning America * Entertainment Weekly * Electric Literature * The New York Post * Alma * The Millions * Book Riot A commanding debut and a poignant coming-of-age story about a devout Jewish high school student whose plunge into the secularized world threatens everything he knows of himself Ari Eden’s life has always been governed by strict rules. In ultra-Orthodox Brooklyn, his days are dedicated to intense study and religious rituals, and adolescence feels profoundly lonely. So when his family announces that they are moving to a glitzy Miami suburb, Ari seizes his unexpected chance for reinvention. Enrolling in an opulent Jewish academy, Ari is stunned by his peers’ dizzying wealth, ambition, and shameless pursuit of life’s pleasures. When the academy’s golden boy, Noah, takes Ari under his wing, Ari finds himself entangled in the school’s most exclusive and wayward group. These friends are magnetic and defiant—especially Evan, the brooding genius of the bunch, still living in the shadow of his mother’s death. Influenced by their charismatic rabbi, the group begins testing their religion in unconventional ways. Soon Ari and his friends are pushing moral boundaries and careening toward a perilous future—one in which the traditions of their faith are repurposed to mysterious, tragic ends. Mesmerizing and playful, heartrending and darkly romantic, The Orchard probes the conflicting forces that determine who we become: the heady relationships of youth, the allure of greatness, the doctrines we inherit, and our concealed desires.",
       textSnippet: "A NATIONAL JEWISH BOOK AWARD FINALIST A Recommended Book From: The New York Times * Good Morning America * Entertainment Weekly * Electric Literature * The New York Post * Alma * The Millions * Book Riot A commanding debut and a poignant ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 104,
+      id: 103,
       isbn10: "1737277530",
       isbn13: "9781737277538",
       title: "ABC Moonlight",
@@ -1870,13 +1852,13 @@ module.exports = {
       language: "en",
       publishDate: "2022-02",
       pageCount: 108,
-      description: "With mounting intensity extended across three sections of poems, Ben Estes' achingly personal second collection unfolds to reveal an uncertain past, present, and future that is by turns mysterious and beautiful. ABC MOONLIGHT contains poems that are filled with reflective awareness and subconsciously constructed dreams; a sweeping landscape of queer Midwestern loss and desire; and pairs of \"folded poems\" that question love, hope, and vulnerability in these harrowing times. Rather than prescribing answers, Estes offers the reader intimacy and open-handed, big-hearted consolation--\"Now to let something go / of myself, / without any need / to replace it\" \"Ben Estes' new poems, here gathered together into numbered, cadenced and syncopated movements, trace themselves onto the reader's consciousness like a sort of extended, scorched earth sigh: 'Humans will / lose their purpose,' it says. 'Phew.' Flood and fire focused, like the times they are written inside of, the poems' language drives straight towards, and eventually lands in, the telegraphic delivery of dreams, where loss and love are confused and finally remembered to be the same thing. The unexpectedness of fantasy mixed with the inevitability of memory is narrated by Estes from both before and after.\"--Matt Connors \"Valï¿½ry says that the future is \"the most perceptible fraction of the present moment,\" but ABC MOONLIGHT gets us, as Devo says, jerkin' back'n' forth between what a mind once made up and the life to come. The writing here is a generous fusion of poetry and dreaming, one in which the poet-dreamer is ever cognizant of the collective as he plumbs his mind to find love and death in the American navel. If this book were a band, it would be called Ben Estes and Latent Destiny, and they'd play at your place every night.\"--Graham Foust \"This poetry is snaily, somehow: both within and looking upon. It suggests we have to hide, but also plod on. And that is just how things feel, so often now. Ben Estes's new poems give me the feeling of life, aliveness, what it's like. There's apocalypse in ABC Moonlight but also tender, gorgeous wondering about human futures, wonder in both the forward-looking action sense (I wonder what will happen) and wonder in whatever is left of the Romantic addressï¿½awe and amazement. The line is magic again. The moon is babble.\"--Hannah Brooks Motl Poetry. LGBTQIA Studies. California Interest.",
+      description: "With mounting intensity extended across three sections of poems, Ben Estes' achingly personal second collection unfolds to reveal an uncertain past, present, and future that is by turns mysterious and beautiful. ABC MOONLIGHT contains poems that are filled with reflective awareness and subconsciously constructed dreams; a sweeping landscape of queer Midwestern loss and desire; and pairs of \"folded poems\" that question love, hope, and vulnerability in these harrowing times. Rather than prescribing answers, Estes offers the reader intimacy and open-handed, big-hearted consolation--\"Now to let something go / of myself, / without any need / to replace it\" \"Ben Estes' new poems, here gathered together into numbered, cadenced and syncopated movements, trace themselves onto the reader's consciousness like a sort of extended, scorched earth sigh: 'Humans will / lose their purpose,' it says. 'Phew.' Flood and fire focused, like the times they are written inside of, the poems' language drives straight towards, and eventually lands in, the telegraphic delivery of dreams, where loss and love are confused and finally remembered to be the same thing. The unexpectedness of fantasy mixed with the inevitability of memory is narrated by Estes from both before and after.\"--Matt Connors \"Valéry says that the future is \"the most perceptible fraction of the present moment,\" but ABC MOONLIGHT gets us, as Devo says, jerkin' back'n' forth between what a mind once made up and the life to come. The writing here is a generous fusion of poetry and dreaming, one in which the poet-dreamer is ever cognizant of the collective as he plumbs his mind to find love and death in the American navel. If this book were a band, it would be called Ben Estes and Latent Destiny, and they'd play at your place every night.\"--Graham Foust \"This poetry is snaily, somehow: both within and looking upon. It suggests we have to hide, but also plod on. And that is just how things feel, so often now. Ben Estes's new poems give me the feeling of life, aliveness, what it's like. There's apocalypse in ABC Moonlight but also tender, gorgeous wondering about human futures, wonder in both the forward-looking action sense (I wonder what will happen) and wonder in whatever is left of the Romantic addressñawe and amazement. The line is magic again. The moon is babble.\"--Hannah Brooks Motl Poetry. LGBTQIA Studies. California Interest.",
       textSnippet: "If this book were a band, it would be called Ben Estes and Latent Destiny, and they&#39;d play at your place every night.&quot;--Graham Foust &quot;This poetry is snaily, somehow: both within and looking upon.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 105,
+      id: 104,
       isbn10: "1684113717",
       isbn13: "9781684113712",
       title: "Daily Reflections",
@@ -1894,7 +1876,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 106,
+      id: 105,
       isbn10: "0890425752",
       isbn13: "9780890425756",
       title: "Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition, Text Revision (DSM-5-TR(tm))",
@@ -1912,7 +1894,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 107,
+      id: 106,
       isbn10: "179237738X",
       isbn13: "9781792377389",
       title: "Last Dance",
@@ -1930,7 +1912,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 108,
+      id: 107,
       isbn10: "1419388770",
       isbn13: "9781419388774",
       title: "From Here to Infinity",
@@ -1948,7 +1930,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 109,
+      id: 108,
       isbn10: "0160941563",
       isbn13: "9780160941566",
       title: "Where is Bear?",
@@ -1966,7 +1948,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 110,
+      id: 109,
       isbn10: "1501833219",
       isbn13: "9781501833212",
       title: "United Methodist Church Book of Discipline 2016",
@@ -1984,7 +1966,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 111,
+      id: 110,
       isbn10: "1629729167",
       isbn13: "9781629729169",
       title: "General Conference Addresses Journal Edition",
@@ -2002,7 +1984,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 112,
+      id: 111,
       isbn10: "0160941520",
       isbn13: "9780160941528",
       title: "Milestone Moments",
@@ -2020,7 +2002,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 113,
+      id: 112,
       isbn10: "059856893X",
       isbn13: "9780598568939",
       title: "Mental disorders : diagnostic and statistical manual",
@@ -2038,7 +2020,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 114,
+      id: 113,
       isbn10: "0007368771",
       isbn13: "9780007368778",
       title: "Saving Fish From Drowning",
@@ -2050,13 +2032,13 @@ module.exports = {
       language: "en",
       publishDate: "2012-05-31",
       pageCount: 496,
-      description: "Please note that due to the limitations of some ereading devices, it was not possible to represent diacritical marks in this title. The highly anticipated novel from the bestselling author of ï¿½The Joy Luck Clubï¿½ and ï¿½The Bonesetterï¿½s Daughterï¿½.",
-      textSnippet: "The highly anticipated novel from the bestselling author of ï¿½The Joy Luck Clubï¿½ and ï¿½The Bonesetterï¿½s Daughterï¿½.",
+      description: "Please note that due to the limitations of some ereading devices, it was not possible to represent diacritical marks in this title. The highly anticipated novel from the bestselling author of ‘The Joy Luck Club’ and ‘The Bonesetter’s Daughter’.",
+      textSnippet: "The highly anticipated novel from the bestselling author of ‘The Joy Luck Club’ and ‘The Bonesetter’s Daughter’.",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 115,
+      id: 114,
       isbn10: "133877624X",
       isbn13: "9781338776249",
       title: "My Mindfulness Workbook: Scholastic Early Learners (My Growth Mindset)",
@@ -2074,7 +2056,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 116,
+      id: 115,
       isbn10: "0316591777",
       isbn13: "9780316591775",
       title: "Wildwood Whispers",
@@ -2086,13 +2068,13 @@ module.exports = {
       language: "en",
       publishDate: "2022-02",
       pageCount: 416,
-      description: "A heartwarming tale of hope, fate, and folk magic unfolds when a young woman travels to a sleepy southern town in the Appalachian Mountains to bury her best friend. \"A feast for the senses. Willa Reece has written a magical, romantic tale about our essential connections to nature and to each other.\" --Sarah Addison Allen, New York Times bestselling author At the age of eleven, Mel Smith's life found its purpose when she met Sarah Ross. Ten years later, Sarah's sudden death threatens to break her. To fulfill a final promise to her best friend, Mel travels to an idyllic small town nestled in the shadows of the Appalachian Mountains. Yet Morgan's Gap is more than a land of morning mists and deep forest shadows. There are secrets that call to Mel, in the gaze of the gnarled and knowing woman everyone calls Granny, in a salvaged remedy book filled with the magic of simple mountain traditions, and in the connection, she feels to the Ross homestead and the wilderness around it. With every taste of sweet honey and tart blackberries, the wildwood twines further into Mel's broken heart. But a threat lingers in the woods--one that may have something to do with Sarah's untimely death and that has now set its sight on Mel. The wildwood is whispering. It has secrets to reveal--if you're willing to listen . . . Praise for Wildwood Whispers: \"Willa Reece has perfectly infused magic, suspense, and a love of nature deep into the pages of this novel. Ultimately filled with hope, love, and the power of growth and resilience, Wildwood Whispers is a thought-provoking, memorable debut.\" --Heather Webber, USA Today bestselling author of Midnight at the Blackbird Cafï¿½ \"I loved everything about Wildwood Whispers. Readers craving a witchy story full of found family, lush nature, and small-town secrets will find it utterly enchanting.\" --Hester Fox, author of The Witch of Willow Hall",
+      description: "A heartwarming tale of hope, fate, and folk magic unfolds when a young woman travels to a sleepy southern town in the Appalachian Mountains to bury her best friend. \"A feast for the senses. Willa Reece has written a magical, romantic tale about our essential connections to nature and to each other.\" --Sarah Addison Allen, New York Times bestselling author At the age of eleven, Mel Smith's life found its purpose when she met Sarah Ross. Ten years later, Sarah's sudden death threatens to break her. To fulfill a final promise to her best friend, Mel travels to an idyllic small town nestled in the shadows of the Appalachian Mountains. Yet Morgan's Gap is more than a land of morning mists and deep forest shadows. There are secrets that call to Mel, in the gaze of the gnarled and knowing woman everyone calls Granny, in a salvaged remedy book filled with the magic of simple mountain traditions, and in the connection, she feels to the Ross homestead and the wilderness around it. With every taste of sweet honey and tart blackberries, the wildwood twines further into Mel's broken heart. But a threat lingers in the woods--one that may have something to do with Sarah's untimely death and that has now set its sight on Mel. The wildwood is whispering. It has secrets to reveal--if you're willing to listen . . . Praise for Wildwood Whispers: \"Willa Reece has perfectly infused magic, suspense, and a love of nature deep into the pages of this novel. Ultimately filled with hope, love, and the power of growth and resilience, Wildwood Whispers is a thought-provoking, memorable debut.\" --Heather Webber, USA Today bestselling author of Midnight at the Blackbird Café \"I loved everything about Wildwood Whispers. Readers craving a witchy story full of found family, lush nature, and small-town secrets will find it utterly enchanting.\" --Hester Fox, author of The Witch of Willow Hall",
       textSnippet: "&quot; --Sarah Addison Allen, New York Times bestselling author &quot;Dark, tender, and thought-provoking, Wildwood Whispers is a beautifully woven tale of fantasy, feminism, and mystery set in rural Appalachia.&quot;?Constance Sayers, author of A Witch ...",
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      id: 117,
+      id: 116,
       isbn10: "1423128338",
       isbn13: "9781423128335",
       title: "I See Colors",
@@ -2110,7 +2092,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 118,
+      id: 117,
       isbn10: "1433836416",
       isbn13: "9781433836411",
       title: "Prediction Statistics for Psychological Assessment",
@@ -2128,7 +2110,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 119,
+      id: 118,
       isbn10: "1433836564",
       isbn13: "9781433836565",
       title: "The Ethical Lives of Clients",
@@ -2146,7 +2128,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      id: 120,
+      id: 119,
       isbn10: "3969990025",
       isbn13: "9783969990025",
       title: "Susan Meiselas: Carnival Strippers - Revisited",
@@ -2171,3 +2153,4 @@ module.exports = {
     await queryInterface.bulkDelete('Books', null, {});
   }
 };
+
