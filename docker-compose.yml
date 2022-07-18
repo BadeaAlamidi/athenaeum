@@ -10,9 +10,5 @@ services:
   server:
     image: athenaeum-server
     build: ./server
-    volumes:
-      - "db:/home/node/app/db"
     ports:
       - "5000:5000"
-volumes:
-  db:
