@@ -14,6 +14,7 @@ export default /*const BooksTable =*/ (sequelize, DataTypes) => {
       // define association here
       this.hasMany(models.Category)
       this.belongsToMany(models.Author,{through:models.Wrote, foreignKey: 'bookId'});
+      this.belongsToMany(models.Tag, {through: models.Tagmapping, foreignKey: 'bookID'});
     }
   }
   Book.init({

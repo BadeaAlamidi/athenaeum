@@ -3,9 +3,16 @@
 import models from '../models/index.js';
 import {Op} from 'sequelize';
 
+// Queries the database to find books whose titles are similar
+//      to the provided req.query.searchString (or equivalent in case the
+//      searchString starts with isbn10/isbn13)
+//      req.query may (but is not guaranteed to) also contain information
+//      on how the results of the query should be sorted and/or ordered
+//
+//      returns an array of json elements
 const getBooks = async (req,res) =>{
     let books;
-    if (req.query){
+    if (Object.keys(req.query).length){
         let whereClause;
         switch (true){
             case /^isbn10:/.test(req.query.searchString) :
@@ -71,6 +78,7 @@ const getBooks = async (req,res) =>{
     }
     res.json(books);
 }
+
 const deleteBook = async (req,res) => {
     console.log("deleting book with id: " + req.body.bookId);
     let wrote = await models.Wrote.destroy({
@@ -88,4 +96,15 @@ const deleteBook = async (req,res) => {
         res.status(204).end();
     }).catch((err) => {console.error(err); res.status(500).end();});
 }
-export { getBooks, deleteBook};
+
+// queries the database for a single book through provided id
+// returns a json representing the book tuple
+const getBook = async (req,res)=>{
+    // findAll is used instead of findByPk because the book table has a date column in the model
+    // definition which is not a supported type in sqlite. this is circumvented with
+    // findAll with the raw:true option for the time being
+    const book = await models.Book.findAll({raw:true, where:{id:{[Op.eq]:req.params.id}}})
+    res.json(book);
+}
+
+export { getBooks, getBook, deleteBook};
