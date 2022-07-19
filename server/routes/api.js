@@ -13,5 +13,6 @@ router.get('/book/:id', getBook);
 router.get('/tags', getAllTags);
 router.get('/taggedbooks',getTaggedBooks);
 router.get('/bookauthors/:bookId', getBookAuthors);
+router.get('/booktags/:bookId', getBookTags);
 
 export default router;
