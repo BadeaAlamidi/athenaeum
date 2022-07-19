@@ -1,12 +1,13 @@
 <script>
+
     export let bookData;
     export let bookAuthors;
+    export let bookTags;
 
     const {isbn10, isbn13, title, subtitle, rating, 
         thumbnailUrl, language, publishDate, pageCount, description,
         textSnippet } = bookData;
 
-    //let displayAuthors = bookAuthors.length? bookAuthors[0] : '-';
 
     let DisplayDescription = textSnippet || description || 'No description available';
     let spanState = (textSnippet && description)? 'Show more' : undefined;
@@ -26,12 +27,14 @@
         --descWidth:auto;
         --gridWidth:80%;
         --headerRowHeight: 4vh;
+        /* --botInfoFlexDirection : column; */
     }}
     @media screen and (orientation: landscape){
         :root{
             --descWidth:15vw;
             --gridWidth:50%;
             --headerRowHeight: 10vh;
+            /* --botInfoFlexDirection : row; */
     }}
     #book-grid {
         display: grid;
@@ -45,9 +48,9 @@
                         "image .     .    " 7vh
                         "image desc  desc " auto
                         "image .     .    " 5vh
-                        "image rtng  ib13 " auto
-                        ".     lang  ib10 " auto
-                        ".     auth  auth " auto
+                        "image binfo binfo" auto
+                        ".     binfo binfo" auto
+                        ".     binfo binfo" auto
                        / auto  var(--descWidth)   var(--descWidth);
         column-gap: 5vw;
     }
@@ -67,11 +70,7 @@
     #pageCount{
         padding-left: 10px;
     }
-    .isbngrid{
-        margin-left: auto;
-    }
     #authorsContainer{
-        grid-area: auth;
         display:flex;
         flex-direction:column;
     }
@@ -79,6 +78,27 @@
         margin:0;
         display: flex;
         align-items: center;
+    }
+    #bottomInfo>*{
+        padding-bottom: 10px;
+    }
+    #bottomInfo{
+        grid-area: binfo;
+        display:flex;
+        /* flex-direction:var(--botInfoFlexDirection) */
+        flex-wrap:wrap;
+        gap: 3vh 5vw
+        
+    }
+    #firstGridCol, #secondGridCol{
+        display:grid;
+        grid-template: "label1 info1" auto
+        "label2 info2" auto
+        "label3 info3" auto
+        / 5em    auto
+    }
+    #firstGridCol>*, #secondGridCol>*{
+        padding-bottom:10px;
     }
 </style>
 <div id=book-grid>
@@ -99,18 +119,39 @@
       </span>
       {/if}
     </div>
-    <div id=rating style:grid-area=rtng>Rating: {rating || '-'}</div>
-    <div id=language style:grid-area=lang>Language: {language.toUpperCase() || '-'}</div>
-    <div id=isbn13 class=isbngrid style:grid-area=ib13>ISBN13: {isbn13|| '-'}</div>
-    <div id=isbn10 class=isbngrid style:grid-area=ib10>ISBN10: {isbn10|| '-'}</div>
-    {#if bookAuthors.length == 0}
-    <div style:gird-area=auth>Authors: -</div>
-    {:else}
-    <div id=authorsContainer>
-        Authors: 
-        {#each bookAuthors as {author}}
-        <span>—{author}—</span>
-        {/each}
+    <div id=bottomInfo>
+        <div id=firstGridCol>
+            <div id=rating class=bottominfo style:grid-area=label1>Rating</div>
+            <div style:grid-area=info1>: {rating || '-'}</div>
+            <div id=language class=bottominfo style:grid-area=label2>Language</div>
+            <div style:grid-area=info2>: {language.toUpperCase() || '-'}</div>
+            {#if bookAuthors.length == 0}
+            <div style:gird-area=label3 class=bottominfo>Authors</div>
+            <div id=authorsContainer style:grid-area=info3>: -</div>
+            {:else}
+            <div style:gird-area=label3 class=bottominfo>Authors</div>
+            <div id=authorsContainer style:grid-area=info3>
+                {#each bookAuthors as {author}}
+                <span>—{author}—</span>
+                {/each}
+            </div>
+            {/if}
+        </div>
+        <div id = secondGridCol>
+            <div id=isbn13 class="bottominfo" style:grid-area=label1>ISBN13</div>
+            <div style:grid-area=info1>: {isbn13 || '-'}</div>
+            <div id=isbn10 class="bottominfo" style:grid-area=label2>ISBN10</div>
+            <div style:grid-area=info2>: {isbn10 || '-'}</div>
+            <div class=bottominfo style:grid-area=label3>Tags</div>
+            {#if bookTags.length == 0}
+            <span style:grid-area=info3>: -</span>
+            {:else}
+                <div id=tagsContainer style:grid-area=info3>: 
+                    {#each bookTags as {tagname}}
+                    <span>{tagname}</span>
+                    {/each}
+                </div>
+            {/if}
+        </div>
     </div>
-    {/if}
 </div>
