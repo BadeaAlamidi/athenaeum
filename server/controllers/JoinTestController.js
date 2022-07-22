@@ -20,11 +20,11 @@ export default async (req,res) =>{
             const authorString = req.query.authors || undefined;
             //api/taggedbooks?authors
             //this variable could be of type undefined | [...]
-            const authorArray = authorString?.split(',')
+            const authorArray = authorString?.split('|')
                                     .map((author)=>author.trim())
                                     .filter((author)=>author.length>0)
                                 || [];
-            const tagsArray = tagsString?.split(',')
+            const tagsArray = tagsString?.split('|')
                                     .map((tag)=>tag.trim())
                                     .filter((tag)=>tag.length>0)
                                 || [];

@@ -21,10 +21,15 @@
     
     // represents all of the tags from the database
     let tagsMap = [];
+    // holds all of the authors from the database:
+    let authorArray;
     // fetches tags from the backend and calls the soundex function for each tag to create a hash for each tag
     const getTags = async () =>{
-        const res = await fetch("http://localhost:5000/api/tags");
+        let res = await fetch("http://localhost:5000/api/tags");
         const tagsRes = await res.json();
+        res = await fetch('http://localhost:5000/api/authors')
+        const authRes = await res.json();
+        authorArray = Array.from(authRes);
 
         let map=[];
         Array.from(tagsRes).forEach(({tagname})=>{

@@ -13,9 +13,12 @@
      const direction = $page.url.searchParams.get('direction') ?? 'ASC';
      const searchString = $page.url.searchParams.get('searchString')?? '';
      const tagsSearchString = $page.url.searchParams.get('tags');
+     const authSearchString = $page.url.searchParams.get('authors');
      let requestURL;
-     if ($page.url.searchParams.get("tag") && $page.url.searchParams.get("tag")==="true"){
-        requestURL = `http://localhost:5000/api/taggedbooks?order=${order}&direction=${direction}&tags=${tagsSearchString}`;
+     if ($page.url.searchParams.get("tag")==="true"){
+        requestURL = `http://localhost:5000/api/taggedbooks?`
+                    +`order=${order}&direction=${direction}`
+                    +`&tags=${tagsSearchString}&authors=${authSearchString}`;
      } else {
         requestURL = `http://localhost:5000/api/books?order=${order}&direction=${direction}&searchString=${searchString}`;
      }
