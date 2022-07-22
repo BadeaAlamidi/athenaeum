@@ -1,4 +1,5 @@
 <script>
+    import {tagArray as filterArray, tagSearchFlagStore as tagSearchFlag} from '../../lib/stores'
 
     export let bookData;
     export let bookAuthors;
@@ -18,6 +19,39 @@
         } else {
             spanState = 'Show more';
             DisplayDescription = textSnippet;
+        }
+    }
+//---------------------------------------------
+    // tells whether the authors and tags of this book are in the filterArray
+    // meant for avoiding the addition of an author / a tag to the filterArray more than once:
+    const tokenMap = {};
+    $:{
+        const filterArrayTokens = $filterArray.map(({token})=>token)
+        for (const i of [...bookTags.map(e=>e.tagname), ...bookAuthors.map(e=>e.author)]){
+            console.log(i);
+        //the tokenMap must be constructed anew... can this be avoided?
+        //yes, by changing the the set to an object
+        //with a normal object, we have to reset everything instead of deleting
+            //inclusion of filterArray here should guarantee this reaction block to run
+            if (filterArrayTokens.includes(i)) tokenMap[i] = true;
+            // triggers reaction
+            else tokenMap[i] = false;
+        }
+    }
+
+/**
+ * 
+*/
+/**
+* @param {{ currentTarget: HTMLElement; }} e
+*/
+    function tokenClick(e){
+        tagSearchFlag.set(true);
+        const token = e.currentTarget.dataset.token;
+        const color = e.currentTarget.dataset.bg;
+        if(tokenMap[token]==false){
+            filterArray.update(v=>[...v, {token, color}]);
+            console.log($filterArray, tokenMap)
         }
     }
 </script>
@@ -101,7 +135,14 @@
         /* display: inline; */
         height: 100%;
     }
+    .token{
+        color:white;
     }
+    .token[data-bg*=red]{
+        background-color:red;
+    }
+    .token[data-bg*=black]{
+        background-color:black;
     }
 </style>
 <div id=book-grid>
@@ -135,7 +176,9 @@
             <div style:gird-area=label3 class=bottomCell>Authors</div>
             <div id=authorsContainer class=bottomCelll style:grid-area=info3>
                 {#each bookAuthors as {author}}
-                <span>—{author}—</span>
+                <span on:click={tokenClick} class=token data-token={author} data-bg=red>
+                    —{author}—
+                </span>
                 {/each}
             </div>
             {/if}
@@ -151,7 +194,9 @@
             {:else}
                 <div id=tagsContainer class=bottomCell style:grid-area=info3> 
                     {#each bookTags as {tagname}}
-                    <span>{tagname}</span>
+                    <span on:click={tokenClick} class=token data-token={tagname} data-bg=black>
+                        —{tagname}—
+                    </span>
                     {/each}
                 </div>
             {/if}
