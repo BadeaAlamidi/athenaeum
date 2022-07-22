@@ -48,9 +48,9 @@
                         "image .     .    " 7vh
                         "image desc  desc " auto
                         "image .     .    " 5vh
-                        "image binfo binfo" auto
-                        ".     binfo binfo" auto
-                        ".     binfo binfo" auto
+                        "image binfo binfo" 1fr
+                        ".     binfo binfo" 1fr
+                        ".     binfo binfo" 1fr
                        / auto  var(--descWidth)   var(--descWidth);
         column-gap: 5vw;
     }
@@ -70,17 +70,17 @@
     #pageCount{
         padding-left: 10px;
     }
-    #authorsContainer{
+    #authorsContainer,#tagsContainer{
         display:flex;
         flex-direction:column;
+    }
+    #authorsContainer::before,#tagsContainer::before{
+        content:":";
     }
     h1,h2{
         margin:0;
         display: flex;
         align-items: center;
-    }
-    #bottomInfo>*{
-        padding-bottom: 10px;
     }
     #bottomInfo{
         grid-area: binfo;
@@ -92,13 +92,16 @@
     }
     #firstGridCol, #secondGridCol{
         display:grid;
-        grid-template: "label1 info1" auto
-        "label2 info2" auto
-        "label3 info3" auto
-        / 5em    auto
+        grid-template: "label1 info1" calc(1em + 10px)
+                       "label2 info2" calc(1em + 10px)
+                       "label3 info3" auto
+        / 5em       1fr
     }
-    #firstGridCol>*, #secondGridCol>*{
-        padding-bottom:10px;
+    .bottomCell{
+        /* display: inline; */
+        height: 100%;
+    }
+    }
     }
 </style>
 <div id=book-grid>
@@ -121,16 +124,16 @@
     </div>
     <div id=bottomInfo>
         <div id=firstGridCol>
-            <div id=rating class=bottominfo style:grid-area=label1>Rating</div>
-            <div style:grid-area=info1>: {rating || '-'}</div>
-            <div id=language class=bottominfo style:grid-area=label2>Language</div>
-            <div style:grid-area=info2>: {language.toUpperCase() || '-'}</div>
+            <div id=rating class=bottomCell style:grid-area=label1>Rating</div>
+            <div class=bottomCell style:grid-area=info1>: {rating || '-'}</div>
+            <div id=language class=bottomCell style:grid-area=label2>Language</div>
+            <div class=bottomCell style:grid-area=info2>: {language.toUpperCase() || '-'}</div>
             {#if bookAuthors.length == 0}
-            <div style:gird-area=label3 class=bottominfo>Authors</div>
-            <div id=authorsContainer style:grid-area=info3>: -</div>
+            <div style:gird-area=label3 class=bottomCell>Authors</div>
+            <div  class=bottomCell style:grid-area=info3>: -</div>
             {:else}
-            <div style:gird-area=label3 class=bottominfo>Authors</div>
-            <div id=authorsContainer style:grid-area=info3>
+            <div style:gird-area=label3 class=bottomCell>Authors</div>
+            <div id=authorsContainer class=bottomCelll style:grid-area=info3>
                 {#each bookAuthors as {author}}
                 <span>—{author}—</span>
                 {/each}
@@ -138,15 +141,15 @@
             {/if}
         </div>
         <div id = secondGridCol>
-            <div id=isbn13 class="bottominfo" style:grid-area=label1>ISBN13</div>
-            <div style:grid-area=info1>: {isbn13 || '-'}</div>
-            <div id=isbn10 class="bottominfo" style:grid-area=label2>ISBN10</div>
-            <div style:grid-area=info2>: {isbn10 || '-'}</div>
-            <div class=bottominfo style:grid-area=label3>Tags</div>
+            <div id=isbn13 class=bottomCell style:grid-area=label1>ISBN13</div>
+            <div class=bottomCell style:grid-area=info1>: {isbn13 || '-'}</div>
+            <div id=isbn10 class=bottomCell style:grid-area=label2>ISBN10</div>
+            <div class=bottomCell style:grid-area=info2>: {isbn10 || '-'}</div>
+            <div class=bottomCell style:grid-area=label3>Tags</div>
             {#if bookTags.length == 0}
-            <span style:grid-area=info3>: -</span>
+            <span class=bottomCell style:grid-area=info3>: -</span>
             {:else}
-                <div id=tagsContainer style:grid-area=info3>: 
+                <div id=tagsContainer class=bottomCell style:grid-area=info3> 
                     {#each bookTags as {tagname}}
                     <span>{tagname}</span>
                     {/each}
