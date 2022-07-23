@@ -118,7 +118,7 @@
             <BookComponent id={id}>
                 <span slot="title">{title}</span>
                 <span slot="image"><img src="{thumbnailUrl}" alt="Book cover"></span>
-                <button on:click={() => deleteBook(book.id)}>Delete</button>
+                <button on:click={() => deleteBook(id)}>Delete</button>
             </BookComponent>
         </div>
         {/each}
