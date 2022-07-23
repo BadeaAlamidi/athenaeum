@@ -64,8 +64,6 @@
     // to changing the value of the searchStatus and is meant to stop the
     // user from abusing the backend database
 
-    // TODO: can this be turned into a normal svelte reaction block?
-    // const tagSearchReaction = function (){
     let lastTimeoutID;
     $: {
         const tagTokens = $filterArray.filter(({color})=>color=='black').map(obj=>obj.token)
@@ -73,9 +71,12 @@
 
         $page.url.searchParams.set('tags', tagTokens.join('|'));
         $page.url.searchParams.set('authors', authTokens.join('|'));
-        searchStatus.set('not_ready');
-        clearTimeout(lastTimeoutID);
+        // stop interval from happening if page just loaded:
+        if(lastTimeoutID){
+            searchStatus.set('not_ready');
+            clearTimeout(lastTimeoutID);
         lastTimeoutID = setTimeout(()=>searchStatus.set('ready'),1500);
+        } else lastTimeoutID = 1;
     }
     // if ($page.url.searchParams.get('tag') === "true") $tagSearchFlag = true;
     // this statement reacts to the changes done to the normalSearchText store to reflect its contents into the page store:
@@ -88,7 +89,6 @@
         
         console.log('tag URLparameter option was set to', $page.url.searchParams.get('tag'))
         }
-    $: console.log($page.url.searchParams.get('tags'), ' $page store reaction')
     function tagSearchInput(event){
         if (tagSearchString.length>1){
             // test if current input matches one of the indexes of the global tags variable
@@ -100,7 +100,6 @@
 
             for (let {author} of authorArray)
                 if (!filterArrayTokens.includes(author) && author.startsWith(tagSearchString)) {
-                    console.log('found author suggestion')
                     suggestions = [...suggestions, {token:author, color:'red'}]
                 }
         }
@@ -112,7 +111,6 @@
                 // tagArray = [...tagArray, val];//copies entire array(+1 new elem) into the same symbol. could use push method followed by tagArray = tagArray to trigger svelte reaction but
                                               //this looks cooler
                 filterArray.update(e=>[...e,{token, color}]);
-                // tagSearchReaction();
             }
         }
     }
@@ -124,7 +122,6 @@
             // pop is more appropriate but this looks cleaner as the assignment operator is used, triggering svelte's reactions
             // tagArray = tagArray.slice(0,tagArray.length - 1);
             filterArray.update(e=>e.slice(0,e.length - 1));
-            // tagSearchReaction();
             }
     }
     // function that handles the click button of one of the html elements
@@ -133,7 +130,6 @@
         let filterElement = e.currentTarget.dataset.tagValue;
         // tagArray = tagArray.filter((tag)=> tag!==filterElement);
         filterArray.update(v=>v.filter(({token})=>token!==filterElement))
-        // tagSearchReaction();
     }
     // should this be scrapped and have its logic moved to before the reactive statements above?
     onMount(()=>{

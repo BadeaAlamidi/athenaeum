@@ -14,13 +14,18 @@
      const searchString = $page.url.searchParams.get('searchString')?? '';
      const tagsSearchString = $page.url.searchParams.get('tags');
      const authSearchString = $page.url.searchParams.get('authors');
-     let requestURL;
+     
+     //CHANGE HOST HERE
+     const requestURL = new URL('http://localhost:5000/');
+     requestURL.searchParams.append('order',order);
+     requestURL.searchParams.append('direction',direction);
      if ($page.url.searchParams.get("tag")==="true"){
-        requestURL = `http://localhost:5000/api/taggedbooks?`
-                    +`order=${order}&direction=${direction}`
-                    +`&tags=${tagsSearchString}&authors=${authSearchString}`;
+        requestURL.pathname = 'api/taggedbooks'
+        requestURL.searchParams.append('tags',tagsSearchString);
+        requestURL.searchParams.append('authors',authSearchString);
      } else {
-        requestURL = `http://localhost:5000/api/books?order=${order}&direction=${direction}&searchString=${searchString}`;
+        requestURL.pathname = 'api/books';
+        requestURL.searchParams.append('searchString', searchString)
      }
 
      const res = await fetch(requestURL);

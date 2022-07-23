@@ -28,7 +28,6 @@
     $:{
         const filterArrayTokens = $filterArray.map(({token})=>token)
         for (const i of [...bookTags.map(e=>e.tagname), ...bookAuthors.map(e=>e.author)]){
-            console.log(i);
         //the tokenMap must be constructed anew... can this be avoided?
         //yes, by changing the the set to an object
         //with a normal object, we have to reset everything instead of deleting
@@ -51,7 +50,6 @@
         const color = e.currentTarget.dataset.bg;
         if(tokenMap[token]==false){
             filterArray.update(v=>[...v, {token, color}]);
-            console.log($filterArray, tokenMap)
         }
     }
 </script>

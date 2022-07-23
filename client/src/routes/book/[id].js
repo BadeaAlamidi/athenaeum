@@ -3,7 +3,6 @@ export async function get({params}){
     const authors = await fetch('http://localhost:5000/api/bookauthors/'+params.id);
     const tags = await fetch('http://localhost:5000/api/booktags/'+params.id)
 
-    console.log(params.id);
     // TODO: test if the result was succesful in a better way than this
     if (book && authors){
         return {

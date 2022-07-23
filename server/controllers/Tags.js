@@ -13,6 +13,8 @@ const getAllTags = async (req, res)=>{
 
 //Returns the tags associated with a specific book from the 
 //      books table
+//TODO: cache the result of this and make logic to update the cache
+//      every some seconds to avoid constant querying of the database
 
 const getBookTags = async (req,res)=>{
     const bookTags = await models.Tag.findAll({
