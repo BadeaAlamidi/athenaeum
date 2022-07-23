@@ -13,7 +13,3 @@ services:
   backend:
     image: athenaeum-server
     build: ./server
-    volumes:
-      - "db:/home/node/app/db"
-volumes:
-  db:

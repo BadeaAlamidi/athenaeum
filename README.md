@@ -4,6 +4,8 @@ A digital books library written with SvelteKit and Express.
 ## Run the project using docker-compose
 This repository includes three examples options for running using docker-compose.
 
+**RUN ``yarn sequelize-cli db:migrate`` IN THE SERVER DIRECTORY TO CREATE THE DATABASE**
+
 <details>
   <summary>1. Run apps in <strong>local development mode</strong>, on separate ports, without building anything.</summary>
   
