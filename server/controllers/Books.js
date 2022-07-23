@@ -22,7 +22,7 @@ const getBooks = async (req,res) =>{
                     }
                 }
             break;
-            case /^isbn13:/.test(req.query.searchString) : 
+            case /^isbn13:/.test(req.query.searchString) :
                 whereClause = {
                     isbn13:{
                         [Op.eq] : req.query.searchString.slice(7)
@@ -63,7 +63,7 @@ const getBooks = async (req,res) =>{
                 raw:true,
                 order: [[req.query.order,direction]],
                 where: whereClause,
-                
+
             });
         } else {
             // api/books? no  order.
@@ -78,6 +78,25 @@ const getBooks = async (req,res) =>{
     }
     res.json(books);
 }
+
+const deleteBook = async (req,res) => {
+    console.log("deleting book with id: " + req.body.bookId);
+    let wrote = await models.Wrote.destroy({
+        where: {
+            bookId: req.body.bookId
+        }
+    }).then(() => {
+        console.log("Deleted wrotes entry");
+    }).catch((err) => {console.error(error); res.status(500).end();});
+    let book = await models.Book.destroy({
+        where: {
+            id: req.body.bookId
+        }
+    }).then(() => {
+        res.status(204).end();
+    }).catch((err) => {console.error(err); res.status(500).end();});
+}
+
 // queries the database for a single book through provided id
 // returns a json representing the book tuple
 const getBook = async (req,res)=>{
@@ -88,4 +107,4 @@ const getBook = async (req,res)=>{
     res.json(book);
 }
 
-export { getBooks, getBook};
+export { getBooks, getBook, deleteBook};

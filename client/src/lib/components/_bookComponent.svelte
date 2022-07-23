@@ -4,7 +4,7 @@
     export let id;
 
     function navToBook(){
-        window.location.href = window.location.protocol + '//' + $page.url.host + '/book/' + id;
+        window.location.href = window.location.protocol + '//' + $page.url.host + '/book?id=' + id;
     }
 </script>
 <div class='wrapper' style='' title={id} on:click={navToBook}>
@@ -12,6 +12,8 @@
         <slot name='image'>no image</slot>
     </div>
     <slot name='title'>no title</slot>
+    <br />
+    <slot></slot>
 </div>
 
 <style>

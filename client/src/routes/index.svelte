@@ -42,6 +42,22 @@
     // window.location.href=`http://localhost:3000?order=${selectValue}&direction=${selectDirection}`
     window.location.href=$page.url.href;
  }
+
+ function deleteBook(id) {
+     const url = "http://localhost:5000/api/delete/book"
+     const options = {
+         method: 'POST',
+         body: JSON.stringify({bookId: id}),
+         headers: {
+             'Content-Type': 'application/json'
+         }
+     }
+     fetch(url, options)
+         .then(res => res.json())
+         .then(res => console.log(res));
+     console.log("res sent");
+ }
+
  function expand_sharable_div(){
     navigator.clipboard.writeText($page.url.href)
             .then(()=>console.log('async copy success'), ()=>console.log('async copy failed'))
@@ -52,6 +68,7 @@
  }
 
  let sharable_div;
+
 </script>
 <style>
  .grid-container {
@@ -77,6 +94,7 @@
  }
 </style>
 <h1>Welcome to Athenaeum</h1>
+
 {#if $searchStatus == 'ready'}
     {#await bookFetch()}
     <p>Loading Books...</p>
@@ -108,6 +126,7 @@
             <BookComponent id={id}>
                 <span slot="title">{title}</span>
                 <span slot="image"><img src="{thumbnailUrl}" alt="Book cover"></span>
+                <button on:click={() => deleteBook(id)}>Delete</button>
             </BookComponent>
         </div>
         {/each}
