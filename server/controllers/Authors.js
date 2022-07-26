@@ -1,6 +1,8 @@
 import models from '../models/index.js'
 
 const getBookAuthors = async (req,res) =>{
+    //TODO: sanitize req.params.bookId 
+    const bookId = Number(req.params.bookId) || 1;
     const authors = await models.Author.findAll({
         attributes: ['author'],
         include: {
@@ -10,12 +12,19 @@ const getBookAuthors = async (req,res) =>{
                 attributes:[],
             },
             where: {
-                id: Number(req.params.bookId)
+                id: bookId
             }
         },
     }
     );
     res.json(authors);
 }
+const getAllAuthors = async(req,res) =>{
+    res.json(
+        await models.Author.findAll({
+            attributes: ['author']
+        })
+    );
+}
 
-export {getBookAuthors};
+export {getBookAuthors, getAllAuthors};

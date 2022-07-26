@@ -13,11 +13,19 @@
      const direction = $page.url.searchParams.get('direction') ?? 'ASC';
      const searchString = $page.url.searchParams.get('searchString')?? '';
      const tagsSearchString = $page.url.searchParams.get('tags');
-     let requestURL;
-     if ($page.url.searchParams.get("tag") && $page.url.searchParams.get("tag")==="true"){
-        requestURL = `http://localhost:5000/api/taggedbooks?order=${order}&direction=${direction}&tags=${tagsSearchString}`;
+     const authSearchString = $page.url.searchParams.get('authors');
+     
+     //CHANGE HOST HERE
+     const requestURL = new URL(window.location.href);
+     requestURL.searchParams.append('order',order);
+     requestURL.searchParams.append('direction',direction);
+     if ($page.url.searchParams.get("tag")==="true"){
+        requestURL.pathname = '/api/taggedbooks'
+        requestURL.searchParams.append('tags',tagsSearchString);
+        requestURL.searchParams.append('authors',authSearchString);
      } else {
-        requestURL = `http://localhost:5000/api/books?order=${order}&direction=${direction}&searchString=${searchString}`;
+        requestURL.pathname = '/api/books';
+        requestURL.searchParams.append('searchString', searchString)
      }
 
      const res = await fetch(requestURL);
@@ -36,7 +44,7 @@
  }
 
  function deleteBook(id) {
-     const url = "http://localhost:5000/api/delete/book"
+     const url = "/api/delete/book"
      const options = {
          method: 'POST',
          body: JSON.stringify({bookId: id}),
