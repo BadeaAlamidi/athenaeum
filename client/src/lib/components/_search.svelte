@@ -41,9 +41,9 @@
     let authorArray;
     // fetches tags from the backend and calls the soundex function for each tag to create a hash for each tag
     const getTags = async () =>{
-        let res = await fetch("http://localhost:5000/api/tags");
+        let res = await fetch("/api/tags");
         const tagsRes = await res.json();
-        res = await fetch('http://localhost:5000/api/authors')
+        res = await fetch('/api/authors')
         const authRes = await res.json();
         authorArray = Array.from(authRes);
 

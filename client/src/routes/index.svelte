@@ -16,15 +16,15 @@
      const authSearchString = $page.url.searchParams.get('authors');
      
      //CHANGE HOST HERE
-     const requestURL = new URL('http://localhost:5000/');
+     const requestURL = new URL(window.location.href);
      requestURL.searchParams.append('order',order);
      requestURL.searchParams.append('direction',direction);
      if ($page.url.searchParams.get("tag")==="true"){
-        requestURL.pathname = 'api/taggedbooks'
+        requestURL.pathname = '/api/taggedbooks'
         requestURL.searchParams.append('tags',tagsSearchString);
         requestURL.searchParams.append('authors',authSearchString);
      } else {
-        requestURL.pathname = 'api/books';
+        requestURL.pathname = '/api/books';
         requestURL.searchParams.append('searchString', searchString)
      }
 
@@ -44,7 +44,7 @@
  }
 
  function deleteBook(id) {
-     const url = "http://localhost:5000/api/delete/book"
+     const url = "/api/delete/book"
      const options = {
          method: 'POST',
          body: JSON.stringify({bookId: id}),
