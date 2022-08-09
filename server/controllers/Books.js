@@ -81,6 +81,17 @@ const getBooks = async (req,res) =>{
 
 const deleteBook = async (req,res) => {
     console.log("deleting book with id: " + req.body.bookId);
+    let tagmappings = await models.Tagmapping.destroy({
+        where: {
+            bookId: req.body.bookId
+        }
+    }).then(() => {
+        console.log("Deleted tagmapping entry");
+    }).catch((err) => {
+        console.error("Error deleting tagmapping entry");
+        console.error(error);
+        res.status(500).end();
+    });
     let wrote = await models.Wrote.destroy({
         where: {
             bookId: req.body.bookId
