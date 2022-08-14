@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
   res.send("Hello, world!");
 });
 
+app.use(express.static("uploads"));
 app.use('/api', api);
 // app.use('/books/:order?', bookRoutes);
 // app.use('/join', joinRoute);

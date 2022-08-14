@@ -12,3 +12,5 @@ services:
     build: ./server
     ports:
       - "5000:5000"
+
+    
