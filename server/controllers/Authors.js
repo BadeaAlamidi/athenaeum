@@ -17,6 +17,8 @@ const getBookAuthors = async (req,res) =>{
         },
     }
     );
+    console.log("TEST");
+    console.log(authors);
     res.json(authors);
 }
 const getAllAuthors = async(req,res) =>{
