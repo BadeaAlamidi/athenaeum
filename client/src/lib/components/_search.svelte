@@ -71,6 +71,7 @@
 
         $page.url.searchParams.set('tags', tagTokens.join('|'));
         $page.url.searchParams.set('authors', authTokens.join('|'));
+        console.log($page.url.searchParams.get('authors'))
         // stop interval from happening if page just loaded:
         if(lastTimeoutID){
             searchStatus.set('not_ready');
@@ -146,13 +147,19 @@
 </script>
 <!-- {#if $tagSearchFlag} -->
 {#if $tagSearchFlag}
-<div style:background="grey" style:display="flex">
-    <span>
+<div style:background="grey" class=flex>
+    <span class="flex gap-x-px justify-evenly">
         {#each $filterArray as {token, color} }
-            <div style:display="inline-block" style:color="white" style:background={color}>
+            <div  data-type={color}
+                class=" token bg-blue-500 hover:bg-blue-700 text-white font-bold
+                py-2 px-4 rounded-full flex items-center">
                 <!-- <div style:display="inline-block" style:color="white">{tag}</div> -->
                 {token}
-                <button data-tag-value = {token} on:click={removeFromTagArray}>x</button>
+                <span data-tag-value = {token} on:click={removeFromTagArray} class=inline-block>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </span>
             </div>
         {/each}
     </span>
@@ -183,5 +190,11 @@
 <style>
     div>input{
         flex:auto
+    }
+    .token[data-type*=red]{
+        background-color: rgb(190, 18, 61);
+    }
+    .token[data-type*=black]{
+        background-color: rgb(0, 0, 0);
     }
 </style>

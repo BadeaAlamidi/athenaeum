@@ -110,7 +110,7 @@
     @media screen and (orientation: portrait){
     :root{
         --descWidth:auto;
-        --gridWidth:80%;
+        --gridWidth:100%;
         --headerRowHeight: 4vh;
         /* --botInfoFlexDirection : column; */
     }}
@@ -158,6 +158,7 @@
     #authorsContainer,#tagsContainer{
         display:flex;
         flex-direction:column;
+        gap: 5px;
     }
     #authorsContainer::before,#tagsContainer::before{
         content:":";
@@ -190,7 +191,7 @@
         color:white;
     }
     .token[data-bg*=red]{
-        background-color:red;
+        background-color: rgb(190, 18, 61);
     }
     .token[data-bg*=black]{
         background-color:black;
@@ -201,10 +202,12 @@
 {:then {isbn10, isbn13, title, subtitle, rating, 
     thumbnailUrl, language, publishDate, pageCount,}}
 <div id=book-grid>
-    <img id=img src={thumbnailUrl} alt=placeholder/>
-    <h1 id=title style:grid-area=title>{title}</h1>
+    <div id=img >
+        <img src={thumbnailUrl} alt=placeholder class=shrink-0/>
+    </div>
+    <h1 id=title style:grid-area=title class=text-2xl>{title}</h1>
     {#if subtitle}
-        <h2 id=subTitle style:grid-area=subt style:height=100%>{subtitle || ''}</h2>
+        <h2 id=subTitle style:grid-area=subt style:height=100% class=text-xl>{subtitle || ''}</h2>
     {/if}
     <div id=bookInfo >
         <span id=pubDate >Publish Date: {publishDate ||"Not available"}</span>
@@ -235,8 +238,12 @@
                 <div style:gird-area=label3 class=bottomCell>Authors</div>
                 <div id=authorsContainer class=bottomCelll style:grid-area=info3>
                     {#each bookAuthors as {author}}
-                    <span on:click={tokenClick} class=token data-token={author} data-bg=red>
-                        —{author}—
+                    <span on:click={tokenClick} 
+                        class="token bg-blue-500 hover:bg-blue-700 text-white font-bold
+                               py-2 px-4 rounded-full"
+                        data-token={author} data-bg=red
+                    >
+                        {author}
                     </span>
                     {/each}
                 </div>
@@ -257,8 +264,11 @@
             {:else}
             <div id=tagsContainer class=bottomCell style:grid-area=info3> 
                 {#each bookTags as {tagname}}
-                <span on:click={tokenClick} class=token data-token={tagname} data-bg=black>
-                    —{tagname}—
+                <span on:click={tokenClick} class="
+                    token bg-blue-500 hover:bg-blue-700 text-white font-bold
+                    py-2 px-4 rounded-full" 
+                    data-token={tagname} data-bg=black>
+                    {tagname}
                 </span>
                 {/each}
             </div>
