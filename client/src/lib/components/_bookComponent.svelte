@@ -1,18 +1,20 @@
 <script>
-    import {page} from '$app/stores'
+ import {page} from '$app/stores'
 
-    export let id;
+ export let id;
 
-    function navToBook(){
-        window.location.href = window.location.protocol + '//' + $page.url.host + '/book?id=' + id;
-    }
+ function navToBook(){
+     window.location.href = window.location.protocol + '//' + $page.url.host + '/book?id=' + id;
+ }
 </script>
-<div class='wrapper' style='' title={id} on:click={navToBook}>
-    <div>
-        <slot name='image'>no image</slot>
+<div>
+    <div class='wrapper' style='' title={id} on:click={navToBook}>
+        <div>
+            <slot name='image'>no image</slot>
+        </div>
+        <slot name='title'>no title</slot>
+        <br />
     </div>
-    <slot name='title'>no title</slot>
-    <br />
     <slot></slot>
 </div>
 
