@@ -29,23 +29,22 @@
  let selectValue = $page.url.searchParams.get('order') ?? 'id';
  let selectDirection = $page.url.searchParams.get('direction') ?? 'ASC';
  let bookFetch = async () => {
-     const order = $page.url.searchParams.get('order') ?? 'id';
+    const order = $page.url.searchParams.get('order') ?? 'id';
      const direction = $page.url.searchParams.get('direction') ?? 'ASC';
      const searchString = $page.url.searchParams.get('searchString')?? '';
      const tagsSearchString = $page.url.searchParams.get('tags');
      const authSearchString = $page.url.searchParams.get('authors');
      
-     //CHANGE HOST HERE
      const requestURL = new URL(window.location.href);
-     requestURL.searchParams.append('order',order);
-     requestURL.searchParams.append('direction',direction);
+     requestURL.searchParams.set('order',order);
+     requestURL.searchParams.set('direction',direction);
      if ($page.url.searchParams.get("tag")==="true"){
-        requestURL.pathname = '/api/taggedbooks'
-        requestURL.searchParams.append('tags',tagsSearchString);
-        requestURL.searchParams.append('authors',authSearchString);
+        requestURL.pathname = '/api/taggedbooks';
+        requestURL.searchParams.set('tags',tagsSearchString);
+        requestURL.searchParams.set('authors',authSearchString);
      } else {
         requestURL.pathname = '/api/books';
-        requestURL.searchParams.append('searchString', searchString)
+        requestURL.searchParams.set('searchString', searchString)
      }
 
      const res = await fetch(requestURL);
