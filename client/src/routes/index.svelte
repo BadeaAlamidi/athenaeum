@@ -1,10 +1,30 @@
 <script>
+ import Modal from "$lib/components/_modal.svelte";
  import BookComponent from "$lib/components/_bookComponent.svelte";
  import {page} from "$app/stores"
+ import {tagArray} from "$lib/stores"
  import {searchStatus} from "../lib/stores"
-// import {queryParamStore} from "$lib/stores.js"
-// import { onMount } from 'svelte';
+ import { claim_svg_element } from "svelte/internal";
+ // import {queryParamStore} from "$lib/stores.js"
+ // import { onMount } from 'svelte';
 
+ let modal;
+ let files;
+ let newBook = {
+     isbn10: "",
+     isbn13: "",
+     subtitle: "",
+     rating: "",
+     maturityRating: "",
+     thumbnailUrl: "",
+     smallThumbnailUrl: "",
+     language: "",
+     publishDate: new Date(),
+     pageCount: "",
+     description: "",
+     author: "",
+     title: "",
+ };
 
  let selectValue = $page.url.searchParams.get('order') ?? 'id';
  let selectDirection = $page.url.searchParams.get('direction') ?? 'ASC';
@@ -30,16 +50,57 @@
      const res = await fetch(requestURL);
      return await res.json();
  }
-//  onMount(async () => {
-//      const res = await fetch("http://localhost:5000/api/books");
-//      books = await res.json();
-//      console.log(books);
-//  })
+ //  onMount(async () => {
+ //      const res = await fetch("http://localhost/api/books");
+ //      books = await res.json();
+ //      console.log(books);
+ //  })
  function ReOrder(){
-    $page.url.searchParams.set('order',selectValue);
-    $page.url.searchParams.set('direction',selectDirection);
-    // window.location.href=`http://localhost:3000?order=${selectValue}&direction=${selectDirection}`
-    window.location.href=$page.url.href;
+     $page.url.searchParams.set('order',selectValue);
+     $page.url.searchParams.set('direction',selectDirection);
+     // window.location.href=`http://localhost:3000?order=${selectValue}&direction=${selectDirection}`
+     window.location.href=$page.url.href;
+ }
+ function addBook(e) {
+     // I need to be able to access the 
+     const form_input_locations = [5, 6];
+     /* const form_input_locations = [5]; */
+     const formData = new FormData(e.target);
+     const data = {};
+     for (let field of formData) {
+         const [key, value] = field;
+         data[key] = value;
+     }
+     console.log("data: ")
+     console.log(data);
+     console.log("files: ")
+     // Yeah, this looks ugly, I know...
+     let images = [e.target[form_input_locations[0]].files[0], e.target[form_input_locations[1]].files[0]];
+     /* let images = [e.target[form_input_locations[0]].files[0]]; */
+     console.log(images);
+     modal.display(false);
+     for (const key in newBook) {
+         // this avoids grabbing properties in the property chain
+         if (newBook.hasOwnProperty(key)) {
+             console.log(`${key} --> ${newBook[key]}`);
+         }
+     }
+     const url = "/api/add/book";
+     const options = {
+         method: "POST",
+         body: formData
+     };
+
+     fetch(url, options).then(res => {
+         console.log(res);
+         if (res.status != 200) {
+             alert("HTTP ERROR CODE: " + res.status.toString() + "\n" + res.statusText);
+         }
+     }).catch(error => {
+         // error
+         console.log("Error");
+         console.log(error);
+     });
  }
 
  function deleteBook(id) {
@@ -58,18 +119,23 @@
  }
 
  function expand_sharable_div(){
-    navigator.clipboard.writeText($page.url.href)
-            .then(()=>console.log('async copy success'), ()=>console.log('async copy failed'))
+     navigator.clipboard.writeText($page.url.href)
+              .then(()=>console.log('async copy success'), ()=>console.log('async copy failed'))
 
-    // change look as necessary:
-        sharable_div.id = 'sharable-link-div_open';
-        sharable_div.innerText = $page.url.href + ' Copied! (Click again to update)';
+     // change look as necessary:
+     sharable_div.id = 'sharable-link-div_open';
+     sharable_div.innerText = $page.url.href + ' Copied! (Click again to update)';
  }
 
  let sharable_div;
 
 </script>
+
 <style>
+ .crud-add-btn {
+     margin-top: 0.5%;
+     margin-bottom: 0.5%;
+ }
  .grid-container {
      display: grid;
      grid-template-columns: auto auto auto;
@@ -82,14 +148,37 @@
      object-fit: cover;
  }
  #sharable-link-div_closed{
-    background-color: rgb(0, 0, 0);
-    display:inline;
-    color: white;
+     background-color: rgb(0, 0, 0);
+     display:inline;
+     color: white;
  }
  #sharable-link-div-open{
-    background-color: white;
-    display:inline;
-    color: black;
+     background-color: white;
+     display:inline;
+     color: black;
+ }
+ form {
+     display: flex;
+     flex-direction: column;
+     width: 40%;
+ }
+ form > div {
+     display: flex;
+     justify-content: space-between;
+ }
+ form > div + * {
+     margin-top: 10px;
+ }
+ form input, form textarea {
+     width: 50%;
+     border: 1px black solid;
+ }
+ form button {
+     margin-top: 1em;
+     border: 1px black solid;
+ }
+ form button[type="submit"] {
+     width: 25%;
  }
 </style>
 <h1>Welcome to Athenaeum</h1>
@@ -119,6 +208,67 @@
     <div id = sharable-link-div_closed bind:this={sharable_div} on:click={expand_sharable_div}>
         Results link...
     </div>
+<button class="crud-add-btn" on:click={() => modal.display(true)}>Add book</button>
+<Modal bind:this={modal}>
+    <h2>Add a book</h2>
+    <form on:submit|preventDefault={addBook}>
+        <div>
+            <label for="isbn10">isbn10</label>
+            <input type="text" name="isbn10" bind:value={newBook.isbn10} id="isbn10" />
+        </div>
+        <div>
+            <label for="isbn13">isbn13</label>
+            <input type="text" name="isbn13" bind:value={newBook.isbn13} id="isbn13" />
+        </div>
+        <div>
+            <label for="subtitle">subtitle</label>
+            <input type="text" name="subtitle" bind:value={newBook.subtitle} id="subtitle" />
+        </div>
+        <div>
+            <label for="rating">rating</label>
+            <input type="text" name="rating" bind:value={newBook.rating} id="rating" />
+        </div>
+        <div>
+            <label for="maturityRating">maturity rating</label>
+            <input type="text" name="maturityRating" bind:value={newBook.maturityRating} id="maturityRating" />
+        </div>
+        <div>
+            <label for="thumbnailUrl">thumbnail url</label>
+            <input type="file"
+                   accept="image/*" name="thumbnailUrl" bind:files={newBook.thumbnailUrl} id="thumbnailUrl" />
+        </div>
+        <div>
+            <label for="smallThumbnailUrl">small thumbnail url</label>
+            <input type="file"
+                   accept="image/*" name="smallThumbnailUrl" bind:files={newBook.smallThumbnailUrl} id="smallThumbnailUrl" />
+        </div>
+        <div>
+            <label for="language">language</label>
+            <input type="text" name="language" bind:value={newBook.language} id="language" />
+        </div>
+        <div>
+            <label for="publishDate">publish date</label>
+            <input type="date" name="publishDate" bind:value={newBook.publishDate} id="publishDate" />
+        </div>
+        <div>
+            <label for="pageCount">page count</label>
+            <input type="text" name="pageCount" bind:value={newBook.pageCount} id="pageCount" />
+        </div>
+        <div>
+            <label for="description">description</label>
+            <textarea type="text" name="description" bind:value={newBook.description} id="description" />
+        </div>
+        <div>
+            <label for="author">Author</label>
+            <input type="author" id="author" name="author" bind:value={newBook.author} />
+        </div>
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" bind:value={newBook.title} />
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</Modal>    
     <div class="grid-container">
         {#each books as {title, thumbnailUrl, id}}
         <div class="grid-items">
@@ -130,6 +280,7 @@
         </div>
         {/each}
     </div>
+
       {:catch error}
         <p>{error}</p>
       {/await}
