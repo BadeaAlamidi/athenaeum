@@ -219,6 +219,7 @@ const addBook = async (req,res) => {
         } else {
             newAuthor = await models.Author.create({author: newBookObj.author});
             newBook = await models.Book.create(newBookObj);
+            newWrotes = await models.Wrote.create({bookId: newBook.id, writerId: newAuthor.id});
         }
 
     });
