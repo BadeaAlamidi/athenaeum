@@ -95,14 +95,20 @@
     function tagSearchInput(event){
         if (tagSearchString.length>1){
             // test if current input matches one of the indexes of the global tags variable
+            //TODO: use set instead of array
             const filterArrayTokens = $filterArray.map(({token})=>token)
+
+            const suggestionsTokens = new Set();
+            suggestions.forEach(({token})=>{suggestionsTokens.add(token)})
+
             if (tagsMap[soundex(tagSearchString)])
                 suggestions = tagsMap[soundex(tagSearchString)]
                     .filter((suggestion)=>!filterArrayTokens.includes(suggestion))
                     .map((ele)=>{return {token:ele, color:'black'}});
 
             for (let {author} of authorArray)
-                if (!filterArrayTokens.includes(author) && author.startsWith(tagSearchString)) {
+                if (!filterArrayTokens.includes(author) && !suggestionsTokens.has(author)
+                && author.startsWith(tagSearchString)) {
                     suggestions = [...suggestions, {token:author, color:'red'}]
                 }
         }
