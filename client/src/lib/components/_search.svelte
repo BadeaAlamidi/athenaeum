@@ -3,6 +3,7 @@
     import {page} from '$app/stores'
     import soundex from '../soundex.js'
     import {searchStatus, tagArray as filterArray, tagSearchFlagStore as tagSearchFlag} from '../stores.js'
+    import {fly} from 'svelte/transition'
     
     // import {queryParamStore} from '$lib/stores'
     // import {normalSearchText} from '$lib/stores'
@@ -113,6 +114,7 @@
                 // tagArray = [...tagArray, val];//copies entire array(+1 new elem) into the same symbol. could use push method followed by tagArray = tagArray to trigger svelte reaction but
                                               //this looks cooler
                 filterArray.update(e=>[...e,{token, color}]);
+                event.currentTarget.focus();
             }
         }
     }
@@ -148,12 +150,12 @@
 </script>
 <!-- {#if $tagSearchFlag} -->
 {#if $tagSearchFlag}
-<div style:background="grey" class=flex>
-    <span class="flex gap-x-px justify-evenly">
+<div style:background="grey" class="flex flex-wrap">
+    <span class="flex gap-x-px justify-evenly flex-wrap">
         {#each $filterArray as {token, color} }
-            <div  data-type={color}
+            <div  data-type={color} transition:fly="{{ y: 100, duration: 1000 }}"
                 class=" token bg-blue-500 hover:bg-blue-700 text-white font-bold
-                py-2 px-4 rounded-full flex items-center">
+                py-2 px-4 rounded-full flex flex-wrap justify-center">
                 <!-- <div style:display="inline-block" style:color="white">{tag}</div> -->
                 {token}
                 <span data-tag-value = {token} on:click={removeFromTagArray} class=inline-block>
@@ -190,13 +192,23 @@
 {/await}
 <style>
     div>input{
-        flex:auto
+        flex:auto;
+        color : black;
     }
 
+    .token{
+        transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
     .token[data-type*=red]{
         background-color: rgb(190, 18, 61);
     }
     .token[data-type*=black]{
         background-color: rgb(0, 0, 0);
+    }
+    .token[data-type=red]:hover{
+        color:black;
+    }
+    .token[data-type=black]:hover{
+        color:red;
     }
 </style>

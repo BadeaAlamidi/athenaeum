@@ -2,9 +2,7 @@
  import Modal from "$lib/components/_modal.svelte";
  import BookComponent from "$lib/components/_bookComponent.svelte";
  import {page} from "$app/stores"
- import {tagArray} from "$lib/stores"
  import {searchStatus} from "../lib/stores"
- import { claim_svg_element } from "svelte/internal";
  // import {queryParamStore} from "$lib/stores.js"
  // import { onMount } from 'svelte';
 
@@ -136,16 +134,13 @@
      margin-top: 0.5%;
      margin-bottom: 0.5%;
  }
- .grid-container {
-     display: grid;
-     grid-template-columns: auto auto auto;
-     grid-template-rows: auto;
-     grid-gap: 0.5rem;
- }
- .grid-items img {
+ .flex-items img {
      width: 200px;
      height: 300px;
      object-fit: cover;
+ }
+ .flex-items{
+    width:200px;
  }
  #sharable-link-div_closed{
      background-color: rgb(0, 0, 0);
@@ -181,7 +176,6 @@
      width: 25%;
  }
 </style>
-<h1>Welcome to Athenaeum</h1>
 
 {#if $searchStatus == 'ready'}
     {#await bookFetch()}
@@ -269,9 +263,9 @@
         <button type="submit">Submit</button>
     </form>
 </Modal>    
-    <div class="grid-container">
+    <div class="flex flex-wrap justify-around">
         {#each books as {title, thumbnailUrl, id}}
-        <div class="grid-items">
+        <div class="flex-items">
             <BookComponent id={id}>
                 <span slot="title">{title}</span>
                 <span slot="image"><img src="{thumbnailUrl}" alt="Book cover"></span>
