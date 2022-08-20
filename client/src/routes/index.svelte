@@ -3,6 +3,7 @@
  import BookComponent from "$lib/components/_bookComponent.svelte";
  import {page} from "$app/stores"
  import {searchStatus} from "../lib/stores"
+ import noCoverUrl from '$lib/assets/no-cover.svg'
  // import {queryParamStore} from "$lib/stores.js"
  // import { onMount } from 'svelte';
 
@@ -268,7 +269,9 @@
         <div class="flex-items">
             <BookComponent id={id}>
                 <span slot="title">{title}</span>
-                <span slot="image"><img src="{thumbnailUrl}" alt="Book cover"></span>
+                <span slot="image">
+                    <img src="{thumbnailUrl || noCoverUrl}" alt="Book cover">
+                </span>
                 <button on:click={() => deleteBook(id)}>Delete</button>
             </BookComponent>
         </div>
