@@ -130,6 +130,10 @@
             --headerRowHeight : auto;
             --imageColWidth: 0;
         }
+        #book-grid{
+            margin-top:4vh;
+            margin-bottom:4vh;
+        }
     }
     /*smallest width in portrait mode that does not make image too small*/
     @media screen and (orientation: portrait) and (max-width: 630px){
@@ -137,6 +141,10 @@
             --imageGridArea:alimg;
             --headerRowHeight : auto;
             --imageColWidth: 0;
+        }
+        #book-grid{
+            margin-top:4vh;
+            margin-bottom:4vh;
         }
     }
 
@@ -162,7 +170,11 @@
     #img {
         grid-area: var(--imageGridArea, image);
         width:100%;
-        margin : 0 auto auto auto;
+    }
+    img{
+        margin : auto;
+        object-fit:contain;
+        max-height: 300px;
     }
     #pubDate,#descSpan{
         font-weight: bold;

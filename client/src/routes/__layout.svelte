@@ -30,21 +30,23 @@
 		background-color: black;
 		top:0;
 		position: sticky;
+		padding: 10px;
+		z-index: 1;
 	}
 	a{
-		font-size: 2rem;
+		font-size: 1.5rem;
 		display:flex;
 		align-items: center;
 		transition:color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 	svg{
-		width : 2rem;
-		height : 2rem;
+		width : 1.5rem;
+		height : 1.5rem;
 	}
 	a:hover{
 		color:rgb(255,0,129);
 	}
-	html{
+	:root{
 		scroll-behavior : smooth;
 	}
 </style>

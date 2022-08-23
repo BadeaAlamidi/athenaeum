@@ -135,11 +135,6 @@
      margin-top: 0.5%;
      margin-bottom: 0.5%;
  }
- .flex-items img {
-     width: 200px;
-     height: 300px;
-     object-fit: cover;
- }
  .flex-items{
     width:200px;
  }
@@ -267,11 +262,8 @@
     <div class="flex flex-wrap justify-around">
         {#each books as {title, thumbnailUrl, id}}
         <div class="flex-items">
-            <BookComponent id={id}>
+            <BookComponent id={id} imgSource={thumbnailUrl || noCoverUrl}>
                 <span slot="title">{title}</span>
-                <span slot="image">
-                    <img src="{thumbnailUrl || noCoverUrl}" alt="Book cover">
-                </span>
                 <button on:click={() => deleteBook(id)}>Delete</button>
             </BookComponent>
         </div>

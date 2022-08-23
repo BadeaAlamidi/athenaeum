@@ -1,17 +1,41 @@
+<script context='module'>
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            if (entry.isIntersecting)
+                entry.target.dispatchEvent(new Event('intersect'));
+        });
+    })
+    //this intersection observer never gets deleted
+</script>
+
 <script>
  import {page} from '$app/stores'
+ import {onMount} from 'svelte'
 
  export let id;
+ export let imgSource;
+
+ let element;
+ //intermediary variable that is assigned to once the component is in viewport
+ //Meant for lazy-loading: 
+ //(0 for false and 1 for true. this is also used as an opacity value in img)
+ let hasIntersected = 0;
 
  function navToBook(){
      window.location.href = window.location.protocol + '//' + $page.url.host + '/book?id=' + id;
  }
+ onMount(()=>{
+    observer.observe(element);
+    return ()=>observer.unobserve(element);
+ })
 </script>
-<div>
+<div bind:this={element} on:intersect={()=>hasIntersected = 1}>
     <div class='wrapper' style='' title={id} on:click={navToBook}>
-        <div>
-            <slot name='image'>no image</slot>
-        </div>
+        <span style:opacity="{hasIntersected}">
+            {#if hasIntersected}
+                <img src="{imgSource}" alt="Book Cover">
+            {/if}
+        </span>
         <slot name='title'>no title</slot>
         <br />
     </div>
@@ -23,5 +47,13 @@
         cursor:pointer;
         border-style:solid;
         border-color:red;
+    }
+    img {
+        width: 200px;
+        height: 300px;
+        object-fit: contain;
+    }
+    span{
+        transition: 1s opacity cubic-bezier(0.895, 0.03, 0.685, 0.22);
     }
 </style>
