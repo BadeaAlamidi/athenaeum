@@ -3,11 +3,10 @@
 	import Logo from "$lib/components/_logo.svelte"
 	import { goto } from "$app/navigation";
 
+	let navElement;
 </script>
-<a href = "#navbar">
-	<Logo />
-</a>
-<nav id=navbar>
+<Logo on:click={()=>{navElement.scrollIntoView()}} />
+<nav id=navbar bind:this={navElement}>
 	<span>
 		<a href="/">
 			<svg id="homeIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline" viewBox="0 0 20 20" fill="currentColor">

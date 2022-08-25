@@ -3,9 +3,8 @@
  import BookComponent from "$lib/components/_bookComponent.svelte";
  import {page} from "$app/stores"
  import {searchStatus} from "../lib/stores"
+//SVGs
  import noCoverUrl from '$lib/assets/no-cover.svg'
- // import {queryParamStore} from "$lib/stores.js"
- // import { onMount } from 'svelte';
 
  let modal;
  let files;
@@ -117,16 +116,16 @@
      console.log("res sent");
  }
 
- function expand_sharable_div(){
+ function expand_sharable_div(e){
+    console.log(e)
      navigator.clipboard.writeText($page.url.href)
-              .then(()=>console.log('async copy success'), ()=>console.log('async copy failed'))
-
-     // change look as necessary:
-     sharable_div.id = 'sharable-link-div_open';
-     sharable_div.innerText = $page.url.href + ' Copied! (Click again to update)';
+     .then(()=>{
+         e.target.innerText = $page.url.href + ' Copied! (Click again to update)';
+         e.target.classList.remove('unclicked');
+         e.target.classList.remove('border-x-4');
+     }, ()=>e.currentTarget.innerText = "failed to copy link to clipboard"
+     )
  }
-
- let sharable_div;
 
 </script>
 
@@ -134,20 +133,44 @@
  .crud-add-btn {
      margin-top: 0.5%;
      margin-bottom: 0.5%;
- }
- .flex-items{
+     margin-left:auto;
+     background-color: coral;
+     align-items: center;
+     gap:0.5rem;
+     border-right-color:coral;
+     border-right-width: thick;
+     /* background-image: url("/src/lib/assets/plus.svg"); */
+    }
+ .crud-add-btn>span{
+      mask-image: url("$lib/assets/plus.svg");
+      -webkit-mask-image: url("$lib/assets/plus.svg");
+      width: 1.5rem;
+      height:1.5rem;
+      background-color: black;
+  }
+ .flex-item{
     width:200px;
+    min-height: 300px;
  }
- #sharable-link-div_closed{
+ #sharable-link-div.unclicked{
      background-color: rgb(0, 0, 0);
-     display:inline;
+     /* display:inline; */
      color: white;
  }
- #sharable-link-div-open{
-     background-color: white;
-     display:inline;
-     color: black;
- }
+ #sharable-link-div>span{
+    mask-image: url("$lib/assets/copy.svg");
+    -webkit-mask-image: url("$lib/assets/copy.svg");
+}
+#book-del-btn > span{
+     mask-image: url("$lib/assets/delete.svg");
+     -webkit-mask-image: url("$lib/assets/delete.svg");
+    }
+    #book-del-btn > span,
+    #sharable-link-div>span,
+    .crud-add-btn>span{
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+    }
  form {
      display: flex;
      flex-direction: column;
@@ -171,7 +194,22 @@
  form button[type="submit"] {
      width: 25%;
  }
+ .wrapper{
+    min-height: 100vh;
+    padding: 10px;
+ }
+ input[type="radio"]{
+    width: 1.5rem;
+    height: 1.5rem;
+    accent-color:coral;
+ }
+ label[for="ASC"],
+ label[for="DESC"]{
+    display:inline-flex;
+ }
 </style>
+<!-- added for minimum-height -->
+<div class=wrapper>
 
 {#if $searchStatus == 'ready'}
     {#await bookFetch()}
@@ -195,12 +233,21 @@
             Descending
         </label>
     </div>
-    <div id = sharable-link-div_closed bind:this={sharable_div} on:click={expand_sharable_div}>
-        Results link...
+    <div class="flex items-center flex-wrap-reverse">
+        <div id = sharable-link-div class="unclicked rounded-full border-x-4 border-black cursor-pointer
+            flex my-4" style:gap=.5rem on:click={expand_sharable_div}>
+            Results link...
+            <span style:width=1.5rem style:height=1.5rem style:background-color=white></span>
+        </div>
+        <button class="crud-add-btn rounded-full" style:display=inline-flex style:align-items=center 
+            style:gap=0.5rem on:click={() => modal.display(true)}>
+            <span></span>
+            Add book
+        </button>
+
     </div>
-<button class="crud-add-btn" on:click={() => modal.display(true)}>Add book</button>
 <Modal bind:this={modal}>
-    <h2>Add a book</h2>
+    <h2 >Add a book</h2>
     <form on:submit|preventDefault={addBook}>
         <div>
             <label for="isbn10">isbn10</label>
@@ -259,12 +306,18 @@
         <button type="submit">Submit</button>
     </form>
 </Modal>    
-    <div class="flex flex-wrap justify-around">
+    <div class="flex flex-wrap justify-around gap-y-4 ">
         {#each books as {title, thumbnailUrl, id}}
-        <div class="flex-items">
+        <div class="flex-item">
             <BookComponent id={id} imgSource={thumbnailUrl || noCoverUrl}>
                 <span slot="title">{title}</span>
-                <button on:click={() => deleteBook(id)}>Delete</button>
+                <button id=book-del-btn on:click={() => deleteBook(id)}
+                    class="flex border-black text-black mt-auto"
+                    style:gap=0.5rem
+                >
+                    <span style:width=1.5rem style:height=1.5rem style:background-color=black></span>
+                    Delete
+                </button>
             </BookComponent>
         </div>
         {/each}
@@ -276,3 +329,4 @@
     {:else}
     <span>waiting for user</span>
 {/if}
+</div>

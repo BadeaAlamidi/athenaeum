@@ -160,7 +160,7 @@
 </script>
 <!-- {#if $tagSearchFlag} -->
 {#if $tagSearchFlag}
-<div style:background="grey" class="flex flex-wrap" transition:fade>
+<div style:background="grey" class="flex flex-wrap" >
     <span class="flex gap-x-px justify-evenly flex-wrap">
         {#each $filterArray as {token, color} (token)}
             <div  data-type={color} transition:fly="{{ y: 100, duration: 1000 }}"
@@ -188,7 +188,7 @@
     <button on:click = {searchReq}>Search</button>
 </div>
 {:else}
-<div style:display="flex" transition:fade>
+<div style:display="flex" >
     <input type="text" placeholder="Search by title, ISBN, or ISBN13 (prepend with &quot isbn10/13:&quot)" bind:value={searchString} 
         on:keyup={(e)=>{if (e.key==='Enter') searchReq()}}>
     <button on:click={searchReq}>Search</button>
@@ -214,12 +214,12 @@
         background-color: rgb(190, 18, 61);
     }
     .token[data-type*=black]{
-        background-color: rgb(0, 0, 0);
+        background-color: black;
     }
     .token[data-type=red]:hover{
         color:black;
     }
     .token[data-type=black]:hover{
-        color:red;
+        color:rgb(190, 18, 61);
     }
 </style>

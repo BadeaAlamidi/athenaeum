@@ -175,6 +175,7 @@
         margin : auto;
         object-fit:contain;
         max-height: 300px;
+        width: 200px;
     }
     #pubDate,#descSpan{
         font-weight: bold;

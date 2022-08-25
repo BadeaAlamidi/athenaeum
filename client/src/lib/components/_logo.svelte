@@ -6,16 +6,17 @@
     let ready = false;
     let linearGradient;
     const duration = 5000;
-	onMount(()=> {ready = true; 
+	onMount(()=> {
+        ready = true; 
         //change path fill after stroke animation finishes
-        setTimeout(()=>
-        linearGradient.classList.add("colored")
+        if ($page.url.pathname === '/')
+        setTimeout(()=>linearGradient.classList.add("colored")
         ,1000);
         
     });
 </script>
 {#if $page.url.pathname === '/' }
-    <svg  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 940 788" xml:space="preserve">
+    <svg  on:click xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 940 788" xml:space="preserve" style:cursor=pointer>
         <defs>
             <linearGradient bind:this={linearGradient} id=fillGradient x1=0% x2=100% y1=0% y2=00%>
                 <stop offset=00% style="stop-opacity:1;" stop-color=transparent />

@@ -1,10 +1,13 @@
 <script context='module'>
-    const observer = new IntersectionObserver((entries)=>{
-        entries.forEach((entry)=>{
-            if (entry.isIntersecting)
-                entry.target.dispatchEvent(new Event('intersect'));
-        });
-    })
+    import {browser} from '$app/env';
+    let observer;
+    if (browser)
+        observer = new IntersectionObserver((entries)=>{
+            entries.forEach((entry)=>{
+                if (entry.isIntersecting)
+                    entry.target.dispatchEvent(new Event('intersect'));
+            });
+        })
     //this intersection observer never gets deleted
 </script>
 
@@ -32,7 +35,7 @@
 <div bind:this={element} on:intersect={()=>hasIntersected = 1}>
     <div class='wrapper' style='' title={id} on:click={navToBook}>
         <span style:opacity="{hasIntersected}">
-            {#if hasIntersected}
+            {#if hasIntersected }
                 <img src="{imgSource}" alt="Book Cover">
             {/if}
         </span>
@@ -54,6 +57,6 @@
         object-fit: contain;
     }
     span{
-        transition: 1s opacity cubic-bezier(0.895, 0.03, 0.685, 0.22);
+        transition: 0.5s opacity cubic-bezier(0.895, 0.03, 0.685, 0.22);
     }
 </style>
