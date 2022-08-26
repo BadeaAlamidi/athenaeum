@@ -230,6 +230,7 @@
         background-color:black;
     }
 </style>
+<div style:min-height=70vh>
 {#await getBookData()}
     <p>...Loading</p>
 {:then {isbn10, isbn13, title, subtitle, rating, 
@@ -311,3 +312,4 @@
     </div>
 </div>
 {/await}
+</div>

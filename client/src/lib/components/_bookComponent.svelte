@@ -21,9 +21,10 @@
  let element;
  //intermediary variable that is assigned to once the component is in viewport
  //Meant for lazy-loading: 
- //(0 for false and 1 for true. this is also used as an opacity value in img)
- let hasIntersected = 0;
-
+ let hasIntersected = false;
+ //the following variable is used for the opacity style property. it is set to 1 once the image
+ //has completely loaded
+ let opacity=0;
  function navToBook(){
      window.location.href = window.location.protocol + '//' + $page.url.host + '/book?id=' + id;
  }
@@ -32,11 +33,11 @@
     return ()=>observer.unobserve(element);
  })
 </script>
-<div bind:this={element} on:intersect={()=>hasIntersected = 1}>
+<div bind:this={element} on:intersect={()=>hasIntersected = true}>
     <div class='wrapper' style='' title={id} on:click={navToBook}>
-        <span style:opacity="{hasIntersected}">
+        <span style:opacity="{opacity}">
             {#if hasIntersected }
-                <img src="{imgSource}" alt="Book Cover">
+                <img src="{imgSource}" alt="Book Cover" on:load={()=>opacity=1}>
             {/if}
         </span>
         <slot name='title'>no title</slot>

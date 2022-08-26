@@ -19,6 +19,21 @@
 	<SearchBar/>
 </nav>
 <slot></slot>
+<footer class="bg-black block relative p-5" style:height=30vh style:z-index=1>
+	<div class="mb-auto block" style:width=20px style:height=20px>textContent</div>
+	<span class="mt-auto mb-0 bottom-footer-info flex flex-wrap justify-between " style:bottom=0
+		style:width=100%
+	>
+		<span style:color=white>1</span>
+		<span style:color=white>© ATHENAEUM, Inc.</span>
+		<a style:color=white href="https://github.com/BadeaAlamidi/athenaeum"
+			class="flex items-center" style:gap=0.5rem
+		>
+			<span id=github-svg style:width=3rem style:height=3rem class=bg-white ></span>
+				Find this project on GitHub
+		</a>
+	</span>
+</footer>
 <style>
 	@tailwind base;
 	@tailwind components;
@@ -32,7 +47,7 @@
 		padding: 10px;
 		z-index: 1;
 	}
-	a{
+	nav a{
 		font-size: 1.5rem;
 		display:flex;
 		align-items: center;
@@ -47,5 +62,12 @@
 	}
 	:root{
 		scroll-behavior : smooth;
+	}
+	/* footer>span>span:last-child{ */
+	#github-svg{
+		-webkit-mask: url("$lib/assets/github.svg");
+		mask: url("$lib/assets/github.svg");
+		mask-repeat: no-repeat;
+		-webkit-mask-repeat: no-repeat;
 	}
 </style>

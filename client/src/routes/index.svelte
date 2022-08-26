@@ -26,6 +26,8 @@
 
  let selectValue = $page.url.searchParams.get('order') ?? 'id';
  let selectDirection = $page.url.searchParams.get('direction') ?? 'ASC';
+ let collapsed = $page.url.searchParams.has('direction') || $page.url.searchParams.has('direction')?
+                    true : false;
  let bookFetch = async () => {
     const order = $page.url.searchParams.get('order') ?? 'id';
      const direction = $page.url.searchParams.get('direction') ?? 'ASC';
@@ -115,7 +117,8 @@
          .then(res => console.log(res));
      console.log("res sent");
  }
-
+/*styling javascript functionality*/
+//clicking on "Results link":
  function expand_sharable_div(e){
     console.log(e)
      navigator.clipboard.writeText($page.url.href)
@@ -125,6 +128,16 @@
          e.target.classList.remove('border-x-4');
      }, ()=>e.currentTarget.innerText = "failed to copy link to clipboard"
      )
+ }
+ //filter tray height reaction variable:
+ $:collapsibleHeight = collapsed? '15rem' : 0;
+ 
+//  let collapsibleHeight = '0';
+ function filterBtnClick(e){
+    collapsed = !collapsed;
+    // if (collapsed) collapsibleHeight = '0';
+    if (collapsed) collapsibleHeight = '15rem';
+    else collapsibleHeight = "15rem";
  }
 
 </script>
@@ -160,14 +173,19 @@
  #sharable-link-div>span{
     mask-image: url("$lib/assets/copy.svg");
     -webkit-mask-image: url("$lib/assets/copy.svg");
-}
+ }
 #book-del-btn > span{
      mask-image: url("$lib/assets/delete.svg");
      -webkit-mask-image: url("$lib/assets/delete.svg");
     }
+    #filter-btn>div{
+     mask-image: url("$lib/assets/filter.svg");
+     -webkit-mask-image: url("$lib/assets/filter.svg");
+ }
     #book-del-btn > span,
     #sharable-link-div>span,
-    .crud-add-btn>span{
+    .crud-add-btn>span,
+    #filter-btn>div{
         mask-repeat: no-repeat;
         -webkit-mask-repeat: no-repeat;
     }
@@ -199,14 +217,41 @@
     padding: 10px;
  }
  input[type="radio"]{
-    width: 1.5rem;
+    width:  1.5rem;
     height: 1.5rem;
     accent-color:coral;
  }
- label[for="ASC"],
- label[for="DESC"]{
-    display:inline-flex;
+label:not(.modal-form label){
+     display:inline-flex;
+     gap:.5rem;
  }
+ #collapsible{
+    transition: max-height 1s;
+    max-height: var(--maxHeight);
+ }
+ #tray{
+    width:100%;
+    margin: 0 auto;
+    display:grid;
+    grid-template:
+    "orderH sortH" 1fr
+    ".      .    " .5rem
+    "title  ascnd" 1fr
+    "pubdt  dscnd" 1fr
+    "ratng  .    " 1fr
+    "pgcnt  .    " 1fr
+    "id     .    " 1fr
+    /1fr 1fr;
+    column-gap: 5vw;
+    row-gap: .5rem;
+}
+    /*order matters in CSS????!!!!*/
+    @media screen and (min-width: 1000px){
+        #tray{width:80%;}
+    }
+    @media screen and (min-width: 1500px){
+        #tray{width:50%;}
+    }
 </style>
 <!-- added for minimum-height -->
 <div class=wrapper>
@@ -214,41 +259,58 @@
 {#if $searchStatus == 'ready'}
     {#await bookFetch()}
     <p>Loading Books...</p>
-    {:then books} 
-    <div>
-        <label for="order">Sort by: </label>
-        <select bind:value={selectValue} on:change={ReOrder}>
-            <option value="title">Title</option>
-            <option value="publishDate">Date published</option>
-            <option value="rating">Rating</option>
-            <option value="pageCount">Page Count</option>
-            <option value="id">Book ID</option>
-        </select>
-        <label for="ASC">
-            <input type="radio" id="ASC" value="ASC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
-            Ascending 
-        </label>
-        <label for="DESC">
-            <input type="radio" id="DESC" value="DESC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
-            Descending
-        </label>
+    {:then books}
+    <span id=filter-btn class="flex cursor-pointer" style:gap=.5rem on:click={filterBtnClick}>
+        <div style:width=1.5rem style:height=1.5rem class=bg-black></div>
+        Filter
+    </span>
+    <div id=collapsible class="overflow-hidden" style:--maxHeight={collapsibleHeight}>
+        <div id=tray>
+            <!-- <label for="order">Sort by: </label> -->
+            <span style:grid-area=orderH class="border-box border-b-4 border-black">Order by</span>
+            <span style:grid-area=sortH  class="border-box border-b-4 border-black">Sort by</span>
+            <!-- <select bind:value={selectValue} on:change={ReOrder}>
+                <option value="title">Title</option>
+                <option value="publishDate">Date published</option>
+                <option value="rating">Rating</option>
+                <option value="pageCount">Page Count</option>
+                <option value="id">Book ID</option>
+            </select> -->
+            {#each [{gridArea:'title',value:'title',text:'Title'},
+                    {gridArea:'pubdt',value:'publishDate',text:'Date Published'},
+                    {gridArea:'ratng',value:'rating',text:'Rating'},
+                    {gridArea:'pgcnt',value:'pageCount',text:'Page Count'},
+                    {gridArea:'id',value:'id',text:'Book ID'},] as orderOption (orderOption.gridArea)}
+                <label for="{orderOption.gridArea}" style:grid-area={orderOption.gridArea}>
+                    <input bind:group={selectValue} type=radio value={orderOption.value} on:change={ReOrder}/>
+                    {orderOption.text}
+                </label>
+            {/each}
+            <label for="ASC" style:grid-area=ascnd>
+                <input type="radio" id="ASC" value="ASC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
+                Ascending 
+            </label>
+            <label for="DESC" style:grid-area=dscnd>
+                <input type="radio" id="DESC" value="DESC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
+                Descending
+            </label>
+        </div>
     </div>
     <div class="flex items-center flex-wrap-reverse">
         <div id = sharable-link-div class="unclicked rounded-full border-x-4 border-black cursor-pointer
-            flex my-4" style:gap=.5rem on:click={expand_sharable_div}>
-            Results link...
-            <span style:width=1.5rem style:height=1.5rem style:background-color=white></span>
+        flex my-4" style:gap=.5rem on:click={expand_sharable_div}>
+        Results link...
+        <span style:width=1.5rem style:height=1.5rem style:background-color=white></span>
         </div>
         <button class="crud-add-btn rounded-full" style:display=inline-flex style:align-items=center 
-            style:gap=0.5rem on:click={() => modal.display(true)}>
-            <span></span>
-            Add book
+        style:gap=0.5rem on:click={() => modal.display(true)}>
+        <span></span>
+        Add book
         </button>
-
     </div>
 <Modal bind:this={modal}>
     <h2 >Add a book</h2>
-    <form on:submit|preventDefault={addBook}>
+    <form on:submit|preventDefault={addBook} id=modal-form>
         <div>
             <label for="isbn10">isbn10</label>
             <input type="text" name="isbn10" bind:value={newBook.isbn10} id="isbn10" />
