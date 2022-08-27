@@ -2,10 +2,17 @@
 	import SearchBar from "$lib/components/_search.svelte";
 	import Logo from "$lib/components/_logo.svelte"
 	import { goto } from "$app/navigation";
+	import { page } from "$app/stores";
 
 	let navElement;
+	//auto scroll into results if search parameters were provided:
+	$: if (navElement  && window.location.pathname == '/' && window.location.search){
+		navElement.scrollIntoView();
+	}
 </script>
-<Logo on:click={()=>{navElement.scrollIntoView()}} />
+{#if $page.url.pathname === '/'}
+	<Logo on:click={()=>{navElement.scrollIntoView()}} />
+{/if}
 <nav id=navbar bind:this={navElement}>
 	<span>
 		<a href="/">
@@ -20,11 +27,11 @@
 </nav>
 <slot></slot>
 <footer class="bg-black block relative p-5" style:height=30vh style:z-index=1>
-	<div class="mb-auto block" style:width=20px style:height=20px>textContent</div>
-	<span class="mt-auto mb-0 bottom-footer-info flex flex-wrap justify-between " style:bottom=0
-		style:width=100%
+	<div class="mb-auto block">textContent</div>
+	<span class="mt-auto mb-0 bottom-footer-info flex flex-wrap-reverse justify-between"
+	 style:width=100%
 	>
-		<span style:color=white>1</span>
+		<span class=dummy></span>
 		<span style:color=white>© ATHENAEUM, Inc.</span>
 		<a style:color=white href="https://github.com/BadeaAlamidi/athenaeum"
 			class="flex items-center" style:gap=0.5rem

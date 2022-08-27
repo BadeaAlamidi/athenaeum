@@ -222,6 +222,7 @@
     }
     .token{
         color:white;
+        cursor: pointer;
     }
     .token[data-bg*=red]{
         background-color: rgb(190, 18, 61);

@@ -26,8 +26,8 @@
 
  let selectValue = $page.url.searchParams.get('order') ?? 'id';
  let selectDirection = $page.url.searchParams.get('direction') ?? 'ASC';
- let collapsed = $page.url.searchParams.has('direction') || $page.url.searchParams.has('direction')?
-                    true : false;
+ let collapsed = ($page.url.searchParams.has('direction') || $page.url.searchParams.has('direction'))??
+                 false;
  let bookFetch = async () => {
     const order = $page.url.searchParams.get('order') ?? 'id';
      const direction = $page.url.searchParams.get('direction') ?? 'ASC';
