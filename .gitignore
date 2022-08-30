@@ -3,3 +3,5 @@ server/node_modules
 yarn.lock
 .env
 -- SQLITE.sql
+server/uploads
+todo
