@@ -28,8 +28,8 @@
 <slot></slot>
 <footer class="bg-black block relative p-5" style:height=30vh style:z-index=1>
 	<div class="mb-auto block">textContent</div>
-	<span class="mt-auto mb-0 bottom-footer-info flex flex-wrap-reverse justify-between"
-	 style:width=100%
+	<span class="mt-auto mb-0 bottom-footer-info flex flex-wrap-reverse justify-center items-center"
+	 style:width=100% style:gap=10px
 	>
 		<span class=dummy></span>
 		<span style:color=white>© ATHENAEUM, Inc.</span>
