@@ -12,7 +12,7 @@
      height: 100%;
      top: 0;
      left: 0;
-     z-index: 2;
+     z-index: 12;
  }
  .modal {
      background-color: #ffffff;
