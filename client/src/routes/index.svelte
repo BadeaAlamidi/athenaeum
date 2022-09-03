@@ -1,8 +1,9 @@
 <script>
  import Modal from "$lib/components/_modal.svelte";
  import BookComponent from "$lib/components/_bookComponent.svelte";
- import {page} from "$app/stores"
- import {searchStatus} from "../lib/stores"
+ import {page} from "$app/stores";
+ import {searchStatus} from "$lib/stores";
+ import Spinner from "$lib/components/spinner.svelte"
 //SVGs
  import noCoverUrl from '$lib/assets/no-cover.svg'
 
@@ -42,7 +43,7 @@
         requestURL.pathname = '/api/taggedbooks';
         requestURL.searchParams.set('tags',tagsSearchString);
         requestURL.searchParams.set('authors',authSearchString);
-     } else {
+     } else { 
         requestURL.pathname = '/api/books';
         requestURL.searchParams.set('searchString', searchString)
      }
@@ -258,7 +259,8 @@ label:not(.modal-form label){
 
 {#if $searchStatus == 'ready'}
     {#await bookFetch()}
-    <p>Loading Books...</p>
+    <!-- <p>Loading Books...</p> -->
+    <Spinner text="Loading Books" mode="clockwise"/>
     {:then books}
     <span id=filter-btn class="flex cursor-pointer" style:gap=.5rem on:click={filterBtnClick}>
         <div style:width=1.5rem style:height=1.5rem class=bg-black></div>
@@ -389,6 +391,7 @@ label:not(.modal-form label){
         <p>{error}</p>
       {/await}
     {:else}
-    <span>waiting for user</span>
+    <!-- <span>waiting for user</span> -->
+    <Spinner text="Waiting for user" mode="counter-clockwise"/>
 {/if}
 </div>

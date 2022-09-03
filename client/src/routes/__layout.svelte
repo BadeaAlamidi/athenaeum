@@ -42,9 +42,9 @@
 	//auto scroll into results if search parameters were provided:
 	//DOES NOT WORK. THERE IS NO REACTIVE SYMBOL IN THE STATEMENT
 	$: if (navElement  && window.location.pathname == '/' && window.location.search){
+		console.log('reaction triggered in __layout.svelte')
 		navElement.scrollIntoView();
 	}
-	
 	onMount(()=>{
 		observer.observe(footElement);
 
@@ -54,17 +54,20 @@
 	function updateRot({detail:ratio}){
 		// don't rotate if viewport is bigger than document element:
 		const documentElement = document.documentElement;
-		if (documentElement.clientHeight <= window.innerHeight) {
-			rotValue="0deg"; 
+		if (documentElement.scrollHeight <= window.innerHeight) {
+			rotValue=0; 
 			return;
 		}
-		// ensure the rotation is 0degrees if the user has scrolled all the way down
-		if (Math.abs(documentElement.scrollHeight - window.innerHeight
-			 - documentElement.scrollTop) < 1) rotValue = '0deg';
-		else
-			rotValue=`${90 - ratio * 90}deg`
+		rotValue = 90 - (90*ratio);
+	}
+	//ensures rotValue is 0 when the user has scrolled to bottom. Added since intersection observer
+	// does not trigger once the footer is full in viewport (threshold of 1)
+	function testBottom(){
+		if (Math.abs(document.documentElement.scrollHeight - window.innerHeight
+			 - document.documentElement.scrollTop) < 1) rotValue = 0;
 	}
 </script>
+<svelte:window on:scroll={testBottom}/>
 {#if $page.url.pathname === '/'}
 	<Logo on:click={()=>{navElement.scrollIntoView()}} />
 {/if}
@@ -84,7 +87,7 @@
 <footer class="bg-black block relative p-5 overflow-hidden" style:max-height=100vh style:z-index=1
 	bind:this={footElement} on:visible={updateRot}>
 	<span id=header class="text-white m-auto flex items-center justify-center" >Developed by:</span>
-	<address class="text-white flex" style:grid-area=addr1 style:gap=10px style:--rot={rotValue}>
+	<address class="text-white flex" style:grid-area=addr1 style:gap=10px style:--rot={rotValue + 'deg'}>
 		<img src="{badeaav}" style:width=3rem style:height=3rem alt=badeasav class=object-contain/>
 		<div>
 			Badea Alamidi 
@@ -93,7 +96,7 @@
 			</a>
 		</div>
 	</address>
-	<address class="text-white flex" style:grid-area=addr2 style:gap=10px style:--rot={"-" + rotValue}>
+	<address class="text-white flex" style:grid-area=addr2 style:gap=10px style:--rot={"-" + rotValue + 'deg'}>
 		<img style:width=3rem style:height=3rem src="{anthonyav}" alt=anthonysav/>
 		<div>
 			Anthony Chavez 
@@ -164,7 +167,7 @@
 		max-width:375px;
 		margin: 0 auto;
 		background-color: #1F2530;
-		transition: transform;
+		transition: transform 200ms linear;
 	}
 		footer>address:nth-child(2){
 			transform-origin: 150%;

@@ -2,6 +2,8 @@
     import {tagArray as filterArray, tagSearchFlagStore as tagSearchFlag} from '../../lib/stores'
     import {page} from '$app/stores'
     import noCoverUrl from '$lib/assets/no-cover.svg'
+    import Spinner from "$lib/components/spinner.svelte"
+import BookComponent from '$lib/components/_bookComponent.svelte';
 
     let bookData = {};
     let bookAuthors=[];
@@ -228,12 +230,13 @@
         background-color: rgb(190, 18, 61);
     }
     .token[data-bg*=black]{
-        background-color:black;
+        background-color:#1F2530;
     }
 </style>
 <div style:min-height=70vh>
 {#await getBookData()}
-    <p>...Loading</p>
+    <!-- <p>...Loading</p> -->
+    <Spinner text="...Loading" mode=clockwise/>
 {:then {isbn10, isbn13, title, subtitle, rating, 
     thumbnailUrl, language, publishDate, pageCount,}}
 <div id=book-grid>
