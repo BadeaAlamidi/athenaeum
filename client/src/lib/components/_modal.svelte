@@ -1,6 +1,6 @@
 <script>
  import {fade} from 'svelte/transition';
- let visible = true;
+ let visible = false;
  export function display(show) {
      visible = show;
  }
