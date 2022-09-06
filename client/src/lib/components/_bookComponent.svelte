@@ -27,14 +27,16 @@
  let opacity=0;
  function navToBook(){
      window.location.href = window.location.protocol + '//' + $page.url.host + '/book?id=' + id;
- }
+    }
+const href = window.location.protocol + '//' + $page.url.host + '/book?id=' + id;
  onMount(()=>{
     observer.observe(element);
     return ()=>observer.unobserve(element);
  })
 </script>
 <div bind:this={element} on:intersect={()=>hasIntersected = true}>
-    <div class='wrapper' style='' title={id} on:click={navToBook}>
+    <!-- <div class='wrapper' style='' title={id} on:click={navToBook}> -->
+    <a class='wrapper' style='' title={id} href={href}>
         <span style:opacity="{opacity}">
             {#if hasIntersected }
                 <img src="{imgSource}" alt="Book Cover" on:load={()=>opacity=1}>
@@ -42,7 +44,7 @@
         </span>
         <slot name='title'>no title</slot>
         <br />
-    </div>
+    </a>
     <slot></slot>
 </div>
 
