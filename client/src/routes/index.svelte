@@ -1,8 +1,9 @@
 <script>
  import Modal from "$lib/components/_modal.svelte";
  import BookComponent from "$lib/components/_bookComponent.svelte";
- import {page} from "$app/stores"
- import {searchStatus} from "../lib/stores"
+ import {page} from "$app/stores";
+ import {searchStatus} from "$lib/stores";
+ import Spinner from "$lib/components/spinner.svelte"
 //SVGs
  import noCoverUrl from '$lib/assets/no-cover.svg'
 
@@ -42,7 +43,7 @@
         requestURL.pathname = '/api/taggedbooks';
         requestURL.searchParams.set('tags',tagsSearchString);
         requestURL.searchParams.set('authors',authSearchString);
-     } else {
+     } else { 
         requestURL.pathname = '/api/books';
         requestURL.searchParams.set('searchString', searchString)
      }
@@ -190,24 +191,35 @@
         -webkit-mask-repeat: no-repeat;
     }
  form {
-     display: flex;
-     flex-direction: column;
-     width: 40%;
+    display: flex;
+    flex-direction: column;
+    color:black;
+    background-color: white;
+    box-sizing: border-box;
  }
  form > div {
-     display: flex;
-     justify-content: space-between;
- }
- form > div + * {
-     margin-top: 10px;
- }
- form input, form textarea {
-     width: 50%;
-     border: 1px black solid;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-bottom:1px black solid;
+}
+    form > div:not(:last-child){
+        margin: 10px 6px 0 6px;
+        text-shadow: 2px 2px 3px lightblue;
+    }
+    form input, form textarea {
+        width: 50%;
+        box-shadow: 3px 6px 1px lightblue;
+     /* border: 1px 1px 0 1px; */
+     border-left:1px;
+     /* border-right:1px; */
+     border-top:1px;
+
+     border-color: black;
+     border-style: solid;
  }
  form button {
      margin-top: 1em;
-     border: 1px black solid;
  }
  form button[type="submit"] {
      width: 25%;
@@ -258,7 +270,8 @@ label:not(.modal-form label){
 
 {#if $searchStatus == 'ready'}
     {#await bookFetch()}
-    <p>Loading Books...</p>
+    <!-- <p>Loading Books...</p> -->
+    <Spinner text="Loading Books" mode="clockwise"/>
     {:then books}
     <span id=filter-btn class="flex cursor-pointer" style:gap=.5rem on:click={filterBtnClick}>
         <div style:width=1.5rem style:height=1.5rem class=bg-black></div>
@@ -309,52 +322,52 @@ label:not(.modal-form label){
         </button>
     </div>
 <Modal bind:this={modal}>
-    <h2 >Add a book</h2>
-    <form on:submit|preventDefault={addBook} id=modal-form>
+    <h2 style:grid-area=header class=text-center style:font-size=1.5rem>Add a Book</h2>
+    <form on:submit|preventDefault={()=>{addBook}} id=modal-form class=flex style:grid-area=form>
         <div>
-            <label for="isbn10">isbn10</label>
+            <label for="isbn10">ISBN10</label>
             <input type="text" name="isbn10" bind:value={newBook.isbn10} id="isbn10" />
         </div>
         <div>
-            <label for="isbn13">isbn13</label>
+            <label for="isbn13">ISBN13</label>
             <input type="text" name="isbn13" bind:value={newBook.isbn13} id="isbn13" />
         </div>
         <div>
-            <label for="subtitle">subtitle</label>
+            <label for="subtitle">Subtitle</label>
             <input type="text" name="subtitle" bind:value={newBook.subtitle} id="subtitle" />
         </div>
         <div>
-            <label for="rating">rating</label>
+            <label for="rating">Rating</label>
             <input type="text" name="rating" bind:value={newBook.rating} id="rating" />
         </div>
         <div>
-            <label for="maturityRating">maturity rating</label>
+            <label for="maturityRating">Maturity Rating</label>
             <input type="text" name="maturityRating" bind:value={newBook.maturityRating} id="maturityRating" />
         </div>
         <div>
-            <label for="thumbnailUrl">thumbnail url</label>
+            <label for="thumbnailUrl">Thumbnail URL</label>
             <input type="file"
                    accept="image/*" name="thumbnailUrl" bind:files={newBook.thumbnailUrl} id="thumbnailUrl" />
         </div>
         <div>
-            <label for="smallThumbnailUrl">small thumbnail url</label>
+            <label for="smallThumbnailUrl">Small Thumbnail url</label>
             <input type="file"
                    accept="image/*" name="smallThumbnailUrl" bind:files={newBook.smallThumbnailUrl} id="smallThumbnailUrl" />
         </div>
         <div>
-            <label for="language">language</label>
+            <label for="language">Language</label>
             <input type="text" name="language" bind:value={newBook.language} id="language" />
         </div>
         <div>
-            <label for="publishDate">publish date</label>
+            <label for="publishDate">Publish Date</label>
             <input type="date" name="publishDate" bind:value={newBook.publishDate} id="publishDate" />
         </div>
         <div>
-            <label for="pageCount">page count</label>
+            <label for="pageCount">Page Count</label>
             <input type="text" name="pageCount" bind:value={newBook.pageCount} id="pageCount" />
         </div>
         <div>
-            <label for="description">description</label>
+            <label for="description">Description</label>
             <textarea type="text" name="description" bind:value={newBook.description} id="description" />
         </div>
         <div>
@@ -365,7 +378,9 @@ label:not(.modal-form label){
             <label for="title">Title</label>
             <input type="text" id="title" name="title" bind:value={newBook.title} />
         </div>
-        <button type="submit">Submit</button>
+        <div style:background-color=black>
+            <button type="submit" style:background-color=coral class="mx-auto border-0">Submit</button>
+        </div>
     </form>
 </Modal>    
     <div class="flex flex-wrap justify-around gap-y-4 ">
@@ -389,6 +404,7 @@ label:not(.modal-form label){
         <p>{error}</p>
       {/await}
     {:else}
-    <span>waiting for user</span>
+    <!-- <span>waiting for user</span> -->
+    <Spinner text="Waiting for user" mode="counter-clockwise"/>
 {/if}
 </div>
