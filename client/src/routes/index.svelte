@@ -1,12 +1,11 @@
 <script>
  import Modal from "$lib/components/_modal.svelte";
  import BookComponent from "$lib/components/_bookComponent.svelte";
- import {page} from "$app/stores"
- import {tagArray} from "$lib/stores"
- import {searchStatus} from "../lib/stores"
- import { claim_svg_element } from "svelte/internal";
- // import {queryParamStore} from "$lib/stores.js"
- // import { onMount } from 'svelte';
+ import {page} from "$app/stores";
+ import {searchStatus} from "$lib/stores";
+ import Spinner from "$lib/components/spinner.svelte"
+//SVGs
+ import noCoverUrl from '$lib/assets/no-cover.svg'
 
  let modal;
  let files;
@@ -28,6 +27,8 @@
 
  let selectValue = $page.url.searchParams.get('order') ?? 'id';
  let selectDirection = $page.url.searchParams.get('direction') ?? 'ASC';
+ let collapsed = ($page.url.searchParams.has('direction') || $page.url.searchParams.has('direction'))??
+                 false;
  let bookFetch = async () => {
     const order = $page.url.searchParams.get('order') ?? 'id';
      const direction = $page.url.searchParams.get('direction') ?? 'ASC';
@@ -42,7 +43,7 @@
         requestURL.pathname = '/api/taggedbooks';
         requestURL.searchParams.set('tags',tagsSearchString);
         requestURL.searchParams.set('authors',authSearchString);
-     } else {
+     } else { 
         requestURL.pathname = '/api/books';
         requestURL.searchParams.set('searchString', searchString)
      }
@@ -117,17 +118,28 @@
          .then(res => console.log(res));
      console.log("res sent");
  }
-
- function expand_sharable_div(){
+/*styling javascript functionality*/
+//clicking on "Results link":
+ function expand_sharable_div(e){
+    console.log(e)
      navigator.clipboard.writeText($page.url.href)
-              .then(()=>console.log('async copy success'), ()=>console.log('async copy failed'))
-
-     // change look as necessary:
-     sharable_div.id = 'sharable-link-div_open';
-     sharable_div.innerText = $page.url.href + ' Copied! (Click again to update)';
+     .then(()=>{
+         e.target.innerText = $page.url.href + ' Copied! (Click again to update)';
+         e.target.classList.remove('unclicked');
+         e.target.classList.remove('border-x-4');
+     }, ()=>e.currentTarget.innerText = "failed to copy link to clipboard"
+     )
  }
-
- let sharable_div;
+ //filter tray height reaction variable:
+ $:collapsibleHeight = collapsed? '15rem' : 0;
+ 
+//  let collapsibleHeight = '0';
+ function filterBtnClick(e){
+    collapsed = !collapsed;
+    // if (collapsed) collapsibleHeight = '0';
+    if (collapsed) collapsibleHeight = '15rem';
+    else collapsibleHeight = "15rem";
+ }
 
 </script>
 
@@ -135,127 +147,227 @@
  .crud-add-btn {
      margin-top: 0.5%;
      margin-bottom: 0.5%;
+     margin-left:auto;
+     background-color: coral;
+     align-items: center;
+     gap:0.5rem;
+     border-right-color:coral;
+     border-right-width: thick;
+     /* background-image: url("/src/lib/assets/plus.svg"); */
+    }
+ .crud-add-btn>span{
+      mask-image: url("$lib/assets/plus.svg");
+      -webkit-mask-image: url("$lib/assets/plus.svg");
+      width: 1.5rem;
+      height:1.5rem;
+      background-color: black;
+  }
+ .flex-item{
+    width:200px;
+    min-height: 300px;
  }
- .grid-container {
-     display: grid;
-     grid-template-columns: auto auto auto;
-     grid-template-rows: auto;
-     grid-gap: 0.5rem;
- }
- .grid-items img {
-     width: 200px;
-     height: 300px;
-     object-fit: cover;
- }
- #sharable-link-div_closed{
+ #sharable-link-div.unclicked{
      background-color: rgb(0, 0, 0);
-     display:inline;
+     /* display:inline; */
      color: white;
  }
- #sharable-link-div-open{
-     background-color: white;
-     display:inline;
-     color: black;
+ #sharable-link-div>span{
+    mask-image: url("$lib/assets/copy.svg");
+    -webkit-mask-image: url("$lib/assets/copy.svg");
  }
+#book-del-btn > span{
+     mask-image: url("$lib/assets/delete.svg");
+     -webkit-mask-image: url("$lib/assets/delete.svg");
+    }
+    #filter-btn>div{
+     mask-image: url("$lib/assets/filter.svg");
+     -webkit-mask-image: url("$lib/assets/filter.svg");
+ }
+    #book-del-btn > span,
+    #sharable-link-div>span,
+    .crud-add-btn>span,
+    #filter-btn>div{
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+    }
  form {
-     display: flex;
-     flex-direction: column;
-     width: 40%;
+    display: flex;
+    flex-direction: column;
+    color:black;
+    background-color: white;
+    box-sizing: border-box;
  }
  form > div {
-     display: flex;
-     justify-content: space-between;
- }
- form > div + * {
-     margin-top: 10px;
- }
- form input, form textarea {
-     width: 50%;
-     border: 1px black solid;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-bottom:1px black solid;
+}
+    form > div:not(:last-child){
+        margin: 10px 6px 0 6px;
+        text-shadow: 2px 2px 3px lightblue;
+    }
+    form input, form textarea {
+        width: 50%;
+        box-shadow: 3px 6px 1px lightblue;
+     /* border: 1px 1px 0 1px; */
+     border-left:1px;
+     /* border-right:1px; */
+     border-top:1px;
+
+     border-color: black;
+     border-style: solid;
  }
  form button {
      margin-top: 1em;
-     border: 1px black solid;
  }
  form button[type="submit"] {
      width: 25%;
  }
+ .wrapper{
+    min-height: 100vh;
+    padding: 10px;
+ }
+ input[type="radio"]{
+    width:  1.5rem;
+    height: 1.5rem;
+    accent-color:coral;
+ }
+label:not(.modal-form label){
+     display:inline-flex;
+     gap:.5rem;
+ }
+ #collapsible{
+    transition: max-height 1s;
+    max-height: var(--maxHeight);
+ }
+ #tray{
+    width:100%;
+    margin: 0 auto;
+    display:grid;
+    grid-template:
+    "orderH sortH" 1fr
+    ".      .    " .5rem
+    "title  ascnd" 1fr
+    "pubdt  dscnd" 1fr
+    "ratng  .    " 1fr
+    "pgcnt  .    " 1fr
+    "id     .    " 1fr
+    /1fr 1fr;
+    column-gap: 5vw;
+    row-gap: .5rem;
+}
+    /*order matters in CSS????!!!!*/
+    @media screen and (min-width: 1000px){
+        #tray{width:80%;}
+    }
+    @media screen and (min-width: 1500px){
+        #tray{width:50%;}
+    }
 </style>
-<h1>Welcome to Athenaeum</h1>
+<!-- added for minimum-height -->
+<div class=wrapper>
 
 {#if $searchStatus == 'ready'}
     {#await bookFetch()}
-    <p>Loading Books...</p>
-    {:then books} 
-    <div>
-        <label for="order">Sort by: </label>
-        <select bind:value={selectValue} on:change={ReOrder}>
-            <option value="title">Title</option>
-            <option value="publishDate">Date published</option>
-            <option value="rating">Rating</option>
-            <option value="pageCount">Page Count</option>
-            <option value="id">Book ID</option>
-        </select>
-        <label for="ASC">
-            <input type="radio" id="ASC" value="ASC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
-            Ascending 
-        </label>
-        <label for="DESC">
-            <input type="radio" id="DESC" value="DESC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
-            Descending
-        </label>
+    <!-- <p>Loading Books...</p> -->
+    <Spinner text="Loading Books" mode="clockwise"/>
+    {:then books}
+    <span id=filter-btn class="flex cursor-pointer" style:gap=.5rem on:click={filterBtnClick}>
+        <div style:width=1.5rem style:height=1.5rem class=bg-black></div>
+        Filter
+    </span>
+    <div id=collapsible class="overflow-hidden" style:--maxHeight={collapsibleHeight}>
+        <div id=tray>
+            <!-- <label for="order">Sort by: </label> -->
+            <span style:grid-area=orderH class="border-box border-b-4 border-black">Order by</span>
+            <span style:grid-area=sortH  class="border-box border-b-4 border-black">Sort by</span>
+            <!-- <select bind:value={selectValue} on:change={ReOrder}>
+                <option value="title">Title</option>
+                <option value="publishDate">Date published</option>
+                <option value="rating">Rating</option>
+                <option value="pageCount">Page Count</option>
+                <option value="id">Book ID</option>
+            </select> -->
+            {#each [{gridArea:'title',value:'title',text:'Title'},
+                    {gridArea:'pubdt',value:'publishDate',text:'Date Published'},
+                    {gridArea:'ratng',value:'rating',text:'Rating'},
+                    {gridArea:'pgcnt',value:'pageCount',text:'Page Count'},
+                    {gridArea:'id',value:'id',text:'Book ID'},] as orderOption (orderOption.gridArea)}
+                <label for="{orderOption.gridArea}" style:grid-area={orderOption.gridArea}>
+                    <input bind:group={selectValue} type=radio value={orderOption.value} on:change={ReOrder}/>
+                    {orderOption.text}
+                </label>
+            {/each}
+            <label for="ASC" style:grid-area=ascnd>
+                <input type="radio" id="ASC" value="ASC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
+                Ascending 
+            </label>
+            <label for="DESC" style:grid-area=dscnd>
+                <input type="radio" id="DESC" value="DESC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
+                Descending
+            </label>
+        </div>
     </div>
-    <div id = sharable-link-div_closed bind:this={sharable_div} on:click={expand_sharable_div}>
+    <div class="flex items-center flex-wrap-reverse">
+        <div id = sharable-link-div class="unclicked rounded-full border-x-4 border-black cursor-pointer
+        flex my-4" style:gap=.5rem on:click={expand_sharable_div}>
         Results link...
+        <span style:width=1.5rem style:height=1.5rem style:background-color=white></span>
+        </div>
+        <button class="crud-add-btn rounded-full" style:display=inline-flex style:align-items=center 
+        style:gap=0.5rem on:click={() => modal.display(true)}>
+        <span></span>
+        Add book
+        </button>
     </div>
-<button class="crud-add-btn" on:click={() => modal.display(true)}>Add book</button>
 <Modal bind:this={modal}>
-    <h2>Add a book</h2>
-    <form on:submit|preventDefault={addBook}>
+    <h2 style:grid-area=header class=text-center style:font-size=1.5rem>Add a Book</h2>
+    <form on:submit|preventDefault={()=>{addBook}} id=modal-form class=flex style:grid-area=form>
         <div>
-            <label for="isbn10">isbn10</label>
+            <label for="isbn10">ISBN10</label>
             <input type="text" name="isbn10" bind:value={newBook.isbn10} id="isbn10" />
         </div>
         <div>
-            <label for="isbn13">isbn13</label>
+            <label for="isbn13">ISBN13</label>
             <input type="text" name="isbn13" bind:value={newBook.isbn13} id="isbn13" />
         </div>
         <div>
-            <label for="subtitle">subtitle</label>
+            <label for="subtitle">Subtitle</label>
             <input type="text" name="subtitle" bind:value={newBook.subtitle} id="subtitle" />
         </div>
         <div>
-            <label for="rating">rating</label>
+            <label for="rating">Rating</label>
             <input type="text" name="rating" bind:value={newBook.rating} id="rating" />
         </div>
         <div>
-            <label for="maturityRating">maturity rating</label>
+            <label for="maturityRating">Maturity Rating</label>
             <input type="text" name="maturityRating" bind:value={newBook.maturityRating} id="maturityRating" />
         </div>
         <div>
-            <label for="thumbnailUrl">thumbnail url</label>
+            <label for="thumbnailUrl">Thumbnail URL</label>
             <input type="file"
                    accept="image/*" name="thumbnailUrl" bind:files={newBook.thumbnailUrl} id="thumbnailUrl" />
         </div>
         <div>
-            <label for="smallThumbnailUrl">small thumbnail url</label>
+            <label for="smallThumbnailUrl">Small Thumbnail url</label>
             <input type="file"
                    accept="image/*" name="smallThumbnailUrl" bind:files={newBook.smallThumbnailUrl} id="smallThumbnailUrl" />
         </div>
         <div>
-            <label for="language">language</label>
+            <label for="language">Language</label>
             <input type="text" name="language" bind:value={newBook.language} id="language" />
         </div>
         <div>
-            <label for="publishDate">publish date</label>
+            <label for="publishDate">Publish Date</label>
             <input type="date" name="publishDate" bind:value={newBook.publishDate} id="publishDate" />
         </div>
         <div>
-            <label for="pageCount">page count</label>
+            <label for="pageCount">Page Count</label>
             <input type="text" name="pageCount" bind:value={newBook.pageCount} id="pageCount" />
         </div>
         <div>
-            <label for="description">description</label>
+            <label for="description">Description</label>
             <textarea type="text" name="description" bind:value={newBook.description} id="description" />
         </div>
         <div>
@@ -266,16 +378,23 @@
             <label for="title">Title</label>
             <input type="text" id="title" name="title" bind:value={newBook.title} />
         </div>
-        <button type="submit">Submit</button>
+        <div style:background-color=black>
+            <button type="submit" style:background-color=coral class="mx-auto border-0">Submit</button>
+        </div>
     </form>
 </Modal>    
-    <div class="grid-container">
+    <div class="flex flex-wrap justify-around gap-y-4 ">
         {#each books as {title, thumbnailUrl, id}}
-        <div class="grid-items">
-            <BookComponent id={id}>
+        <div class="flex-item">
+            <BookComponent id={id} imgSource={thumbnailUrl || noCoverUrl}>
                 <span slot="title">{title}</span>
-                <span slot="image"><img src="{thumbnailUrl}" alt="Book cover"></span>
-                <button on:click={() => deleteBook(id)}>Delete</button>
+                <button id=book-del-btn on:click={() => deleteBook(id)}
+                    class="flex border-black text-black mt-auto"
+                    style:gap=0.5rem
+                >
+                    <span style:width=1.5rem style:height=1.5rem style:background-color=black></span>
+                    Delete
+                </button>
             </BookComponent>
         </div>
         {/each}
@@ -285,5 +404,7 @@
         <p>{error}</p>
       {/await}
     {:else}
-    <span>waiting for user</span>
+    <!-- <span>waiting for user</span> -->
+    <Spinner text="Waiting for user" mode="counter-clockwise"/>
 {/if}
+</div>

@@ -1,12 +1,15 @@
 <script>
-    import {onMount} from 'svelte'
+    import {onDestroy} from 'svelte'
     import {page} from '$app/stores'
     import soundex from '../soundex.js'
     import {searchStatus, tagArray as filterArray, tagSearchFlagStore as tagSearchFlag} from '../stores.js'
+    //built-in svelte animations:
+    import {fly} from 'svelte/transition' //for tags in tagsearchbar
+    import {fade} from 'svelte/transition'//for chaning the search bar type
+    import {flip} from 'svelte/animate'//for chaning the search bar type
+
     
-    // import {queryParamStore} from '$lib/stores'
-    // import {normalSearchText} from '$lib/stores'
-    
+    const tokenAnimDuration = 500;
     
     // let normalSearch; // boolean for switching between tag search and normal title/isbn search
     let tagSearchString='';
@@ -94,14 +97,20 @@
     function tagSearchInput(event){
         if (tagSearchString.length>1){
             // test if current input matches one of the indexes of the global tags variable
+            //TODO: use set instead of array
             const filterArrayTokens = $filterArray.map(({token})=>token)
+
+            const suggestionsTokens = new Set();
+            suggestions.forEach(({token})=>{suggestionsTokens.add(token)})
+
             if (tagsMap[soundex(tagSearchString)])
                 suggestions = tagsMap[soundex(tagSearchString)]
                     .filter((suggestion)=>!filterArrayTokens.includes(suggestion))
                     .map((ele)=>{return {token:ele, color:'black'}});
 
             for (let {author} of authorArray)
-                if (!filterArrayTokens.includes(author) && author.startsWith(tagSearchString)) {
+                if (!filterArrayTokens.includes(author) && !suggestionsTokens.has(author)
+                && author.startsWith(tagSearchString)) {
                     suggestions = [...suggestions, {token:author, color:'red'}]
                 }
         }
@@ -113,9 +122,25 @@
                 // tagArray = [...tagArray, val];//copies entire array(+1 new elem) into the same symbol. could use push method followed by tagArray = tagArray to trigger svelte reaction but
                                               //this looks cooler
                 filterArray.update(e=>[...e,{token, color}]);
+                event.currentTarget.focus();
             }
         }
     }
+
+    //intermediary for toggling $tagSearchFlag created to await the animation of tokens if they
+    //  exist while switching between the two search modes:
+    let regularSearch = true;
+    let timeOutId;
+    const unsub = tagSearchFlag.subscribe(value=>{
+        clearTimeout(timeOutId);
+        if (value == true){
+            regularSearch = false;
+        } else {
+            if ($filterArray.length)
+                timeOutId=setTimeout(()=>regularSearch = true, tokenAnimDuration);
+            else regularSearch = true;
+        }
+    });
 
     // function that removes the last element of the tag array
     // by pressing 'backspace' while typing on tag text input field
@@ -134,12 +159,7 @@
         filterArray.update(v=>v.filter(({token})=>token!==filterElement))
     }
     // should this be scrapped and have its logic moved to before the reactive statements above?
-    onMount(()=>{
-        // if ((!($page.url.searchParams.get('tag'))) || $page.url.searchParams.get('tag') === "false")
-        //     {$tagSearchFlag = false; console.log('tagSearchFlag was set to false on mount')}
-        // else $tagSearchFlag = true;
-    }
-    );
+    onDestroy(unsub);
     function searchReq(){
         // navigate to the index.svelte page with the accumulated get params from this component:
         window.location.href = window.location.protocol + '//' + $page.url.host + '/?' 
@@ -148,12 +168,14 @@
 </script>
 <!-- {#if $tagSearchFlag} -->
 {#if $tagSearchFlag}
-<div style:background="grey" class=flex>
-    <span class="flex gap-x-px justify-evenly">
-        {#each $filterArray as {token, color} }
-            <div  data-type={color}
+<div style:background=black class="flex flex-wrap" >
+    <span class="flex gap-x-px justify-evenly flex-wrap">
+        {#each $filterArray as {token, color} (token)}
+            <div  data-type={color} in:fly="{{ y: 100, duration: tokenAnimDuration }}" 
+                out:fly="{{ y: 100, duration: tokenAnimDuration }}"
                 class=" token bg-blue-500 hover:bg-blue-700 text-white font-bold
-                py-2 px-4 rounded-full flex items-center">
+                py-2 px-4 rounded-full flex flex-wrap justify-center"
+                animate:flip>
                 <!-- <div style:display="inline-block" style:color="white">{tag}</div> -->
                 {token}
                 <span data-tag-value = {token} on:click={removeFromTagArray} class=inline-block>
@@ -165,20 +187,37 @@
         {/each}
     </span>
     <!-- update the tagArray only when the space button was pressed -->
-    <input type="text" placeholder="Search by tags (unfinished)" bind:value={tagSearchString} on:input={tagSearchInput} on:keydown={tagDelete} 
-        on:keyup={(e)=>{if (e.key==='Enter') searchReq()}} list=suggestions>
+    <div style:width=auto style:padding="2px 0" style:flex=auto class=box-border
+        style:background="linear-gradient(90deg, rgba(190, 18, 61,0) 0%, rgba(190, 18, 61,1)"
+    >
+        <input type="text" placeholder="Search by tags (unfinished)" bind:value={tagSearchString} 
+            on:input={tagSearchInput} on:keydown={tagDelete} on:keyup={(e)=>{if (e.key==='Enter') 
+            searchReq()}} list=suggestions style:background-color=black style:color=white
+            style:height=100% style:width=100%
+    >
+    </div>
     <datalist id=suggestions>
         {#each suggestions as {token, color}}
         <option value = {token} style:background={color}>{token}</option>    
         {/each}
     </datalist>
-    <button on:click = {searchReq}>Search</button>
+    <button on:click = {searchReq} style:min-width=1.5rem style:min-height=1.5rem 
+        style:padding-left=3px style:background-color="rgb(190,18,61)" class="rounded-r-md box-border"
+        style:border-right-width=0.375rem style:border-color="rgb(190,18,61)">
+        <span id=search-btn-span></span>
+    </button>
 </div>
-{:else}
-<div style:display="flex">
+{:else if regularSearch}
+<div style:display="flex" >
     <input type="text" placeholder="Search by title, ISBN, or ISBN13 (prepend with &quot isbn10/13:&quot)" bind:value={searchString} 
-        on:keyup={(e)=>{if (e.key==='Enter') searchReq()}}>
-    <button on:click={searchReq}>Search</button>
+        on:keyup={(e)=>{if (e.key==='Enter') searchReq()}}
+        class=rounded-l-md
+    >
+    <button on:click={searchReq} style:min-width=1.5rem style:min-height=1.5rem style:padding-left=3px
+        style:background-color="rgb(0, 200, 166)" class="rounded-r-md box-border"
+        style:border-right-width=.375rem style:border-color="rgb(0, 200, 166)">
+        <span id=search-btn-span></span>
+    </button>
 </div>
 {/if}
 <lable for="searchType">Tag Search</lable>
@@ -190,13 +229,33 @@
 {/await}
 <style>
     div>input{
-        flex:auto
+        flex:auto;
+        color : black;
     }
 
+    .token{
+        transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
     .token[data-type*=red]{
         background-color: rgb(190, 18, 61);
     }
     .token[data-type*=black]{
-        background-color: rgb(0, 0, 0);
+        background-color: #1F2530;
+    }
+    .token[data-type=red]:hover{
+        color:black;
+    }
+    .token[data-type=black]:hover{
+        color:rgb(190, 18, 61);
+    }
+    #search-btn-span{
+        display:block;
+        background-color: white;
+        mask-image: url("$lib/assets/search.svg");
+        -webkit-mask-image: url("$lib/assets/search.svg");
+        mask-repeat:no-repeat;
+        -webkit-mask-repeat:no-repeat;
+        width: calc(1.5rem - 3px);
+        height:calc(1.5rem - 3px);
     }
 </style>

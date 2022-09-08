@@ -1,6 +1,9 @@
 <script>
     import {tagArray as filterArray, tagSearchFlagStore as tagSearchFlag} from '../../lib/stores'
     import {page} from '$app/stores'
+    import noCoverUrl from '$lib/assets/no-cover.svg'
+    import Spinner from "$lib/components/spinner.svelte"
+import BookComponent from '$lib/components/_bookComponent.svelte';
 
     let bookData = {};
     let bookAuthors=[];
@@ -107,28 +110,54 @@
     }
 </script>
 <style>
-    @media screen and (orientation: portrait){
-    :root{
-        --descWidth:auto;
-        --gridWidth:100%;
-        --headerRowHeight: 4vh;
-        /* --botInfoFlexDirection : column; */
-    }}
     @media screen and (orientation: landscape){
         :root{
             --descWidth:15vw;
             --gridWidth:50%;
             --headerRowHeight: 10vh;
             /* --botInfoFlexDirection : row; */
+        }}
+        /*added for minimum dimensions (iphoneSE)*/
+        @media screen and (orientation: portrait),(max-width: 700px) {
+            :root{
+                --descWidth:auto;
+                --gridWidth:100%;
+                --headerRowHeight: 4vh;
+            /* --botInfoFlexDirection : column; */
     }}
+    /*smallest width in landscape mode that does not make image too small*/
+    @media screen and (orientation: landscape) and (max-width: 1250px){
+        :root{
+            --imageGridArea:alimg;
+            --headerRowHeight : auto;
+            --imageColWidth: 0;
+        }
+        #book-grid{
+            margin-top:4vh;
+            margin-bottom:4vh;
+        }
+    }
+    /*smallest width in portrait mode that does not make image too small*/
+    @media screen and (orientation: portrait) and (max-width: 630px){
+        :root{
+            --imageGridArea:alimg;
+            --headerRowHeight : auto;
+            --imageColWidth: 0;
+        }
+        #book-grid{
+            margin-top:4vh;
+            margin-bottom:4vh;
+        }
+    }
+
     #book-grid {
         display: grid;
         width : var(--gridWidth);
         margin-left : auto;
         margin-right : auto;
-        grid-template:  ".     .     .    " var(--headerRowHeight)
-                        "image title title" 5vh
-                        "image subt  subt " 5vh
+        grid-template:  ".     alimg alimg" var(--headerRowHeight)
+                        "image title title" auto
+                        "image subt  subt " auto
                         "image info  info " auto
                         "image .     .    " 7vh
                         "image desc  desc " auto
@@ -136,13 +165,19 @@
                         "image binfo binfo" 1fr
                         ".     binfo binfo" 1fr
                         ".     binfo binfo" 1fr
-                       / auto  var(--descWidth)   var(--descWidth);
+                       / var(--imageColWidth, auto)  var(--descWidth)   var(--descWidth);
         column-gap: 5vw;
+        /* row-gap:5vh; */
     }
     #img {
-        grid-area: image;
+        grid-area: var(--imageGridArea, image);
         width:100%;
-        margin : 0 auto auto auto;
+    }
+    img{
+        margin : auto;
+        object-fit:contain;
+        max-height: 300px;
+        width: 200px;
     }
     #pubDate,#descSpan{
         font-weight: bold;
@@ -189,21 +224,24 @@
     }
     .token{
         color:white;
+        cursor: pointer;
     }
     .token[data-bg*=red]{
         background-color: rgb(190, 18, 61);
     }
     .token[data-bg*=black]{
-        background-color:black;
+        background-color:#1F2530;
     }
 </style>
+<div style:min-height=70vh>
 {#await getBookData()}
-    <p>...Loading</p>
+    <!-- <p>...Loading</p> -->
+    <Spinner text="...Loading" mode=clockwise/>
 {:then {isbn10, isbn13, title, subtitle, rating, 
     thumbnailUrl, language, publishDate, pageCount,}}
 <div id=book-grid>
     <div id=img >
-        <img src={thumbnailUrl} alt=placeholder class=shrink-0/>
+        <img src={thumbnailUrl || noCoverUrl} alt=placeholder class=shrink-0/>
     </div>
     <h1 id=title style:grid-area=title class=text-2xl>{title}</h1>
     {#if subtitle}
@@ -278,3 +316,4 @@
     </div>
 </div>
 {/await}
+</div>
