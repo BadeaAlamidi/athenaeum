@@ -1,5 +1,5 @@
 <script context="module">
-	import {browser} from '$app/env'
+	import {browser} from '$app/environment'
 
 	//inspired by mdn's example for IntersectionObserver:
 	function generateThresholds(){
