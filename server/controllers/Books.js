@@ -227,4 +227,81 @@ const addBook = async (req,res) => {
     req.pipe(bb);
 }
 
-export { getBooks, getBook, deleteBook, addBook};
+const editBook = async (req,res) => {
+    console.log("Editing  book");
+    let responseCode = 200;
+    // requestInputvalues is responsible for holding all the values of the
+    // field inputs except for the file uploads.
+    let requestInputValues = [];
+    let newBookObj = {};
+    const bb = busboy({ headers: req.headers });
+    bb.on('file', (name, file, info) => {
+        const { filename, encoding, mimeType } = info;
+        console.log(
+            `File [${name}]: filename: %j, encoding: %j, mimeType: %j`,
+            filename,
+            encoding,
+            mimeType
+        );
+        file.on('data', (data) => {
+            if (filename !== undefined)
+                console.log(`File [${name}] got ${data.length} bytes`);
+        }).on('close', () => {
+            if (filename !== undefined)
+                console.log(`File [${name}] done`);
+        });
+    });
+    bb.on('field', (name, val, info) => {
+        // console.log(`Field [${name}]: value: %j`, val);
+        if (val != "" || val !== undefined) {
+            console.log(`${name} has a value of %j`, val);
+            // requestInputvalues is responsible for holding all the values of the
+            // field inputs except for the file uploads.
+            // The spread operator is then used to assign all the values of the
+            // array to each argument of the Book function.
+            //
+            // Since newBookObj already has the thumbnailurl and smallthumbnailurl
+            // properties, assigning the book object that the Book function returns would remove
+            // the properties. That's what tempBookObj is for.
+            // It holds these properties and reassigns them to the object returned by the "Book" function.
+            requestInputValues[requestInputValues.length] = val;
+            let tempBookObj = newBookObj;
+            newBookObj = new Book(...requestInputValues);
+            newBookObj.thumbnailUrl = tempBookObj.thumbnailUrl;
+            newBookObj.smallThumbnailUrl = tempBookObj.smallThumbnailUrl;
+        }
+        else
+            responseCode = 400; // bad request
+    });
+    bb.on('close', async () => {
+        console.log("Closed");
+        res.writeHead(responseCode, {Connection: 'close'});
+        res.status(responseCode).end()
+        console.log("Book Object: %j", newBookObj);
+        newBookObj.rating = parseInt(newBookObj.rating);
+        newBookObj.pageCount = parseInt(newBookObj.pageCount);
+        newBookObj.publishDate = new Date(newBookObj.publishDate);
+        let wrotes = await models.Wrote.findOne({where: {bookId: req.params.id}});
+        let udpatedAuthor = await models.Author.update({author: newBookObj.author},
+                                                {where: {id: wrotes.writerId}});
+        let updatedBook = await models.Book.update({isbn10: newBookObj.isbn10,
+                                                isbn13: newBookObj.isbn13,
+                                                title: newBookObj.title,
+                                                subtitle: newBookObj.subtitle,
+                                                rating: newBookObj.rating,
+                                                maturityRating: newBookObj.maturityRating,
+                                                thumbnailUrl: newBookObj.thumbnailUrl,
+                                                smallThumbnailUrl: newBookObj.smallThumbnailUrl,
+                                                language: newBookObj.language,
+                                                publishDate: newBookObj.publishDate,
+                                                pageCount: newBookObj.pageCount,
+                                                description: newBookObj.description,
+                                                textSnippet: newBookObj.textSnippet,},
+                                              {
+                                                  where: {id: req.params.id}
+                                              })
+
+    });
+    req.pipe(bb);
+}
+export { getBooks, getBook, deleteBook, addBook, editBook};
