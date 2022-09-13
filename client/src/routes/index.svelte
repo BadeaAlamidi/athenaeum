@@ -8,8 +8,14 @@
  import noCoverUrl from '$lib/assets/no-cover.svg'
 
  let modal;
+ /*
+    Form object to hold an argument and function reference to use for form submission.
+    I want the modal form be able to be used with multiple functions on submission,
+    And this is the best way I could think of doing that.
+ */
+ let formSubmissionObj = {arg: null, func: null};
  let files;
- let newBook = {
+ let bookObj = {
      isbn10: "",
      isbn13: "",
      subtitle: "",
@@ -35,7 +41,7 @@
      const searchString = $page.url.searchParams.get('searchString')?? '';
      const tagsSearchString = $page.url.searchParams.get('tags');
      const authSearchString = $page.url.searchParams.get('authors');
-     
+
      const requestURL = new URL(window.location.href);
      requestURL.searchParams.set('order',order);
      requestURL.searchParams.set('direction',direction);
@@ -43,7 +49,7 @@
         requestURL.pathname = '/api/taggedbooks';
         requestURL.searchParams.set('tags',tagsSearchString);
         requestURL.searchParams.set('authors',authSearchString);
-     } else { 
+     } else {
         requestURL.pathname = '/api/books';
         requestURL.searchParams.set('searchString', searchString)
      }
@@ -62,8 +68,38 @@
      // window.location.href=`http://localhost:3000?order=${selectValue}&direction=${selectDirection}`
      window.location.href=$page.url.href;
  }
+
+ /*
+    Fills the form with the information of a book given an id
+ */
+ function fillForm(id) {
+     fetch("/api/book/" + id).then(res => res.json()).then(data => {
+         bookObj = data[0];
+         // Removes the time and just leaves the date in year month day format.
+         bookObj.publishDate = bookObj.publishDate.split(" ")[0];
+         console.log(bookObj.publishDate);
+     });
+     fetch("/api/bookauthors/" + id).then(res => res.json()).then(data => {
+         bookObj.author = data[0].author;
+     });
+ }
+
+ /*
+    Decides which function to call on form submission
+    This may very depending on which button was clicked.
+    onSubmit can only call one function, so that's why this is here
+  */
+ function handleFormSubmission(e, formSubmissionObj) {
+     console.log(e);
+     console.log(formSubmissionObj);
+     if (formSubmissionObj.func.name === "editBook")
+         editBook(e, formSubmissionObj.arg);
+     else if (formSubmissionObj.func.name === "addBook")
+         addBook(e);
+ }
+
  function addBook(e) {
-     // I need to be able to access the 
+     // I need to be able to access the
      const form_input_locations = [5, 6];
      /* const form_input_locations = [5]; */
      const formData = new FormData(e.target);
@@ -79,11 +115,11 @@
      let images = [e.target[form_input_locations[0]].files[0], e.target[form_input_locations[1]].files[0]];
      /* let images = [e.target[form_input_locations[0]].files[0]]; */
      console.log(images);
-     modal.display(false);
-     for (const key in newBook) {
+     modal.display(false, "");
+     for (const key in bookObj) {
          // this avoids grabbing properties in the property chain
-         if (newBook.hasOwnProperty(key)) {
-             console.log(`${key} --> ${newBook[key]}`);
+         if (bookObj.hasOwnProperty(key)) {
+             console.log(`${key} --> ${bookObj[key]}`);
          }
      }
      const url = "/api/add/book";
@@ -118,10 +154,53 @@
          .then(res => console.log(res));
      console.log("res sent");
  }
-/*styling javascript functionality*/
-//clicking on "Results link":
+
+ function editBook(e, id) {
+     // I need to be able to access the
+     const form_input_locations = [5, 6];
+     /* const form_input_locations = [5]; */
+     const formData = new FormData(e.target);
+     const data = {};
+     for (let field of formData) {
+         const [key, value] = field;
+         data[key] = value;
+     }
+     console.log("data: ")
+     console.log(data);
+     console.log("files: ")
+     // Yeah, this looks ugly, I know...
+     let images = [e.target[form_input_locations[0]].files[0], e.target[form_input_locations[1]].files[0]];
+     /* let images = [e.target[form_input_locations[0]].files[0]]; */
+     console.log(images);
+     modal.display(false, "");
+     for (const key in bookObj) {
+         // this avoids grabbing properties in the property chain
+         if (bookObj.hasOwnProperty(key)) {
+             console.log(`${key} --> ${bookObj[key]}`);
+         }
+     }
+     const url = "/api/edit/book/" + id;
+     const options = {
+         method: "PATCH",
+         body: formData
+     };
+
+     fetch(url, options).then(res => {
+         console.log(res);
+         if (res.status != 200) {
+             alert("HTTP ERROR CODE: " + res.status.toString() + "\n" + res.statusText);
+         }
+     }).catch(error => {
+         // error
+         console.log("Error");
+         console.log(error);
+     });
+ }
+
+ /*styling javascript functionality*/
+ //clicking on "Results link":
  function expand_sharable_div(e){
-    console.log(e)
+     console.log(e)
      navigator.clipboard.writeText($page.url.href)
      .then(()=>{
          e.target.innerText = $page.url.href + ' Copied! (Click again to update)';
@@ -132,7 +211,7 @@
  }
  //filter tray height reaction variable:
  $:collapsibleHeight = collapsed? '15rem' : 0;
- 
+
 //  let collapsibleHeight = '0';
  function filterBtnClick(e){
     collapsed = !collapsed;
@@ -292,7 +371,7 @@ label:not(.modal-form label){
                 <option value="rating">Rating</option>
                 <option value="pageCount">Page Count</option>
                 <option value="id">Book ID</option>
-            </select> -->
+                 </select><!--  --> -->
             {#each [{gridArea:'title',value:'title',text:'Title'},
                     {gridArea:'pubdt',value:'publishDate',text:'Date Published'},
                     {gridArea:'ratng',value:'rating',text:'Rating'},
@@ -305,7 +384,7 @@ label:not(.modal-form label){
             {/each}
             <label for="ASC" style:grid-area=ascnd>
                 <input type="radio" id="ASC" value="ASC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
-                Ascending 
+                Ascending
             </label>
             <label for="DESC" style:grid-area=dscnd>
                 <input type="radio" id="DESC" value="DESC" name="direction" bind:group={selectDirection} on:change={ReOrder}>
@@ -319,74 +398,77 @@ label:not(.modal-form label){
         Results link...
         <span style:width=1.5rem style:height=1.5rem style:background-color=white></span>
         </div>
-        <button class="crud-add-btn rounded-full" style:display=inline-flex style:align-items=center 
-        style:gap=0.5rem on:click={() => modal.display(true)}>
+        <!--
+             Sets the function to be
+        -->
+        <button class="crud-add-btn rounded-full" style:display=inline-flex style:align-items=center
+        style:gap=0.5rem on:click={() => {formSubmissionObj={arg: null, func: addBook}; modal.display(true, "Add a Book")}}>
         <span></span>
         Add book
         </button>
     </div>
 <Modal bind:this={modal}>
-    <h2 style:grid-area=header class=text-center style:font-size=1.5rem>Add a Book</h2>
-    <form on:submit|preventDefault={()=>{addBook}} id=modal-form class=flex style:grid-area=form>
+    <h2 style:grid-area=header class=text-center style:font-size=1.5rem>{modal.getHeading()}</h2>
+    <form on:submit|preventDefault={(e)=>{handleFormSubmission(e, formSubmissionObj)}} id=modal-form class=flex style:grid-area=form>
         <div>
             <label for="isbn10">ISBN10</label>
-            <input type="text" name="isbn10" bind:value={newBook.isbn10} id="isbn10" />
+            <input type="text" name="isbn10" bind:value={bookObj.isbn10} id="isbn10" />
         </div>
         <div>
             <label for="isbn13">ISBN13</label>
-            <input type="text" name="isbn13" bind:value={newBook.isbn13} id="isbn13" />
+            <input type="text" name="isbn13" bind:value={bookObj.isbn13} id="isbn13" />
         </div>
         <div>
             <label for="subtitle">Subtitle</label>
-            <input type="text" name="subtitle" bind:value={newBook.subtitle} id="subtitle" />
+            <input type="text" name="subtitle" bind:value={bookObj.subtitle} id="subtitle" />
         </div>
         <div>
             <label for="rating">Rating</label>
-            <input type="text" name="rating" bind:value={newBook.rating} id="rating" />
+            <input type="text" name="rating" bind:value={bookObj.rating} id="rating" />
         </div>
         <div>
             <label for="maturityRating">Maturity Rating</label>
-            <input type="text" name="maturityRating" bind:value={newBook.maturityRating} id="maturityRating" />
+            <input type="text" name="maturityRating" bind:value={bookObj.maturityRating} id="maturityRating" />
         </div>
         <div>
             <label for="thumbnailUrl">Thumbnail URL</label>
             <input type="file"
-                   accept="image/*" name="thumbnailUrl" bind:files={newBook.thumbnailUrl} id="thumbnailUrl" />
+                   accept="image/*" name="thumbnailUrl" bind:files={bookObj.thumbnailUrl} id="thumbnailUrl" />
         </div>
         <div>
             <label for="smallThumbnailUrl">Small Thumbnail url</label>
             <input type="file"
-                   accept="image/*" name="smallThumbnailUrl" bind:files={newBook.smallThumbnailUrl} id="smallThumbnailUrl" />
+                   accept="image/*" name="smallThumbnailUrl" bind:files={bookObj.smallThumbnailUrl} id="smallThumbnailUrl" />
         </div>
         <div>
             <label for="language">Language</label>
-            <input type="text" name="language" bind:value={newBook.language} id="language" />
+            <input type="text" name="language" bind:value={bookObj.language} id="language" />
         </div>
         <div>
             <label for="publishDate">Publish Date</label>
-            <input type="date" name="publishDate" bind:value={newBook.publishDate} id="publishDate" />
+            <input type="date" name="publishDate" bind:value={bookObj.publishDate} id="publishDate" />
         </div>
         <div>
             <label for="pageCount">Page Count</label>
-            <input type="text" name="pageCount" bind:value={newBook.pageCount} id="pageCount" />
+            <input type="text" name="pageCount" bind:value={bookObj.pageCount} id="pageCount" />
         </div>
         <div>
             <label for="description">Description</label>
-            <textarea type="text" name="description" bind:value={newBook.description} id="description" />
+            <textarea type="text" name="description" bind:value={bookObj.description} id="description" />
         </div>
         <div>
             <label for="author">Author</label>
-            <input type="author" id="author" name="author" bind:value={newBook.author} />
+            <input type="author" id="author" name="author" bind:value={bookObj.author} />
         </div>
         <div>
             <label for="title">Title</label>
-            <input type="text" id="title" name="title" bind:value={newBook.title} />
+            <input type="text" id="title" name="title" bind:value={bookObj.title} />
         </div>
         <div style:background-color=black>
             <button type="submit" style:background-color=coral class="mx-auto border-0">Submit</button>
         </div>
     </form>
-</Modal>    
+</Modal>
     <div class="flex flex-wrap justify-around gap-y-4 ">
         {#each books as {title, thumbnailUrl, id}}
         <div class="flex-item">
@@ -399,7 +481,7 @@ label:not(.modal-form label){
                     <span style:width=1.5rem style:height=1.5rem style:background-color=black></span>
                     Delete
                 </button>
-                <button id="book-edit-btn"
+                <button id="book-edit-btn" on:click={() => {fillForm(id);formSubmissionObj={arg: id, func: editBook}; modal.display(true, "Edit Book")}}
                         class="flex border-black text-black mt-auto"
                         style:gap=0.5rem
                 >
