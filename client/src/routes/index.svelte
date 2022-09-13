@@ -179,7 +179,11 @@
      mask-image: url("$lib/assets/delete.svg");
      -webkit-mask-image: url("$lib/assets/delete.svg");
     }
-    #filter-btn>div{
+ #book-edit-btn > span{
+     mask-image: url("$lib/assets/pencil.svg");
+     -webkit-mask-image: url("$lib/assets/pencil.svg");
+ }
+ #filter-btn>div{
      mask-image: url("$lib/assets/filter.svg");
      -webkit-mask-image: url("$lib/assets/filter.svg");
  }
@@ -394,6 +398,13 @@ label:not(.modal-form label){
                 >
                     <span style:width=1.5rem style:height=1.5rem style:background-color=black></span>
                     Delete
+                </button>
+                <button id="book-edit-btn"
+                        class="flex border-black text-black mt-auto"
+                        style:gap=0.5rem
+                >
+                    <span style:width=1.5rem style:height=1.5rem style:background-color=black></span>
+                    Edit
                 </button>
             </BookComponent>
         </div>
