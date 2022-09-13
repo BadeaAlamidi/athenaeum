@@ -1,7 +1,7 @@
 import express from 'express';
 
 import {getAllTags, getBookTags} from '../controllers/Tags.js'
-import {getBooks, getBook, deleteBook, addBook} from '../controllers/Books.js'
+import {getBooks, getBook, deleteBook, addBook, editBook} from '../controllers/Books.js'
 import getTaggedBooks from '../controllers/JoinTestController.js'
 import { getBookAuthors, getAllAuthors } from '../controllers/Authors.js';
 
@@ -20,5 +20,6 @@ router.get('/booktags/:bookId', getBookTags);
 router.post('/delete/book', deleteBook);
 
 router.post("/add/book", addBook);
+router.patch("/edit/book/:id", editBook);
 
 export default router;
