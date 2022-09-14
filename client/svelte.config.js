@@ -8,8 +8,10 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter()
-	}
+		adapter: adapter(),
+		// adapter: adapter({out:'./build'}),
+		// outDir:'./build',
+	},
 };
 
 export default config;
