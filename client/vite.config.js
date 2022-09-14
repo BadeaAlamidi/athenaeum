@@ -6,7 +6,10 @@ const config = {
       plugins: [sveltekit()],
       server: {
             port:3000
-      }
+      },
+      // build:{
+      //       // outDir:'./build',
+      // }
 };
 
 export default config;

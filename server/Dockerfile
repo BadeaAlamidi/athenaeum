@@ -5,5 +5,6 @@ RUN npm install
 COPY . .
 VOLUME /home/node/app/db
 EXPOSE 5000
+ENV NODE_ENV="production"
 ENTRYPOINT ["./entrypoint.sh"]
 CMD [ "node", "index.js" ]
