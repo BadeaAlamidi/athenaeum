@@ -1,8 +1,14 @@
 <script>
  import {fade} from 'svelte/transition';
  let visible = false;
- export function display(show) {
+ let heading;
+ export function display(show, header) {
      visible = show;
+     heading = header
+ }
+
+ export function getHeading() {
+     return heading;
  }
 </script>
 <style>
