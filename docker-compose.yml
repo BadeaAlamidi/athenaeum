@@ -1,16 +1,29 @@
 version: '2.4'
 services:
+  nginx:
+    image: nginx:stable-alpine
+    volumes:
+      - "./web/nginx.conf:/etc/nginx/nginx.conf"
+    ports:
+      - "80:80"
+    depends_on:
+      - client
+      - server
+
   client:
-    image: athenaeum-client:node
+    image: athenaeum-client:1.0
     build:
       context: ./client
       target: node
     ports:
       - "3000:3000"
+
   server:
-    image: athenaeum-server
+    image: athenaeum-server:1.0
     build: ./server
     ports:
       - "5000:5000"
-
-    
+    volumes:
+       - "server_database:/home/node/app/db"
+volumes:
+  server_database:
