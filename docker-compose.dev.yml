@@ -9,7 +9,6 @@ services:
     depends_on:
       - client
       - server
-
   client:
     image: node:16-alpine3.14
     environment:
