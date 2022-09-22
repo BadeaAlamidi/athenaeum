@@ -1,5 +1,5 @@
-db
 client/node_modules
 server/node_modules
 server/db
 client/build
+server/images
