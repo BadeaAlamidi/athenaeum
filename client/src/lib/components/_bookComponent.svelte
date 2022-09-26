@@ -17,6 +17,7 @@
 
  export let id;
  export let imgSource;
+ export let deleted;
 
  let element;
  //intermediary variable that is assigned to once the component is in viewport
@@ -34,7 +35,8 @@ const href = window.location.protocol + '//' + $page.url.host + '/book?id=' + id
     return ()=>observer.unobserve(element);
  })
 </script>
-<div bind:this={element} on:intersect={()=>hasIntersected = true}>
+{#if deleted==false}
+<div bind:this={element} on:intersect={()=>hasIntersected = true} on:click={()=>deleted=true}>
     <!-- <div class='wrapper' style='' title={id} on:click={navToBook}> -->
     <a class='wrapper' style='' title={id} href={href}>
         <span style:opacity="{opacity}">
@@ -47,7 +49,7 @@ const href = window.location.protocol + '//' + $page.url.host + '/book?id=' + id
     </a>
     <slot></slot>
 </div>
-
+{/if}
 <style>
     .wrapper {
         cursor:pointer;
@@ -61,5 +63,9 @@ const href = window.location.protocol + '//' + $page.url.host + '/book?id=' + id
     }
     span{
         transition: 0.5s opacity cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    }
+    div{
+    width:200px;
+    min-height: 300px;
     }
 </style>

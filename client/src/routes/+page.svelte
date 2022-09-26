@@ -1,4 +1,4 @@
-<script>
+ <script>
  import Modal from "$lib/components/_modal.svelte";
  import BookComponent from "$lib/components/_bookComponent.svelte";
  import {page} from "$app/stores";
@@ -241,10 +241,6 @@
       height:1.5rem;
       background-color: black;
   }
- .flex-item{
-    width:200px;
-    min-height: 300px;
- }
  #sharable-link-div.unclicked{
      background-color: rgb(0, 0, 0);
      /* display:inline; */
@@ -371,7 +367,7 @@ label:not(.modal-form label){
                 <option value="rating">Rating</option>
                 <option value="pageCount">Page Count</option>
                 <option value="id">Book ID</option>
-                 </select><!--  --> -->
+                 </select>-->
             {#each [{gridArea:'title',value:'title',text:'Title'},
                     {gridArea:'pubdt',value:'publishDate',text:'Date Published'},
                     {gridArea:'ratng',value:'rating',text:'Rating'},
@@ -470,9 +466,8 @@ label:not(.modal-form label){
     </form>
 </Modal>
     <div class="flex flex-wrap justify-around gap-y-4 ">
-        {#each books as {title, thumbnailUrl, id}}
-        <div class="flex-item">
-            <BookComponent id={id} imgSource={thumbnailUrl || noCoverUrl}>
+        {#each books as {title, thumbnailUrl, id} (books.id)}
+            <BookComponent id={id} imgSource={thumbnailUrl || noCoverUrl} deleted={false}>
                 <span slot="title">{title}</span>
                 <button id=book-del-btn on:click={() => deleteBook(id)}
                     class="flex border-black text-black mt-auto"
@@ -489,7 +484,6 @@ label:not(.modal-form label){
                     Edit
                 </button>
             </BookComponent>
-        </div>
         {/each}
     </div>
 
