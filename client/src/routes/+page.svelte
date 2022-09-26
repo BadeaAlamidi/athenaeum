@@ -92,9 +92,9 @@
  function handleFormSubmission(e, formSubmissionObj) {
      console.log(e);
      console.log(formSubmissionObj);
-     if (formSubmissionObj.func.name === "editBook")
+     if (formSubmissionObj.func === editBook)
          editBook(e, formSubmissionObj.arg);
-     else if (formSubmissionObj.func.name === "addBook")
+     else if (formSubmissionObj.func === addBook)
          addBook(e);
  }
 
