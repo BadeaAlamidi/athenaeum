@@ -68,6 +68,9 @@
 	}
 </script>
 <svelte:window on:scroll={testBottom}/>
+<svelte:head>
+	<title>Athenauem</title>
+</svelte:head>
 {#if $page.url.pathname === '/'}
 	<Logo on:click={()=>{navElement.scrollIntoView()}} />
 {/if}
