@@ -94,7 +94,7 @@ const deleteBook = async (req,res) => {
     }).catch((err) => {
         console.error("Error deleting tagmapping entry");
         console.error(error);
-        res.status(500).end();
+        res.status(500).json({result:false})
     });
     let wrote = await models.Wrote.destroy({
         where: {
@@ -102,14 +102,19 @@ const deleteBook = async (req,res) => {
         }
     }).then(() => {
         console.log("Deleted wrotes entry");
-    }).catch((err) => {console.error(err); res.status(500).end();});
+    }).catch((err) => {console.error(err); 
+        res.status(500).json({result:false})}
+    );
     let book = await models.Book.destroy({
         where: {
             id: req.body.bookId
         }
     }).then(() => {
-        res.status(204).end();
-    }).catch((err) => {console.error(err); res.status(500).end();});
+        res.status(200).json({result:true});
+    }).catch((err) => {
+        console.error(err);
+        res.status(500).json({result:false})
+    });
 }
 
 // queries the database for a single book through provided id
