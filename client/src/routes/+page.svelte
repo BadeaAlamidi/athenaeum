@@ -1,4 +1,4 @@
-<script>
+ <script>
  import Modal from "$lib/components/_modal.svelte";
  import BookComponent from "$lib/components/_bookComponent.svelte";
  import {page} from "$app/stores";
@@ -139,22 +139,6 @@
          console.log(error);
      });
  }
-
- function deleteBook(id) {
-     const url = "/api/delete/book"
-     const options = {
-         method: 'POST',
-         body: JSON.stringify({bookId: id}),
-         headers: {
-             'Content-Type': 'application/json'
-         }
-     }
-     fetch(url, options)
-         .then(res => res.json())
-         .then(res => console.log(res));
-     console.log("res sent");
- }
-
  function editBook(e, id) {
      // I need to be able to access the
      const form_input_locations = [5, 6];
@@ -241,10 +225,6 @@
       height:1.5rem;
       background-color: black;
   }
- .flex-item{
-    width:200px;
-    min-height: 300px;
- }
  #sharable-link-div.unclicked{
      background-color: rgb(0, 0, 0);
      /* display:inline; */
@@ -254,20 +234,16 @@
     mask-image: url("$lib/assets/copy.svg");
     -webkit-mask-image: url("$lib/assets/copy.svg");
  }
-#book-del-btn > span{
-     mask-image: url("$lib/assets/delete.svg");
-     -webkit-mask-image: url("$lib/assets/delete.svg");
-    }
  #book-edit-btn > span{
      mask-image: url("$lib/assets/pencil.svg");
      -webkit-mask-image: url("$lib/assets/pencil.svg");
- }
+    }
  #filter-btn>div{
      mask-image: url("$lib/assets/filter.svg");
      -webkit-mask-image: url("$lib/assets/filter.svg");
  }
-    #book-del-btn > span,
     #sharable-link-div>span,
+    #book-edit-btn>span,
     .crud-add-btn>span,
     #filter-btn>div{
         mask-repeat: no-repeat;
@@ -371,7 +347,7 @@ label:not(.modal-form label){
                 <option value="rating">Rating</option>
                 <option value="pageCount">Page Count</option>
                 <option value="id">Book ID</option>
-                 </select><!--  --> -->
+                 </select>-->
             {#each [{gridArea:'title',value:'title',text:'Title'},
                     {gridArea:'pubdt',value:'publishDate',text:'Date Published'},
                     {gridArea:'ratng',value:'rating',text:'Rating'},
@@ -470,26 +446,17 @@ label:not(.modal-form label){
     </form>
 </Modal>
     <div class="flex flex-wrap justify-around gap-y-4 ">
-        {#each books as {title, thumbnailUrl, id}}
-        <div class="flex-item">
-            <BookComponent id={id} imgSource={thumbnailUrl || noCoverUrl}>
-                <span slot="title">{title}</span>
-                <button id=book-del-btn on:click={() => deleteBook(id)}
-                    class="flex border-black text-black mt-auto"
-                    style:gap=0.5rem
-                >
-                    <span style:width=1.5rem style:height=1.5rem style:background-color=black></span>
-                    Delete
-                </button>
-                <button id="book-edit-btn" on:click={() => {fillForm(id);formSubmissionObj={arg: id, func: editBook}; modal.display(true, "Edit Book")}}
+        {#each books as {title, thumbnailUrl, id} (id)}
+                <BookComponent id={id} imgSource={thumbnailUrl || noCoverUrl} deleted={false}>
+                    <span slot="title">{title}</span>
+                    <button id="book-edit-btn" on:click={() => {fillForm(id);formSubmissionObj={arg: id, func: editBook}; modal.display(true, "Edit Book")}}
                         class="flex border-black text-black mt-auto"
                         style:gap=0.5rem
                 >
                     <span style:width=1.5rem style:height=1.5rem style:background-color=black></span>
                     Edit
-                </button>
-            </BookComponent>
-        </div>
+                    </button>
+                </BookComponent>
         {/each}
     </div>
 
