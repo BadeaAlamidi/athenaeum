@@ -280,8 +280,6 @@ const editBook = async (req,res) => {
     });
     bb.on('close', async () => {
         console.log("Closed");
-        res.writeHead(responseCode, {Connection: 'close'});
-        res.status(responseCode).end()
         console.log("Book Object: %j", newBookObj);
         newBookObj.rating = parseInt(newBookObj.rating);
         newBookObj.pageCount = parseInt(newBookObj.pageCount);
@@ -304,7 +302,9 @@ const editBook = async (req,res) => {
                                                 textSnippet: newBookObj.textSnippet,},
                                               {
                                                   where: {id: req.params.id}
-                                              })
+                                              });
+        res.writeHead(responseCode, {Connection: 'close'});
+        res.status(responseCode).end() // isn't this redundant
 
     });
     req.pipe(bb);
