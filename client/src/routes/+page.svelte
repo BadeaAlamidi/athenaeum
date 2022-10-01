@@ -6,6 +6,7 @@
  import Spinner from "$lib/components/spinner.svelte"
 //SVGs
  import noCoverUrl from '$lib/assets/no-cover.svg'
+	import { tick } from "svelte";
 
  let modal;
  /*
@@ -130,9 +131,15 @@
 
      fetch(url, options).then(res => {
          console.log(res);
-         if (res.status != 200) {
-             alert("HTTP ERROR CODE: " + res.status.toString() + "\n" + res.statusText);
-         }
+         if (res.status == 200) {
+            //hacky way to force re-render of books by re-assigning to store that
+            //  is reacted to in the html portion of this component
+            
+            searchStatus.set('not_ready');
+            tick().then(()=>searchStatus.set('ready'));
+            
+        } else 
+            alert("HTTP ERROR CODE: " + res.status.toString() + "\n" + res.statusText);
      }).catch(error => {
          // error
          console.log("Error");
@@ -171,9 +178,13 @@
 
      fetch(url, options).then(res => {
          console.log(res);
-         if (res.status != 200) {
-             alert("HTTP ERROR CODE: " + res.status.toString() + "\n" + res.statusText);
-         }
+         if (res.status == 200) {
+            //hacky way to force re-render of books by re-assigning to store that
+            //  is reacted to in the html portion of this component
+
+            searchStatus.set('not_ready')
+            tick().then(()=>searchStatus.set('ready'));
+         } else alert("HTTP ERROR CODE: " + res.status.toString() + "\n" + res.statusText);
      }).catch(error => {
          // error
          console.log("Error");
@@ -452,7 +463,7 @@ label:not(.modal-form label){
                     <button id="book-edit-btn" on:click={() => {fillForm(id);formSubmissionObj={arg: id, func: editBook}; modal.display(true, "Edit Book")}}
                         class="flex border-black text-black mt-auto"
                         style:gap=0.5rem
-                >
+                    >
                     <span style:width=1.5rem style:height=1.5rem style:background-color=black></span>
                     Edit
                     </button>

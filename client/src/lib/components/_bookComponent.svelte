@@ -2,13 +2,13 @@
     import {browser} from '$app/environment';
     let observer;
     if (browser)
+        //this intersection observer never gets deleted
         observer = new IntersectionObserver((entries)=>{
             entries.forEach((entry)=>{
                 if (entry.isIntersecting)
                     entry.target.dispatchEvent(new Event('intersect'));
             });
         })
-    //this intersection observer never gets deleted
 </script>
 
 <script>
