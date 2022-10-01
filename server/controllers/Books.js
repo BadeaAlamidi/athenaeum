@@ -94,7 +94,7 @@ const deleteBook = async (req,res) => {
     }).catch((err) => {
         console.error("Error deleting tagmapping entry");
         console.error(error);
-        res.status(500).end();
+        res.status(500).json({result:false})
     });
     let wrote = await models.Wrote.destroy({
         where: {
@@ -102,14 +102,19 @@ const deleteBook = async (req,res) => {
         }
     }).then(() => {
         console.log("Deleted wrotes entry");
-    }).catch((err) => {console.error(err); res.status(500).end();});
+    }).catch((err) => {console.error(err); 
+        res.status(500).json({result:false})}
+    );
     let book = await models.Book.destroy({
         where: {
             id: req.body.bookId
         }
     }).then(() => {
-        res.status(204).end();
-    }).catch((err) => {console.error(err); res.status(500).end();});
+        res.status(200).json({result:true});
+    }).catch((err) => {
+        console.error(err);
+        res.status(500).json({result:false})
+    });
 }
 
 // queries the database for a single book through provided id
@@ -275,8 +280,6 @@ const editBook = async (req,res) => {
     });
     bb.on('close', async () => {
         console.log("Closed");
-        res.writeHead(responseCode, {Connection: 'close'});
-        res.status(responseCode).end()
         console.log("Book Object: %j", newBookObj);
         newBookObj.rating = parseInt(newBookObj.rating);
         newBookObj.pageCount = parseInt(newBookObj.pageCount);
@@ -299,7 +302,9 @@ const editBook = async (req,res) => {
                                                 textSnippet: newBookObj.textSnippet,},
                                               {
                                                   where: {id: req.params.id}
-                                              })
+                                              });
+        res.writeHead(responseCode, {Connection: 'close'});
+        res.status(responseCode).end() // isn't this redundant
 
     });
     req.pipe(bb);
